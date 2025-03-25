@@ -1,1 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnGro</title>
+    <style>
+    /* General Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Progress:wght@700&display=swap');
 
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #333;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+        background: linear-gradient(135deg, #8A2BE2, #000000); /* Violet to Black gradient */
+        color: #f5f5f5;
+    }
+
+    /* AI Chatbot Icon */
+    .chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #FFD700;
+        color: #000;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .chatbot-icon:hover {
+        background-color: #6B0000;
+        transform: scale(1.1);
+    }
+
+    .chatbot-icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Workout Generator Container */
+    .workout-generator {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 999;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    body.dark-mode .workout-generator {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .workout-generator.active {
+        display: block;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .container {
+        background-color: #1e1e1e;
+        color: #f5f5f5;
+        border-color: #333;
+    }
+
+    .header {
+        text-align: center;
+        padding: 15px 0;
+        font-size: 48px; /* Increased font size */
+        font-weight: bold;
+        font-family: 'Progress', sans-serif; /* Use Progress font */
+        color: #2c3e50;
+        border-bottom: 2px solid #FFD700;
+        margin-bottom: 20px;
+        transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .header {
+        color: #f5f5f5;
+        border-color: #ffd700;
+    }
+
+    .form-container {
+        margin-top: 20px;
+    }
+
+    .form-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    body.dark-mode .form-container label {
+        color: #f5f5f5;
+    }
+
+    .form-container input,
+    .form-container select {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .form-container input,
+    body.dark-mode .form-container select {
+        background-color: #333;
+        color: #f5f5f5;
+        border-color: #555;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #FFD700;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .form-container button:hover {
+        background-color: #6B0000;
+        transform: translateY(-2px);
+    }
+
+    .loading {
+        text-align: center;
+        font-size: 24px;
+        color: #000;
+        padding: 20px;
+        font-weight: bold;
+        display: none;
+        transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    body.dark-mode .loading {
+        color: #f5f5f5;
+    }
+
+    .loading.fade {
+        animation: fade 1s infinite;
+    }
+
+    @keyframes fade {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    .user-details {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .user-details {
+        background-color: #1e1e1e;
+        color: #f5f5f5;
+        border-color: #333;
+    }
+
+    .user-details h3 {
+        margin-top: 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        transition: color 0.3s ease;
+    }
+
+    body.dark-mode .user-details h3 {
+        color: #f5f5f5;
+    }
+
+    .user-details p {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    body.dark-mode .user-details p {
+        color: #f5f5f5;
+    }
+
+    .bmi-display {
+        font-family: 'Impact', sans-serif;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        color: #2c3e50;
+    }
+
+    body.dark-mode .bmi-display {
+        color: #ffd700;
+    }
+
+    .bmi-category {
+        font-family: 'Impact', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+        color: #2c3e50;
+    }
+
+    body.dark-mode .bmi-category {
+        color: #ffd700;
+    }
+
+    .workout-plan {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode .workout-plan {
+        background-color: #1e1e1e;
+        color: #f5f5f5;
+        border-color: #333;
+    }
+
+    .workout-plan h3 {
+        margin-top: 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        transition: color 0.3s ease;
+    }
+
+    body.dark-mode .workout-plan h3 {
+        color: #f5f5f5;
+    }
+
+    .workout-plan table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .workout-plan th,
+    .workout-plan td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    body.dark-mode .workout-plan th,
+    body.dark-mode .workout-plan td {
+        border-color: #555;
+    }
+
+    .workout-plan th {
+        background-color: #FFD700; /* Gold color for light mode */
+        color: #000; /* Black font color for light mode */
+        font-weight: bold; /* Bold font for light mode */
+    }
+
+    body.dark-mode .workout-plan th {
+        background-color: #8A2BE2; /* Violet color for dark mode */
+        color: #ffffff; /* White font color for dark mode */
+        font-weight: bold; /* Bold font for dark mode */
+    }
+
+    .workout-plan ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .workout-plan li {
+        list-style-type: disc;
+    }
+
+    /* Dark/Light Mode Toggle */
+    .mode-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: #3498db;
+        transition: color 0.3s ease;
+        z-index: 1000;
+    }
+
+    body.dark-mode .mode-toggle {
+        color: #2ecc71;
+    }
+
+    .mode-toggle:hover {
+        opacity: 0.8;
+    }
+
+    .wide-column {
+    width: 150px; /* Adjust this value as needed */
+    min-width: 150px; /* Ensure a minimum width */
+}
+
+.diet-button {
+    margin-top: 1cm; /* Adds 2 cm space above the diet plan button */
+}
+
+.sub-title {
+    text-align: center; /* Center the subtitle */
+    font-size: 24px; /* Adjust the font size */
+    color: #2c3e50; /* Change the color to match your theme */
+    margin-top: 10px; /* Add some space above the subtitle */
+}
+
+body.dark-mode .sub-title {
+    color: #ffffff; /* Change color to white for dark mode */
+}
+
+
+</style>
+  
+        
+</head>
+<body>
+    <!-- AI Chatbot Icon -->
+    <div class="chatbot-icon" onclick="toggleWorkoutGenerator()">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Icon">
+    </div>
+
+    <!-- Workout Generator -->
+    <div class="workout-generator" id="workout-generator">
+        <div class="container">
+            <div class="header" id="header">FitnGro</div>
+             <h2 class="sub-title">YOUR ULTIMATE FITNESS PLAN GENERATOR!</h2>
+            <div class="form-container">
+                <label>Age: <input type="number" id="age"></label>
+                <label>Height (cm): <input type="number" id="height"></label>
+                <label>Weight (kg): <input type="number" id="weight"></label>
+                <label>Workout Experience: 
+                    <select id="experience_level">
+                        <option value="0">Beginner</option>
+                        <option value="1">Intermediate</option>
+                        <option value="2">Advanced</option>
+                    </select>
+                </label>
+                <label>Fitness Goal: 
+                    <select id="fitness_goal">
+                        <option value="0">Gain Muscle</option>
+                        <option value="1">Lose Fat</option>
+                        <option value="2">Improve Strength</option>
+                        <option value="3">Improve Stamina</option>
+                        <option value="4">Cardio</option>
+                        <option value="5">General Fitness</option>
+                    </select>
+                </label>
+                <label>Activity Level: 
+                    <select id="activity_level">
+                        <option value="sedentary">Sedentary</option>
+                        <option value="active">Active</option>
+                        <option value="highly_active">Highly Active</option>
+                    </select>
+                </label>
+                <label>Hours of Sleep: <input type="number" id="sleep"></label>
+                <label>Water Intake (Liters): <input type="number" id="water"></label>
+                
+                <div class="button-container">
+                    <button onclick="generateWorkout()">GENERATE WORKOUT PLAN</button>
+                    <button class="diet-button" onclick="generateDietPlan()">GENERATE DIET PLAN</button>
+                </div>
+            </div>
+            <div id="loading-indicator" class="loading fade">
+                FitnGro is generating your plan... <span class="push-up-animation">💪</span>
+            </div>
+            <div id="user-details" class="user-details" style="display: none;">
+                <h3>Your Details</h3>
+                <div id="user-details-content"></div>
+                <div id="bmi-display" class="bmi-display"></div>
+                <div id="bmi-category" class="bmi-category"></div>
+            </div>
+            <div id="workout-plan" class="workout-plan" style="display: none;">
+                <h3>Your 4-Week Plan</h3>
+                <div id="workout-content"></div>
+                <div id="workout-plan" class="workout-plan" style="display: none;">
+                    <h3 id="workout-plan-title">Your 4-Week Plan</h3>
+                    <div id="workout-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Workout Generator
+        function toggleWorkoutGenerator() {
+            const workoutGenerator = document.getElementById('workout-generator');
+            workoutGenerator.classList.toggle('active');
+        }
+
+        // Generate Workout Plan
+        // Generate Workout Plan
+        function generateWorkout() {
+    const age = document.getElementById('age').value;
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    const experienceLevel = document.getElementById('experience_level').value;
+    const fitnessGoal = document.getElementById('fitness_goal').value;
+    const activityLevel = document.getElementById('activity_level').value;
+    const sleep = document.getElementById('sleep').value;
+    const water = document.getElementById('water').value;
+
+    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel || !sleep || !water) {
+        alert('Please fill all fields.');
+        return;
+    }
+
+    // Show loading indicator
+    document.getElementById('loading-indicator').style.display = 'block';
+    document.getElementById('user-details').style.display = 'none';
+    document.getElementById('workout-plan').style.display = 'none';
+
+    // Fetch workout plan from backend
+    fetch('/generate-workout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            age: age,
+            height: height,
+            weight: weight,
+            experience_level: experienceLevel,
+            fitness_goal: fitnessGoal,
+            activity_level: activityLevel,
+            sleep: sleep,
+            water: water
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Delay for 3 seconds before displaying the results
+        setTimeout(() => {
+            // Display user details
+            const userDetails = `
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Height:</strong> ${height} cm</p>
+                <p><strong>Weight:</strong> ${weight} kg</p>
+                <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
+                <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
+                <p><strong>Activity Level:</strong> ${activityLevel}</p>
+                <p><strong>Hours of Sleep:</strong> ${sleep}</p>
+                <p><strong>Water Intake:</strong> ${water} liters</p>
+            `;
+            document.getElementById('user-details-content').innerHTML = userDetails;
+
+            // Display BMI
+            document.getElementById('bmi-display').innerHTML = `BMI: ${data.bmi}`;
+            document.getElementById('bmi-category').innerHTML = `According to FitnTech, your BMI is <strong>${data.bmi_category}</strong>`;
+
+            // Display workout plan in a table
+            const workoutPlan = data.workout_plan;
+            let workoutHTML = '';
+            for (const week in workoutPlan) {
+                workoutHTML += `<h4>${week}</h4>`;
+                workoutHTML += `<table>`;
+                workoutHTML += `<tr><th>Day</th><th>Warmup</th><th>Main (Reps)</th><th>Main (Sets)</th><th>Main (Workouts)</th><th>Cooldown</th></tr>`;
+                const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                for (const day of orderedDays) {
+                    workoutHTML += `<tr>`;
+                    workoutHTML += `<td><strong>${day}</strong></td>`;
+                    if (workoutPlan[week][day] === "Rest Day") {
+                        workoutHTML += `<td colspan="5">Rest Day</td>`;
+                    } else {
+                        // Warmup
+                        const warmupExercises = workoutPlan[week][day].Warmup.map(ex => {
+                            return `<li>${ex}</li>`;
+                        }).join('');
+                        workoutHTML += `<td><ul>${warmupExercises}</ul></td>`;
+
+                        // Main (Reps, Sets, Workouts)
+                        const mainExercises = workoutPlan[week][day].Main;
+                                                const reps = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                            return match ? `<li>${match[2]} reps</li>` : `<li>N/A</li>`;
+                        }).join('');
+                        const sets = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                            return match ? `<li>${match[1]} sets</li>` : `<li>N/A</li>`;
+                        }).join('');
+                        const workouts = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
+                            return match ? `<li>${match[4]}</li>` : `<li>N/A</li>`;
+                        }).join('');
+
+                        workoutHTML += `<td><ul>${reps}</ul></td>`;
+                        workoutHTML += `<td><ul>${sets}</ul></td>`;
+                        workoutHTML += `<td><ul>${workouts}</ul></td>`;
+
+                        // Cooldown
+                        const cooldownExercises = workoutPlan[week][day].Cooldown.map(ex => {
+                            return `<li>${ex}</li>`;
+                        }).join('');
+                        workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
+                    }
+                    workoutHTML += `</tr>`;
+                }
+                workoutHTML += `</table>`;
+            }
+            document.getElementById('workout-content').innerHTML = workoutHTML;
+
+            // Show user details and workout plan
+            document.getElementById('user-details').style.display = 'block';
+            document.getElementById('workout-plan').style.display = 'block';
+
+            // Hide loading indicator
+            document.getElementById('loading-indicator').style.display = 'none';
+        }, 3000); // 3 seconds delay
+    });
+}
+
+        // Dark/Light Mode Toggle
+        const modeToggle = document.createElement('button');
+        modeToggle.className = 'mode-toggle';
+        modeToggle.innerHTML = '🌙';
+        modeToggle.onclick = () => {
+            document.body.classList.toggle('dark-mode');
+            modeToggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        };
+        document.body.appendChild(modeToggle);
+
+    
+
+workoutHTML += `<tr><th>Day</th><th>Warmup</th><th class="wide-column">Main (Reps)</th><th class="wide-column">Main (Sets)</th><th class="wide-column">Main (Workouts)</th><th class="wide-column">Cooldown</th></tr>`;
+
+
+function generateDietPlan() {
+    const age = document.getElementById('age').value;
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    const experienceLevel = document.getElementById('experience_level').value;
+    const fitnessGoal = document.getElementById('fitness_goal').value;
+    const activityLevel = document.getElementById('activity_level').value;
+    const sleep = document.getElementById('sleep').value;
+    const water = document.getElementById('water').value;
+
+    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel || !sleep || !water) {
+        alert('Please fill all fields.');
+        return;
+    }
+
+    // Show loading indicator
+    document.getElementById('loading-indicator').style.display = 'block';
+    document.getElementById('user-details').style.display = 'none';
+    document.getElementById('workout-plan').style.display = 'none';
+
+    document.getElementById('workout-plan-title').innerHTML = 'Your 4-Week Diet Plan';
+    // Fetch diet plan from backend
+    fetch('/generate-diet-plan', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            age: age,
+            height: height,
+            weight: weight,
+            experience_level: experienceLevel,
+            fitness_goal: fitnessGoal,
+            activity_level: activityLevel,
+            sleep: sleep,
+            water: water
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Delay for 3 seconds before displaying the results
+        setTimeout(() => {
+            // Display user details
+            const userDetails = `
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Height:</strong> ${height} cm</p>
+                <p><strong>Weight:</strong> ${weight} kg</p>
+                <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
+                <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
+                <p><strong>Activity Level:</strong> ${activityLevel}</p>
+                <p><strong>Hours of Sleep:</strong> ${sleep}</p>
+                <p><strong>Water Intake:</strong> ${water} liters</p>
+            `;
+            document.getElementById('user-details-content').innerHTML = userDetails;
+
+            // Display diet plan in a table
+            // Display diet plan in a table
+const dietPlan = data.diet_plan;
+let dietHTML = '<h4>Your Diet Plan</h4><table>';
+dietHTML += `<tr><th>Week</th><th>Meal</th><th>Food Items</th></tr>`;
+
+for (const week in dietPlan) {
+    for (const meal in dietPlan[week]) {
+        dietHTML += `<tr><td><strong>${week}</strong></td><td><strong>${meal}</strong></td><td><ul>`;
+        dietPlan[week][meal].forEach(item => {
+            dietHTML += `<li>${item}</li>`;
+        });
+        dietHTML += `</ul></td></tr>`;
+    }
+}
+dietHTML += `</table>`;
+        
+            document.getElementById('workout-content').innerHTML = dietHTML;
+
+            // Show user details and diet plan
+            document.getElementById('user-details').style.display = 'block';
+            document.getElementById('workout-plan').style.display = 'block';
+
+            // Hide loading indicator
+            document.getElementById('loading-indicator').style.display = 'none';
+        }, 3000); // 3 seconds delay
+    });
+}
+
+
+    </script>
+</body>
+</html>
