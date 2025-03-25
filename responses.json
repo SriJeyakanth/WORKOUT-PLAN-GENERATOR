@@ -1,1 +1,464 @@
-
+[
+    {
+        "bmi": 23.11,
+        "bmi_category": "Ideal",
+        "workout_plan": {
+            "Week 1": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Wide Push-ups",
+                        "2x10r Wall Sit"
+                    ],
+                    "Main": [
+                        "3x10r Knee-to-Elbow Push-ups",
+                        "3x10r Cardio Knee Drives",
+                        "3x10r Squat Thrusts",
+                        "3x10r Speed Skaters"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Side Plank with Reach Through",
+                        "2x10r Cardio Side Lunges"
+                    ],
+                    "Main": [
+                        "3x10r Incline Push-ups",
+                        "3x10r Glute Bridges",
+                        "3x10r Side Kick Jumps",
+                        "3x10r Plank to Jump"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Power Skips",
+                        "2x10r Lunge Hold"
+                    ],
+                    "Main": [
+                        "3x10r Side Plank with Knee Tuck",
+                        "3x10r Boxer Jab Cross",
+                        "3x10r Pulse Jumps",
+                        "3x10r Burpees"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": {
+                    "Warmup": [
+                        "2x10r Pop Squats",
+                        "2x10r Switch Lunges"
+                    ],
+                    "Main": [
+                        "3x10r Lunge Pulse Hold",
+                        "3x10r Decline Push-ups",
+                        "3x10r Plank with Leg Lift",
+                        "3x10r Jump Rope (Imaginary)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Switch Lunges",
+                        "2x10r Russian Twists"
+                    ],
+                    "Main": [
+                        "3x10r Low Jump Squats",
+                        "3x10r Jump Lunges",
+                        "3x10r High Knee March",
+                        "3x10r Jumping Heel Clicks"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": {
+                    "Warmup": [
+                        "2x10r Side Hop Burpees",
+                        "2x10r Jumping Knee Tucks"
+                    ],
+                    "Main": [
+                        "3x10r Quick Boxer Steps",
+                        "3x10r Knee Drive Hops",
+                        "3x10r Squat Thrusts",
+                        "3x10r Explosive Push-ups"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Single-Leg Glute Bridges",
+                        "2x10r Fast Feet"
+                    ],
+                    "Main": [
+                        "3x10r Side Plank with Hip Dips",
+                        "3x10r Fast Feet",
+                        "3x10r Standing Side Crunches",
+                        "3x10r Mountain Climber Twists"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 2": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Low-Impact Skaters",
+                        "2x10r Jump Rope (Imaginary)"
+                    ],
+                    "Main": [
+                        "3x10r Tricep Kickbacks",
+                        "3x10r Static Lunge Twist",
+                        "3x10r Side Lunge Hops",
+                        "3x10r Burpees"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Sprint Bursts",
+                        "2x10r Cross Jacks"
+                    ],
+                    "Main": [
+                        "3x10r Speed Skaters",
+                        "3x10r Plank Jack Twists",
+                        "3x10r Squat Pulses",
+                        "3x10r Side Step Kicks"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Mountain Climbers",
+                        "2x10r High Knee Sprints"
+                    ],
+                    "Main": [
+                        "3x10r Double Unders (Imaginary)",
+                        "3x10r Side Plank with Knee Drive",
+                        "3x10r Step-Ups",
+                        "3x10r Chair Dips"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": {
+                    "Warmup": [
+                        "2x10r Tricep Dip Hold",
+                        "2x10r Wall Sit Pulse"
+                    ],
+                    "Main": [
+                        "3x10r Front Kick Jumps",
+                        "3x10r Switch Lunges",
+                        "3x10r Plank to Pike",
+                        "3x10r Mountain Climber Twists"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Single-Leg Calf Raise",
+                        "2x10r Jump Rope (Imaginary)"
+                    ],
+                    "Main": [
+                        "3x10r Side-to-Side Skips",
+                        "3x10r Knee Drive Hops",
+                        "3x10r Side Lunge Jumps",
+                        "3x10r Pulse Jumps"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": {
+                    "Warmup": [
+                        "2x10r Squat Thrusts",
+                        "2x10r Bicycle Crunches"
+                    ],
+                    "Main": [
+                        "3x10r Power Skips",
+                        "3x10r Butt Kicks",
+                        "3x10r Side Plank with Knee Tuck",
+                        "3x10r Jump Lunges"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Fast Marching Twists",
+                        "2x10r Knee Tuck Jumps"
+                    ],
+                    "Main": [
+                        "3x10r Side Plank with Side Step",
+                        "3x10r Fast Feet",
+                        "3x10r Quick Boxer Steps",
+                        "3x10r Knee Drive Hops"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 3": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Side Plank with Side Step",
+                        "2x10r Wall Plank"
+                    ],
+                    "Main": [
+                        "3x10r Burpees",
+                        "3x10r Decline Push-ups",
+                        "3x10r Hollow Body Hold",
+                        "3x10r Side Plank with Rotation"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Burpee to Side Kick",
+                        "2x10r Sprint-in-Place"
+                    ],
+                    "Main": [
+                        "3x10r Spider Lunges",
+                        "3x10r Step-Up Jumps",
+                        "3x10r Burpees",
+                        "3x10r Squat Thrusts"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Side Plank Twist",
+                        "2x10r Plank to Pike"
+                    ],
+                    "Main": [
+                        "3x10r Plank with Leg Lift",
+                        "3x10r Mountain Climber Twists",
+                        "3x10r Lateral Hops",
+                        "3x10r Squat Jumps"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": {
+                    "Warmup": [
+                        "2x10r Tuck Jumps",
+                        "2x10r Side Shuffle Hops"
+                    ],
+                    "Main": [
+                        "3x10r Frog Jumps",
+                        "3x10r Jump Rope (Imaginary)",
+                        "3x10r Jumping Side Steps",
+                        "3x10r Sprint-in-Place"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Mountain Climbers",
+                        "2x10r Jumping Knee Tucks"
+                    ],
+                    "Main": [
+                        "3x10r Mountain Climbers",
+                        "3x10r Hover Squat",
+                        "3x10r Plank to Jump",
+                        "3x10r Side Plank"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": {
+                    "Warmup": [
+                        "2x10r Plank Jack Twists",
+                        "2x10r Knee Drive Hops"
+                    ],
+                    "Main": [
+                        "3x10r Close-Grip Push-ups",
+                        "3x10r Pulse Squat Jumps",
+                        "3x10r Pulse Jumps",
+                        "3x10r Reverse Plank Leg Lift"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Static Lunge Twist",
+                        "2x10r Sprint-in-Place"
+                    ],
+                    "Main": [
+                        "3x10r Lunges",
+                        "3x10r Side Plank with Hip Dips",
+                        "3x10r Sprint Bursts",
+                        "3x10r Superman Pulse"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 4": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Lunge Pulses",
+                        "2x10r Reverse Lunge Jumps"
+                    ],
+                    "Main": [
+                        "3x10r Jumping Heel Clicks",
+                        "3x10r Plank to Toe Touch",
+                        "3x10r Plank with Leg Lift",
+                        "3x10r Close-Grip Push-ups"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Side Plank with Side Hold",
+                        "2x10r Cross Jacks"
+                    ],
+                    "Main": [
+                        "3x10r Butt Kicks",
+                        "3x10r Plank Jacks",
+                        "3x10r Star Jumps",
+                        "3x10r Quick Boxer Steps"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Side Plank with Hip Dips",
+                        "2x10r Leg Raises"
+                    ],
+                    "Main": [
+                        "3x10r Plank Jack Burpees",
+                        "3x10r Quick Skater Twists",
+                        "3x10r Lunge Jumps",
+                        "3x10r Boxer Jab Cross"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": {
+                    "Warmup": [
+                        "2x10r Sprint-in-Place",
+                        "2x10r Single-Leg Squat"
+                    ],
+                    "Main": [
+                        "3x10r Single-Leg Calf Raise",
+                        "3x10r Side Lunge Jumps",
+                        "3x10r Cross Jacks",
+                        "3x10r Plank Jack Burpees"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Side Plank with Side Step",
+                        "2x10r Side Lunges"
+                    ],
+                    "Main": [
+                        "3x10r Chair Dips",
+                        "3x10r Superman Hold",
+                        "3x10r Side Plank with Side Lift",
+                        "3x10r Power Skips"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": {
+                    "Warmup": [
+                        "2x10r Plank Hop Outs",
+                        "2x10r Side Lunges"
+                    ],
+                    "Main": [
+                        "3x10r Side Plank with Side Step",
+                        "3x10r Power Jacks",
+                        "3x10r Single-Leg Balance",
+                        "3x10r Cross-Body Hops"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Single-Leg Squat",
+                        "2x10r Calf Raise Hold"
+                    ],
+                    "Main": [
+                        "3x10r V-Ups",
+                        "3x10r Reverse Plank Lift",
+                        "3x10r Burpee March",
+                        "3x10r Skater Jumps"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            }
+        }
+    }
+]
