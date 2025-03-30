@@ -2,89 +2,274 @@ from flask import Flask, request, jsonify, render_template
 import random
 import json
 import os
+from pathlib import Path
+import datetime
+
 
 app = Flask(__name__)
 
 # Minimal EXERCISES dictionary
 EXERCISES = {
-    0: ("Push-ups", "reps" ), 1: ("Wide Push-ups", "reps"), 2: ("Diamond Push-ups", "reps"), 3: ("Archer Push-ups", "reps"),
-    4: ("Glute Bridges", "timing"), 5: ("Single-Leg Glute Bridges", "timing"), 6: ("Squats", "reps"), 7: ("Pistol Squat Prep", "reps"),
-    8: ("Tricep Dips", "reps"), 9: ("Wall Push-ups", "reps"), 10: ("Lunges", "reps"), 11: ("Reverse Lunges", "reps"),
-    12: ("Side Lunges", "reps"), 13: ("Close-Grip Push-ups", "reps"), 14: ("Bulgarian Split Squat", "reps"), 15: ("Hand-Release Push-ups", "reps"),
-    16: ("Single-Leg Squat", "reps"), 17: ("Tricep Extensions", "reps"), 18: ("Calf Raises", "reps"), 19: ("Knee-to-Elbow Push-ups", "reps"),
-    20: ("Incline Push-ups", "reps"), 21: ("Decline Push-ups", "reps"), 22: ("Squat Pulses", "reps"), 23: ("Lunge Pulses", "reps"),
-    24: ("Wall Tricep Push-ups", "reps"), 25: ("Single-Leg Calf Raise", "reps"), 26: ("Step-Ups", "reps"), 27: ("Chair Dips", "reps"),
-    28: ("Squat Hold to Jump", "reps"), 29: ("Reverse Plank Leg Lift", "timing"), 30: ("Side Squat", "reps"), 31: ("Forward Lunge", "reps"),
-    32: ("Push-up to Plank", "reps"), 33: ("Glute Bridge March", "reps"), 34: ("Wall Squat Thrust", "reps"), 35: ("Tricep Kickbacks", "reps"),
-    36: ("Single-Arm Push-up Prep", "reps"), 37: ("Lunge to Knee Drive", "reps"), 38: ("Calf Raise Hold", "timing"), 39: ("Squat to Lunge", "reps"),
-    40: ("Burpees", "reps"), 41: ("Mountain Climbers", "reps"), 42: ("Squat Jumps", "reps"), 43: ("High Knees", "reps"),
-    44: ("Jumping Jacks", "reps"), 45: ("Skier Jumps", "reps"), 46: ("Power Jacks", "reps"), 47: ("Tuck Jumps", "reps"),
-    48: ("Plank Jacks", "reps"), 49: ("Star Jumps", "reps"), 50: ("Jump Lunges", "reps"), 51: ("Lateral Hops", "reps"),
-    52: ("Fast Feet", "reps"), 53: ("Butt Kicks", "reps"), 54: ("Cross Jacks", "reps"), 55: ("Skater Jumps", "reps"),
-    56: ("Knee Tuck Jumps", "reps"), 57: ("Heisman Jumps", "reps"), 58: ("Power Skips", "reps"), 59: ("Frog Jumps", "reps"),
-    60: ("Boxer Shuffle", "reps"), 61: ("Side-to-Side Hops", "reps"), 62: ("Pulse Jumps", "reps"), 63: ("Jump Squat Twist", "reps"),
-    64: ("Switch Lunges", "reps"), 65: ("High Knee Twists", "reps"), 66: ("Burpee Tuck Jumps", "reps"), 67: ("Lateral Skips", "reps"),
-    68: ("Sprint Bursts", "reps"), 69: ("Jump Rope (Imaginary)", "reps"), 70: ("Side Kick Jumps", "reps"), 71: ("Plank to Jump", "reps"),
-    72: ("Mountain Climber Twists", "reps"), 73: ("Squat Thrusts", "reps"), 74: ("Lunge Jumps", "reps"), 75: ("Knee Drive Hops", "reps"),
-    76: ("Pop Squats", "reps"), 77: ("Side Lunge Jumps", "reps"), 78: ("Speed Skaters", "reps"), 79: ("Explosive Push-ups", "reps"),
-    80: ("Plank", "timing"), 81: ("Wall Sit", "timing"), 82: ("Plank Rotations", "timing"), 83: ("Isometric Squat", "timing"),
-    84: ("Side Plank", "timing"), 85: ("Superman Hold", "timing"), 86: ("Reverse Plank", "timing"), 87: ("Lunge Hold", "timing"),
-    88: ("Squat Hold", "timing"), 89: ("Single-Leg Wall Sit", "timing"), 90: ("Plank Up-Downs", "timing"), 91: ("Side Lunge Hold", "timing"),
-    92: ("Calf Raise Hold", "timing"), 93: ("Tricep Dip Hold", "timing"), 94: ("Chair Pose", "timing"), 95: ("Single-Leg Balance", "timing"),
-    96: ("Wall Plank", "timing"), 97: ("Knee-to-Chest Plank", "timing"), 98: ("Hover Lunge", "timing"), 99: ("Plank Shoulder Taps", "timing"),
-    100: ("Static Push-up Hold", "timing"), 101: ("Bridge Hold", "timing"), 102: ("Side Plank Twist", "timing"), 103: ("Squat Pulse Hold", "timing"),
-    104: ("Lunge Pulse Hold", "timing"), 105: ("Wall Sit Twist", "timing"), 106: ("Plank Leg Lift", "timing"), 107: ("Superman Pulse", "timing"),
-    108: ("Single-Leg Glute Bridge", "timing"), 109: ("Tricep Push-up Hold", "timing"), 110: ("Isometric Calf Raise", "timing"), 111: ("Plank to Pike", "timing"),
-    112: ("Side Plank Reach", "timing"), 113: ("Wall Sit Pulse", "timing"), 114: ("Hover Squat", "timing"), 115: ("Reverse Plank Lift", "timing"),
-    116: ("Static Lunge Twist", "timing"), 117: ("Plank Knee Tuck", "timing"), 118: ("Chair Pose Twist", "timing"), 119: ("Single-Arm Plank", "timing"),
-    120: ("High Knees", "reps"), 121: ("Mountain Climbers", "reps"), 122: ("Shuttle Runs", "reps"), 123: ("Step Hops", "reps"),
-    124: ("Sprint-in-Place", "reps"), 125: ("Lateral Shuffles", "reps"), 126: ("Burpees", "reps"), 127: ("Jumping Jacks", "reps"),
-    128: ("Skater Jumps", "reps"), 129: ("Fast Feet", "reps"), 130: ("Butt Kicks", "reps"), 131: ("Cross Jacks", "reps"),
-    132: ("Tuck Jumps", "reps"), 133: ("Star Jumps", "reps"), 134: ("Power Skips", "reps"), 135: ("Frog Jumps", "reps"),
-    136: ("Boxer Shuffle", "reps"), 137: ("Side-to-Side Hops", "reps"), 138: ("Knee Tuck Jumps", "reps"), 139: ("Heisman Jumps", "reps"),
-    140: ("High Knee Twists", "reps"), 141: ("Sprint Bursts", "reps"), 142: ("Lateral Skips", "reps"), 143: ("Jump Rope (Imaginary)", "reps"),
-    144: ("Side Kick Jumps", "reps"), 145: ("Plank to Jump", "reps"), 146: ("Mountain Climber Twists", "reps"), 147: ("Squat Thrusts", "reps"),
-    148: ("Lunge Jumps", "reps"), 149: ("Knee Drive Hops", "reps"), 150: ("Pop Squats", "reps"), 151: ("Side Lunge Jumps", "reps"),
-    152: ("Speed Skaters", "reps"), 153: ("Pulse Jumps", "reps"), 154: ("Switch Lunges", "reps"), 155: ("High Knee Sprints", "reps"),
-    156: ("Plank Jack Burpees", "reps"), 157: ("Step-Up Jumps", "reps"), 158: ("Lateral Hop Twists", "reps"), 159: ("Explosive Knee Lifts", "reps"),
-    160: ("Jumping Jacks", "reps"), 161: ("Burpees", "reps"), 162: ("Mountain Climbers", "reps"), 163: ("High Knee Sprints", "reps"),
-    164: ("Squat Jumps", "reps"), 165: ("Skater Jumps", "reps"), 166: ("Sprint-in-Place", "reps"), 167: ("Lateral Skips", "reps"),
-    168: ("Fast Feet", "reps"), 169: ("Butt Kicks", "reps"), 170: ("Cross Jacks", "reps"), 171: ("Tuck Jumps", "reps"),
-    172: ("Star Jumps", "reps"), 173: ("Heisman Jumps", "reps"), 174: ("Power Skips", "reps"), 175: ("Frog Jumps", "reps"),
-    176: ("Boxer Shuffle", "reps"), 177: ("Side-to-Side Hops", "reps"), 178: ("Knee Tuck Jumps", "reps"), 179: ("Pulse Jumps", "reps"),
-    180: ("High Knees", "reps"), 181: ("Skier Jumps", "reps"), 182: ("Power Jacks", "reps"), 183: ("Plank Jacks", "reps"),
-    184: ("Jump Lunges", "reps"), 185: ("Lateral Hops", "reps"), 186: ("Switch Lunges", "reps"), 187: ("High Knee Twists", "reps"),
-    188: ("Sprint Bursts", "reps"), 189: ("Side Kick Jumps", "reps"), 190: ("Plank to Jump", "reps"), 191: ("Mountain Climber Twists", "reps"),
-    192: ("Squat Thrusts", "reps"), 193: ("Knee Drive Hops", "reps"), 194: ("Pop Squats", "reps"), 195: ("Side Lunge Jumps", "reps"),
-    196: ("Speed Skaters", "reps"), 197: ("Explosive Push-ups", "reps"), 198: ("Jump Rope (Imaginary)", "reps"), 199: ("Lateral Hop Twists", "reps"),
-    200: ("Shadow Boxing Punches", "reps"), 201: ("Side-Step Jacks", "reps"), 202: ("Knee-to-Elbow Twists", "reps"), 203: ("Cardio Marching", "reps"),
-    204: ("Double Unders (Imaginary)", "reps"), 205: ("Alternating Knee Lifts", "reps"), 206: ("Side Step Burpees", "reps"), 207: ("Jumping Knee Tucks", "reps"),
-    208: ("Cross-Body Kicks", "reps"), 209: ("Quick Step-Ups", "reps"), 210: ("Twist Jumps", "reps"), 211: ("Low-Impact Burpees", "reps"),
-    212: ("Side Shuffle Hops", "reps"), 213: ("Front Kick Jumps", "reps"), 214: ("Heel Tap Jumps", "reps"), 215: ("Cardio Knee Drives", "reps"),
-    216: ("Plank Jack Twists", "reps"), 217: ("Lateral Step Jumps", "reps"), 218: ("Reverse Lunge Jumps", "reps"), 219: ("Standing Side Crunches", "reps"),
-    220: ("High Knee March", "reps"), 221: ("Boxer Jab Cross", "reps"), 222: ("Side Hop Burpees", "reps"), 223: ("Pulse Squat Jumps", "reps"),
-    224: ("Knee Lift Twists", "reps"), 225: ("Quick Lateral Steps", "reps"), 226: ("Burpee to Side Kick", "reps"), 227: ("Cross Jack Twists", "reps"),
-    228: ("Sprint Pulse", "reps"), 229: ("Low Skater Hops", "reps"), 230: ("Front-to-Back Hops", "reps"), 231: ("Cardio Side Lunges", "reps"),
-    232: ("Jumping Heel Clicks", "reps"), 233: ("Plank Hop Outs", "reps"), 234: ("Twist Skaters", "reps"), 235: ("Side Kick Burpees", "reps"),
-    236: ("Fast Marching Twists", "reps"), 237: ("Lunge Jump Twists", "reps"), 238: ("Quick Boxer Steps", "reps"), 239: ("Low-Impact Skaters", "reps"),
-    240: ("Side Step Kicks", "reps"), 241: ("Knee Drive Skips", "reps"), 242: ("Cross-Body Hops", "reps"), 243: ("Pulse High Knees", "reps"),
-    244: ("Jumping Side Steps", "reps"), 245: ("Cardio Arm Swings", "reps"), 246: ("Burpee Knee Tucks", "reps"), 247: ("Lateral Pulse Jumps", "reps"),
-    248: ("Quick Heel Taps", "reps"), 249: ("Twist Power Jacks", "reps"), 250: ("Side-to-Side Skips", "reps"), 251: ("Low Jump Squats", "reps"),
-    252: ("Cross Kick Jumps", "reps"), 253: ("Fast Knee Lifts", "reps"), 254: ("Plank Side Hops", "reps"), 255: ("Cardio Twist Steps", "reps"),
-    256: ("Jumping Cross Punches", "reps"), 257: ("Side Lunge Hops", "reps"), 258: ("Quick Skater Twists", "reps"), 259: ("Burpee March", "reps"),
-    260: ("Bear Crawls", "reps"), 261: ("Crab Walks", "reps"), 262: ("Spider Lunges", "reps"), 263: ("Plank to Side Plank", "reps"),
-    264: ("Side Plank Dips", "reps"), 265: ("Plank to Toe Touch", "reps"), 266: ("Superman Pulls", "reps"), 267: ("Bird Dogs", "reps"),
-    268: ("Dead Bug", "reps"), 269: ("Hollow Body Hold", "timing"), 270: ("Arch Body Hold", "timing"), 271: ("V-Ups", "reps"),
-    272: ("Bicycle Crunches", "reps"), 273: ("Flutter Kicks", "reps"), 274: ("Leg Raises", "reps"), 275: ("Russian Twists", "reps"),
-    276: ("Mountain Climber Crossovers", "reps"), 277: ("Burpee Broad Jumps", "reps"), 278: ("Side Plank with Reach Through", "reps"),
-    279: ("Plank with Arm Lift", "reps"), 280: ("Plank with Leg Lift", "reps"), 281: ("Plank with Opposite Arm and Leg Lift", "reps"),
-    282: ("Side Plank with Rotation", "reps"), 283: ("Side Plank with Knee Tuck", "reps"), 284: ("Side Plank with Leg Lift", "reps"),
-    285: ("Side Plank with Hip Dips", "reps"), 286: ("Side Plank with Toe Tap", "reps"), 287: ("Side Plank with Arm Reach", "reps"),
-    288: ("Side Plank with Knee Drive", "reps"), 289: ("Side Plank with Leg Circles", "reps"), 290: ("Side Plank with Side Crunch", "reps"),
-    291: ("Side Plank with Side Kick", "reps"), 292: ("Side Plank with Side Step", "reps"), 293: ("Side Plank with Side Twist", "reps"),
-    294: ("Side Plank with Side Reach", "reps"), 295: ("Side Plank with Side Tap", "reps"), 296: ("Side Plank with Side Lift", "reps"),
-    297: ("Side Plank with Side Pulse", "reps"), 298: ("Side Plank with Side Hold", "timing"), 299: ("Side Plank with Side March", "reps"),
+    # ===== Gain Muscle (0-29) =====
+    # Beginner (0-9)
+    0: ("Wall Push-ups", "reps"),
+    1: ("Knee Push-ups (Hands on Bed)", "reps"),
+    2: ("Incline Push-ups (Kitchen Counter)", "reps"),
+    3: ("Squats (Holding Chair for Balance)", "reps"),
+    4: ("Glute Bridges (Pillow Between Knees)", "reps"),
+    5: ("Step-ups (Bottom Stair)", "reps"),
+    6: ("Towel Rows (Door Anchor)", "reps"),
+    7: ("Deadbugs", "timing"),
+    8: ("Plank (Knees Down)", "timing"),
+    9: ("Assisted Lunges (Wall Support)", "reps"),
+
+    # Intermediate (10-19)
+    10: ("Standard Push-ups", "reps"),
+    11: ("Wide Push-ups", "reps"),
+    12: ("Diamond Push-ups", "reps"),
+    13: ("Pistol Squats (Assisted by Chair)", "reps"),
+    14: ("Bulgarian Split Squats (Back Foot on Chair)", "reps"),
+    15: ("Single-leg Glute Bridges", "reps"),
+    16: ("Table Rows (Under Sturdy Table)", "reps"),
+    17: ("Side Plank (From Knees)", "timing"),
+    18: ("Bear Crawls", "timing"),
+    19: ("Jump Squats (Onto Pillow)", "reps"),
+
+    # Advanced (20-29)
+    20: ("Archer Push-ups (Sliding Towels)", "reps"),
+    21: ("One-arm Push-up Progressions", "reps"),
+    22: ("Nordic Curls (Towel Under Knees)", "reps"),
+    23: ("Handstand Push-ups (Wall-assisted)", "reps"),
+    24: ("Dragon Flag Progressions", "reps"),
+    25: ("Planche Lean (Towel Slides)", "timing"),
+    26: ("Human Flag Progressions (Tree Branch)", "timing"),
+    27: ("One-arm Towel Rows", "reps"),
+    28: ("Towel Front Lever Rows", "reps"),
+    29: ("Towel Muscle-up Progressions", "reps"),
+
+    # ===== Lose Fat (30-59) =====
+    # Beginner (30-39)
+    30: ("Marching in Place", "timing"),
+    31: ("Seated Knee Lifts", "reps"),
+    32: ("Standing Side Bends", "reps"),
+    33: ("Wall Sit", "timing"),
+    34: ("Step Touch (Side Steps)", "timing"),
+    35: ("Arm Circles (Water Bottles)", "timing"),
+    36: ("Chair Step-ups", "reps"),
+    37: ("Standing Leg Raises (Wall Support)", "reps"),
+    38: ("Seated Russian Twists (Hold Shoes)", "reps"),
+    39: ("Slow Mountain Climbers", "reps"),
+
+    # Intermediate (40-49)
+    40: ("Jumping Jacks", "reps"),
+    41: ("Squat Jumps (Socks on Tile)", "reps"),
+    42: ("Burpees (No Push-up)", "reps"),
+    43: ("High Knees (Moderate)", "timing"),
+    44: ("Skater Steps (No Jump)", "reps"),
+    45: ("Plank to Downward Dog", "reps"),
+    46: ("Side-to-Side Lunges", "reps"),
+    47: ("Towel Mountain Climbers", "reps"),
+    48: ("Shadow Boxing (Water Bottles)", "timing"),
+    49: ("Stair Sprints (If Available)", "timing"),
+
+    # Advanced (50-59)
+    50: ("Burpees with Push-up", "reps"),
+    51: ("Plyo Jump Squats (Onto Cushion)", "reps"),
+    52: ("Sprint in Place (Maximum Effort)", "timing"),
+    53: ("Tuck Jumps", "reps"),
+    54: ("Sprawl to Push-up", "reps"),
+    55: ("Fast Mountain Climbers", "reps"),
+    56: ("Jump Lunges (Low Impact Version)", "reps"),
+    57: ("Towel Slams (Battle Rope Substitute)", "timing"),
+    58: ("Stair Climb (Weighted Backpack)", "timing"),
+    59: ("Tabata Shadow Boxing", "timing"),
+
+    # ===== Improve Strength (60-89) =====
+    # Beginner (60-69)
+    60: ("Towel-Resisted Push-ups", "reps"),
+    61: ("Chair Pistol Squats", "reps"),
+    62: ("Farmer's Walk (Water Jugs)", "timing"),
+    63: ("Towel Deadlifts", "reps"),
+    64: ("Table Rows", "reps"),
+    65: ("Wall Handstand Hold", "timing"),
+    66: ("Towel Pallof Press", "reps"),
+    67: ("Box Squats (To Chair)", "reps"),
+    68: ("Bird Dogs", "reps"),
+    69: ("Clamshells (Towel Under Knee)", "reps"),
+
+    # Intermediate (70-79)
+    70: ("Pike Push-ups", "reps"),
+    71: ("Archer Rows (Towel)", "reps"),
+    72: ("Single-leg Deadlifts (Wall Support)", "reps"),
+    73: ("Overhead Press (Water Jugs)", "reps"),
+    74: ("Towel Hamstring Curls", "reps"),
+    75: ("Pull-ups (Tree Branch)", "reps"),
+    76: ("Towel Front Lever Rows", "reps"),
+    77: ("Zercher Carry (Backpack)", "timing"),
+    78: ("Towel Landmine Press", "reps"),
+    79: ("Towel Sliding Snatches", "reps"),
+
+    # Advanced (80-89)
+    80: ("One-arm Push-ups", "reps"),
+    81: ("Weighted Pull-ups (Backpack)", "reps"),
+    82: ("Human Flag Progressions", "timing"),
+    83: ("Handstand Walk Practice", "timing"),
+    84: ("Towel Iron Cross", "timing"),
+    85: ("Planche Push-up Progressions", "reps"),
+    86: ("Towel Front Squats", "reps"),
+    87: ("Towel Muscle-ups", "reps"),
+    88: ("Towel Leg Raises", "reps"),
+    89: ("Towel Climbing Mimic", "timing"),
+
+    # ===== Improve Stamina (90-119) =====
+    # Beginner (90-99)
+    90: ("Brisk Walking (Indoor/Outdoor)", "timing"),
+    91: ("Shadow Boxing (Slow Pace)", "timing"),
+    92: ("Step Touch (Low Intensity)", "timing"),
+    93: ("Seated Knee Lifts (Slow)", "reps"),
+    94: ("Wall Push-up Holds", "timing"),
+    95: ("Standing Side Bends (Slow)", "reps"),
+    96: ("Chair Step-ups (Slow Pace)", "reps"),
+    97: ("Arm Circles (No Weight)", "timing"),
+    98: ("Seated Marches", "timing"),
+    99: ("Breathing Exercises", "timing"),
+
+    # Intermediate (100-109)
+    100: ("Jogging in Place", "timing"),
+    101: ("Jump Rope (Imaginary Rope)", "timing"),
+    102: ("Stair Climbing (Slow Pace)", "timing"),
+    103: ("Dancing (Freestyle)", "timing"),
+    104: ("Towel Rows (Moderate Pace)", "reps"),
+    105: ("Squat Hold (Wall Sit)", "timing"),
+    106: ("Plank Walkouts", "reps"),
+    107: ("Bear Crawl (Short Distance)", "timing"),
+    108: ("Mountain Climbers (Moderate)", "reps"),
+    109: ("Shadow Boxing (Moderate)", "timing"),
+
+    # Advanced (110-119)
+    110: ("High Knees Sprint", "timing"),
+    111: ("Burpee Variations", "reps"),
+    112: ("Jump Squats (Continuous)", "reps"),
+    113: ("Towel Slams (Fast Pace)", "timing"),
+    114: ("Stair Sprints", "timing"),
+    115: ("Plyometric Push-ups", "reps"),
+    116: ("Tuck Jumps (Continuous)", "reps"),
+    117: ("Combo Moves (Squat + Push-up)", "reps"),
+    118: ("Tabata Intervals (Any Exercise)", "timing"),
+    119: ("Circuit Training", "timing"),
+
+    # ===== Cardio (120-149) =====
+    # Beginner (120-129)
+    120: ("Marching in Place", "timing"),
+    121: ("Seated Dancing", "timing"),
+    122: ("Arm Swings", "timing"),
+    123: ("Leg Swings (Holding Wall)", "timing"),
+    124: ("Neck Rolls", "timing"),
+    125: ("Ankle Circles", "timing"),
+    126: ("Seated Jumping Jacks", "reps"),
+    127: ("Standing Knee Hugs", "reps"),
+    128: ("Heel Touches", "reps"),
+    129: ("Breath Focus Walks", "timing"),
+
+    # Intermediate (130-139)
+    130: ("Jogging in Place", "timing"),
+    131: ("Jumping Jacks", "reps"),
+    132: ("Butt Kicks", "timing"),
+    133: ("High Knees", "timing"),
+    134: ("Side Shuffles", "timing"),
+    135: ("Grapevine Steps", "timing"),
+    136: ("Squat Thrusts", "reps"),
+    137: ("Standing Bicycle Crunches", "reps"),
+    138: ("Speed Skaters (No Jump)", "reps"),
+    139: ("Dance Cardio (Freestyle)", "timing"),
+
+    # Advanced (140-149)
+    140: ("Sprint in Place", "timing"),
+    141: ("Burpee Jump Squats", "reps"),
+    142: ("Mountain Climber Sprints", "reps"),
+    143: ("Tuck Jump Burpees", "reps"),
+    144: ("Plyo Lunges", "reps"),
+    145: ("Spiderman Push-up Climbers", "reps"),
+    146: ("Star Jumps", "reps"),
+    147: ("Frog Jumps", "reps"),
+    148: ("180-Degree Jump Squats", "reps"),
+    149: ("Cardio Circuit Blast", "timing"),
+
+    # ===== General Fitness (150-179) =====
+    # Beginner (150-159)
+    150: ("Standing Side Stretch", "timing"),
+    151: ("Neck Stretches", "timing"),
+    152: ("Seated Forward Fold", "timing"),
+    153: ("Cat-Cow Stretch", "reps"),
+    154: ("Standing Quad Stretch", "timing"),
+    155: ("Seated Spinal Twist", "timing"),
+    156: ("Shoulder Rolls", "reps"),
+    157: ("Ankle Rolls", "reps"),
+    158: ("Wrist Stretches", "timing"),
+    159: ("Deep Breathing Exercises", "timing"),
+
+    # Intermediate (160-169)
+    160: ("Sun Salutations (Yoga)", "reps"),
+    161: ("Dynamic Lunges", "reps"),
+    162: ("Standing Side Kicks", "reps"),
+    163: ("Hip Openers", "timing"),
+    164: ("Plank to Downward Dog", "reps"),
+    165: ("Superman Swims", "reps"),
+    166: ("Standing Balance Series", "timing"),
+    167: ("Towel Assisted Stretches", "timing"),
+    168: ("Mobility Flow", "timing"),
+    169: ("Full Body Activation", "timing"),
+
+    # Advanced (170-179)
+    170: ("Handstand Hold (Wall)", "timing"),
+    171: ("L-Sit Progressions", "timing"),
+    172: ("Bridge Hold", "timing"),
+    173: ("V-Sit Progressions", "timing"),
+    174: ("Towel Assisted Splits", "timing"),
+    175: ("Backbend Walkouts", "reps"),
+    176: ("Ninja Jump Rolls", "reps"),
+    177: ("Parkour Basics (Wall Jumps)", "reps"),
+    178: ("Capoeira Movements", "timing"),
+    179: ("Advanced Yoga Flow", "timing")
 }
+
+HIIT_EXERCISES = {
+    180: ("Burpees (No Push-up)", "timing"),  # Beginner
+    181: ("Modified Jump Squats", "timing"),
+    182: ("Slow Mountain Climbers", "timing"),
+    183: ("Step-Back Lunges", "timing"),
+    184: ("Standing Alternating Toe Touches", "timing"),
+    185: ("Wall Push-up to Knee Drive", "timing"),
+    186: ("Seated Leg Raises", "timing"),
+    187: ("Standing Side Hops", "timing"),
+    188: ("Arm Circles (Fast Pace)", "timing"),
+    189: ("Shadow Boxing (Basic)", "timing"),
+    
+    # Intermediate (190-199)
+    190: ("Full Burpees", "timing"),
+    191: ("Jump Squats", "timing"),
+    192: ("Mountain Climbers", "timing"),
+    193: ("Skater Hops", "timing"),
+    194: ("Plank Jacks", "timing"),
+    195: ("High Knees", "timing"),
+    196: ("Butt Kicks", "timing"),
+    197: ("Standing Bicycle Crunches", "timing"),
+    198: ("Towel Slams", "timing"),  # Use rolled towel
+    199: ("Shadow Boxing (Combos)", "timing"),
+    
+    # Advanced (200-209)
+    200: ("Plyo Push-ups", "timing"),
+    201: ("Tuck Jumps", "timing"),
+    202: ("Spiderman Push-up Climbers", "timing"),
+    203: ("180° Jump Squats", "timing"),
+    204: ("Dive Bomber Push-ups", "timing"),
+    205: ("Single-Leg Burpees", "timing"),
+    206: ("Frog Jumps", "timing"),
+    207: ("Star Jumps", "timing"),
+    208: ("Towel Battle Rope Waves", "timing"),  # Use towel as rope
+    209: ("Combo Punches with Squats", "timing")
+}
+
 
 # Diet plans with Indian foods
 DIET_PLANS = {
@@ -1025,6 +1210,140 @@ def calculate_bmi(weight, height):
     bmi = weight / (height_m ** 2)
     return round(bmi, 2)
 
+HIIT_GOAL_MAPPING = {
+    "beginner": {
+        "sedentary": list(range(180, 185)),
+        "active": list(range(185, 190)),
+        "highly_active": list(range(190, 195))
+    },
+    "intermediate": {
+        "sedentary": list(range(190, 195)),
+        "active": list(range(195, 200)),
+        "highly_active": list(range(200, 205))
+    },
+    "advanced": {
+        "sedentary": list(range(200, 205)),
+        "active": list(range(205, 210)),
+        "highly_active": list(range(210, 215))
+    }
+}
+
+def generate_hiit_workout(exp_level, week=None, intensity_multiplier=1.0, activity=None):
+    """Generate a HIIT workout based on experience level and activity level"""
+    exp_key = ["beginner", "intermediate", "advanced"][exp_level]
+    exercise_ids = HIIT_GOAL_MAPPING[exp_key][activity]  # Use activity level to get exercises
+    
+    # Select 2-3 exercises for a complete HIIT circuit for beginners
+    if exp_level == 0:  # Beginner
+        selected_ids = random.sample(exercise_ids, min(len(exercise_ids), random.randint(2, 3)))
+    else:  # Intermediate and Advanced
+        selected_ids = random.sample(exercise_ids, min(len(exercise_ids), random.randint(4, 6)))
+
+    exercises = [HIIT_EXERCISES[ex_id] for ex_id in selected_ids]
+    
+    # Determine work/rest intervals based on experience
+    work_rest = {
+        0: (20 * intensity_multiplier, 40),  # Beginner: 20s work, 40s rest
+        1: (30 * intensity_multiplier, 30),  # Intermediate: 30s work, 30s rest
+        2: (40 * intensity_multiplier, 20)   # Advanced: 40s work, 20s rest
+    }
+    work, rest = work_rest[exp_level]
+    
+    # Apply weekly progression
+    if week:
+        work += WEEK_INCREMENTS[min(week-1, 3)]
+        rest = max(10, rest - WEEK_INCREMENTS[min(week-1, 3)]//2)
+    
+    return [{
+        "exercise": ex[0],
+        "work_sec": work,
+        "rest_sec": rest,
+        "sets": 3 if exp_level < 2 else 4
+    } for ex in exercises]
+
+@app.route('/generate-hiit-plan', methods=['POST'])
+def generate_hiit_plan():
+    try:
+        data = request.json
+        exp = int(data['experience_level'])
+        
+        # Generate 4-week progressive HIIT plan
+        plan = {}
+        for week in range(1, 5):
+            plan[f"Week {week}"] = {
+                "Monday": generate_hiit_workout(exp, week),
+                "Wednesday": generate_hiit_workout(exp, week),
+                "Friday": generate_hiit_workout(exp, week),
+                "Notes": f"Rest days: Tuesday/Thursday. Weekend: Active recovery (walking/yoga)"
+            }
+        
+        return jsonify({
+            "hiit_plan": plan,
+            "instructions": {
+                "beginner": "Complete 3 rounds with 2min rest between circuits",
+                "intermediate": "Complete 4 rounds with 1min rest between circuits",
+                "advanced": "Complete 5 rounds with 30s rest between circuits"
+            }[["beginner", "intermediate", "advanced"][exp]]
+        })
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+
+def get_exercises_by_goal_and_experience(goal, exp):
+    # Define the mapping of goals to experience levels
+    goal_experience_mapping = {
+        0: {  # Gain Muscle
+            "beginner": [0, 1, 3, 4, 6, 7, 9],  # Only beginner-friendly exercises
+            "intermediate": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+            "advanced": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+        },
+        1: {  # Lose Fat
+            "beginner": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+            "intermediate": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
+            "advanced": [50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+        },
+        2: {  # Improve Strength
+            "beginner": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+            "intermediate": [70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+            "advanced": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89]
+        },
+        3: {  # Improve Stamina
+            "beginner": [90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
+            "intermediate": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+            "advanced": [110, 111, 112, 113, 114, 115, 116, 117, 118, 119]
+        },
+        4: {  # Cardio
+            "beginner": [120, 121, 122, 123, 124, 125, 126, 127, 128, 129],
+            "intermediate": [130, 131, 132, 133, 134, 135, 136, 137, 138, 139],
+            "advanced": [140, 141, 142, 143, 144, 145, 146, 147, 148, 149]
+        },
+        5: {  # General Fitness
+            "beginner": [150, 151, 152, 153, 154, 155, 156, 157, 158, 159],
+            "intermediate": [160, 161, 162, 163, 164, 165, 166, 167, 168, 169],
+            "advanced": [170, 171, 172, 173, 174, 175, 176, 177, 178, 179]
+        }
+    }
+
+    # Get the list of exercise indices based on the user's goal and experience level
+    exercise_indices = goal_experience_mapping.get(goal, {}).get(
+        ["beginner", "intermediate", "advanced"][exp], []
+    )
+
+    # Return the corresponding exercises
+    return [EXERCISES[i] for i in exercise_indices]
+
+def generate_workout(age, exp, activity, goal, week=None):
+    # Get exercises based on goal and experience
+    selected_exercises = get_exercises_by_goal_and_experience(goal, exp)
+
+    if not selected_exercises:
+        print(f"No exercises found for goal: {goal} and experience level: {exp}")
+        return [], [], []  # Return empty lists if no exercises are found
+
+    # Randomly select exercises for warmup, main, and HIIT
+
+
 def get_bmi_category(bmi):
     if bmi < 18.5:
         return "Underweight"
@@ -1034,34 +1353,37 @@ def get_bmi_category(bmi):
         return "Overweight"
     else:
         return "Obese"
+    
+def generate_workout(age, exp, activity, goal, week=None):
+    # Get exercises based on goal and experience
+    selected_exercises = get_exercises_by_goal_and_experience(goal, exp)
 
-def generate_workout(age, exp, activity, sleep, water, week=None):
-    base_reps = BASE_REPS[exp]
-    sets = [3, 4, 5][exp]
+    if not selected_exercises:
+        print(f"No exercises found for goal: {goal} and experience level: {exp}")
+        return [], [], []  # Return empty lists if no exercises are found
 
-    # Adjust for age
-    if age >= 50:
-        base_reps = int(base_reps * 0.8)
+    # Adjust the intensity of the workout based on the user's activity level
+    if activity == "sedentary":
+        intensity_multiplier = 0.5
+    elif activity == "active":
+        intensity_multiplier = 1.0
+    elif activity == "highly_active":
+        intensity_multiplier = 1.5
 
-    # Adjust for sleep
-    if sleep < 7:  # Less than recommended sleep
-        base_reps = int(base_reps * 0.9)  # Reduce reps by 10%
+    # Randomly select exercises for warmup, main, and HIIT
+    warmup_ex = random.sample(selected_exercises, min(2, len(selected_exercises)))
+    main_ex = random.sample(selected_exercises, min(4, len(selected_exercises)))
 
-    # Adjust for water intake
-    if water < 2:  # Less than recommended water intake
-        base_reps = int(base_reps * 0.9)  # Reduce reps by 10%
+    # Select HIIT exercises based on experience level and activity level
+    hiit_ex = generate_hiit_workout(exp, week, intensity_multiplier, activity)
 
-    # Warmup: 2 exercises
-    warmup_ex = random.sample([ex for ex in range(len(EXERCISES))], min(2, len(EXERCISES)))
-    warmup = [(ex, 2, base_reps) for ex in warmup_ex]
+    # Format the workouts
+    warmup = [(ex[0], 2, 10) for ex in warmup_ex]  # 2 sets of 10 reps
+    main = [(ex[0], 3, 10) for ex in main_ex]  # 3 sets of 10 reps
 
-    # Main: 4 exercises
-    main_ex = random.sample([ex for ex in range(len(EXERCISES))], min(4, len(EXERCISES)))
-    main = [(ex, sets, base_reps) for ex in main_ex]
+    return warmup, main, hiit_ex  # Return HIIT exercises directly # Return HIIT exercises directly
 
-    return warmup, main
-
-def generate_month_plan(age, exp, activity, sleep, water):
+def generate_month_plan(age, exp, activity, goal):
     day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     plan = {}
 
@@ -1069,10 +1391,17 @@ def generate_month_plan(age, exp, activity, sleep, water):
         week_plan = {}
         for day_index in range(7):
             day_name = day_names[day_index]
-            warmup, main = generate_workout(age, exp, activity, sleep, water, week)
+            warmup, main, hiit = generate_workout(age, exp, activity, goal, week)
+
+            # Format HIIT workouts with work/rest intervals
+            formatted_hiit = []
+            for exercise in hiit:
+                formatted_hiit.append(f"{exercise['sets']}x ({exercise['work_sec']}s {exercise['exercise']}, {exercise['rest_sec']}s Rest)")
+
             week_plan[day_name] = {
-                "Warmup": [f"2x{val}r {EXERCISES[ex][0]}" for ex, _, val in warmup],
-                "Main": [f"{sets}x{val}r {EXERCISES[ex][0]}" for ex, sets, val in main],
+                "Warmup": [f"2x{val}r {ex}" for ex, _, val in warmup],
+                "Main": [f"{sets}x{val}r {ex}" for ex, sets, val in main],
+                "HIIT": formatted_hiit,
                 "Cooldown": ["30s Hamstring Stretch", "30s Quad Stretch"]
             }
         plan[f"Week {week}"] = week_plan
@@ -1080,20 +1409,39 @@ def generate_month_plan(age, exp, activity, sleep, water):
     return plan
 
 def save_response_to_json(data, filename='responses.json'):
-    if not os.path.exists(filename):
-        with open(filename, 'w') as f:
-            json.dump([], f)
-
-    with open(filename, 'r') as f:
-        try:
-            existing_data = json.load(f)
-        except json.JSONDecodeError:
-            existing_data = []
-
-    existing_data.append(data)
-
-    with open(filename, 'w') as f:
-        json.dump(existing_data, f, indent=4)
+    try:
+        # Get absolute path to avoid any directory confusion
+        file_path = Path(filename).absolute()
+        print(f"Attempting to save to: {file_path}")
+        
+        # Initialize with empty list if file doesn't exist
+        if not file_path.exists():
+            print("File doesn't exist, creating new one")
+            with open(file_path, 'w') as f:
+                json.dump([], f)
+        
+        # Read existing data
+        with open(file_path, 'r') as f:
+            try:
+                existing_data = json.load(f)
+                print(f"Successfully read {len(existing_data)} existing entries")
+            except json.JSONDecodeError:
+                print("File was empty/corrupt, starting fresh")
+                existing_data = []
+        
+        # Append new data
+        existing_data.append(data)
+        
+        # Write back to file
+        with open(file_path, 'w') as f:
+            json.dump(existing_data, f, indent=4)
+            print(f"Successfully saved new data (total entries: {len(existing_data)})")
+            
+        return True
+        
+    except Exception as e:
+        print(f"ERROR saving to JSON: {str(e)}")
+        return False
 
 @app.route('/')
 def home():
@@ -1101,34 +1449,48 @@ def home():
 
 @app.route('/generate-workout', methods=['POST'])
 def generate_workout_route():
-    data = request.json
-    age = int(data['age'])
-    height = int(data['height'])
-    weight = int(data['weight'])
-    exp = int(data['experience_level'])
-    goal = int(data['fitness_goal'])
-    activity = data['activity_level']
-    sleep = int(data['sleep'])
-    water = int(data['water'])
+    try:
+        data = request.json
+        age = int(data['age'])
+        height = int(data['height'])
+        weight = int(data['weight'])
+        exp = int(data['experience_level'])
+        goal = int(data['fitness_goal'])
+        activity = data['activity_level']
 
-    # Calculate BMI
-    bmi = calculate_bmi(weight, height)
-    bmi_category = get_bmi_category(bmi)
+        # Calculate BMI
+        bmi = calculate_bmi(weight, height)
+        bmi_category = get_bmi_category(bmi)
 
-    # Generate workout plan
-    workout_plan = generate_month_plan(age, exp, activity, sleep, water)
+        # Generate workout plan
+        workout_plan = generate_month_plan(age, exp, activity, goal)
 
-    # Prepare response data
-    response_data = {
-        "bmi": bmi,
-        "bmi_category": bmi_category,
-        "workout_plan": workout_plan
-    }
+        # Prepare response data
+        response_data = {
+            "user_details": {
+                "age": age,
+                "height": height,
+                "weight": weight,
+                "experience_level": exp,
+                "fitness_goal": goal,
+                "activity_level": activity,
+                "bmi": bmi,
+                "bmi_category": bmi_category
+            },
+            "workout_plan": workout_plan,
+            "timestamp": datetime.datetime.now().isoformat()
+        }
 
-    # Save response to JSON file
-    save_response_to_json(response_data)
+        # Save response to JSON file
+        save_success = save_response_to_json(response_data)
+        if not save_success:
+            print("Warning: Failed to save to JSON file")
 
-    return jsonify(response_data)
+        return jsonify(response_data)
+
+    except Exception as e:
+        print(f"Error: {str(e)}")  # Log the error
+        return jsonify({"error": str(e)}), 400
 
 @app.route('/generate-diet-plan', methods=['POST'])
 def generate_diet_plan():
@@ -1140,7 +1502,7 @@ def generate_diet_plan():
     diet_plan = DIET_PLANS.get(goal, {})
 
     # Prepare the response with diet plans for all weeks
-    return jsonify({"diet_plan": diet_plan})
+    return jsonify({"diet_plan": diet_plan})  
 
 if __name__ == '__main__':
     app.run(debug=True)
