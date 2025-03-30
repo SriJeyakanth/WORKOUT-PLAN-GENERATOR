@@ -295,7 +295,7 @@
     }
 
     body.dark-mode .workout-plan th {
-        background-color: #8A2BE2; /* Violet color for dark mode */
+        background-color: #9400D3; /* Violet color for dark mode */
         color: #ffffff; /* White font color for dark mode */
         font-weight: bold; /* Bold font for dark mode */
     }
@@ -395,8 +395,7 @@ body.dark-mode .sub-title {
                         <option value="highly_active">Highly Active</option>
                     </select>
                 </label>
-                <label>Hours of Sleep: <input type="number" id="sleep"></label>
-                <label>Water Intake (Liters): <input type="number" id="water"></label>
+                
                 
                 <div class="button-container">
                     <button onclick="generateWorkout()">GENERATE WORKOUT PLAN</button>
@@ -439,10 +438,9 @@ body.dark-mode .sub-title {
     const experienceLevel = document.getElementById('experience_level').value;
     const fitnessGoal = document.getElementById('fitness_goal').value;
     const activityLevel = document.getElementById('activity_level').value;
-    const sleep = document.getElementById('sleep').value;
-    const water = document.getElementById('water').value;
+    
 
-    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel || !sleep || !water) {
+    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel) {
         alert('Please fill all fields.');
         return;
     }
@@ -465,8 +463,7 @@ body.dark-mode .sub-title {
             experience_level: experienceLevel,
             fitness_goal: fitnessGoal,
             activity_level: activityLevel,
-            sleep: sleep,
-            water: water
+            
         }),
     })
     .then(response => response.json())
@@ -481,64 +478,78 @@ body.dark-mode .sub-title {
                 <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
                 <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
                 <p><strong>Activity Level:</strong> ${activityLevel}</p>
-                <p><strong>Hours of Sleep:</strong> ${sleep}</p>
-                <p><strong>Water Intake:</strong> ${water} liters</p>
+               
             `;
             document.getElementById('user-details-content').innerHTML = userDetails;
 
             // Display BMI
-            document.getElementById('bmi-display').innerHTML = `BMI: ${data.bmi}`;
-            document.getElementById('bmi-category').innerHTML = `According to FitnTech, your BMI is <strong>${data.bmi_category}</strong>`;
+            document.getElementById('bmi-display').innerHTML = `BMI: ${data.user_details.bmi}`;
+            document.getElementById('bmi-category').innerHTML = `According to FitnTech, your BMI is <strong>${data.user_details.bmi_category}</strong>`;
 
             // Display workout plan in a table
-            const workoutPlan = data.workout_plan;
-            let workoutHTML = '';
-            for (const week in workoutPlan) {
-                workoutHTML += `<h4>${week}</h4>`;
-                workoutHTML += `<table>`;
-                workoutHTML += `<tr><th>Day</th><th>Warmup</th><th>Main (Reps)</th><th>Main (Sets)</th><th>Main (Workouts)</th><th>Cooldown</th></tr>`;
-                const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-                for (const day of orderedDays) {
-                    workoutHTML += `<tr>`;
-                    workoutHTML += `<td><strong>${day}</strong></td>`;
-                    if (workoutPlan[week][day] === "Rest Day") {
-                        workoutHTML += `<td colspan="5">Rest Day</td>`;
-                    } else {
-                        // Warmup
-                        const warmupExercises = workoutPlan[week][day].Warmup.map(ex => {
-                            return `<li>${ex}</li>`;
-                        }).join('');
-                        workoutHTML += `<td><ul>${warmupExercises}</ul></td>`;
+            // Display workout plan in a table
+// Modify the workout plan generation to format HIIT with work/rest intervals
+const workoutPlan = data.workout_plan;
+let workoutHTML = '';
+for (const week in workoutPlan) {
+    workoutHTML += `<h4>${week}</h4>`;
+    workoutHTML += `<table>`;
+    workoutHTML += `<tr><th>Day</th><th>Warmup</th><th>Main (Reps)</th><th>Main (Sets)</th><th>Main (Workouts)</th><th>HIIT (Work/Rest)</th><th>Cooldown</th></tr>`;
+    const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    for (const day of orderedDays) {
+        workoutHTML += `<tr>`;
+        workoutHTML += `<td><strong>${day}</strong></td>`;
+        if (workoutPlan[week][day] === "Rest Day") {
+            workoutHTML += `<td colspan="6">Rest Day</td>`;
+        } else {
+            // Warmup
+            const warmupExercises = workoutPlan[week][day].Warmup.map(ex => {
+                return `<li>${ex}</li>`;
+            }).join('');
+            workoutHTML += `<td><ul>${warmupExercises}</ul></td>`;
 
-                        // Main (Reps, Sets, Workouts)
-                        const mainExercises = workoutPlan[week][day].Main;
-                                                const reps = mainExercises.map(ex => {
-                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
-                            return match ? `<li>${match[2]} reps</li>` : `<li>N/A</li>`;
-                        }).join('');
-                        const sets = mainExercises.map(ex => {
-                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
-                            return match ? `<li>${match[1]} sets</li>` : `<li>N/A</li>`;
-                        }).join('');
-                        const workouts = mainExercises.map(ex => {
-                            const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
-                            return match ? `<li>${match[4]}</li>` : `<li>N/A</li>`;
-                        }).join('');
+            // Main (Reps, Sets, Workouts)
+            const mainExercises = workoutPlan[week][day].Main;
+            const reps = mainExercises.map(ex => {
+                const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                return match ? `<li>${match[2]} reps</li>` : `<li>N/A</li>`;
+            }).join('');
+            const sets = mainExercises.map(ex => {
+                const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                return match ? `<li>${match[1]} sets</li>` : `<li>N/A</li>`;
+            }).join('');
+            const workouts = mainExercises.map(ex => {
+                const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
+                return match ? `<li>${match[4]}</li>` : `<li>N/A</li>`;
+            }).join('');
 
-                        workoutHTML += `<td><ul>${reps}</ul></td>`;
-                        workoutHTML += `<td><ul>${sets}</ul></td>`;
-                        workoutHTML += `<td><ul>${workouts}</ul></td>`;
+            workoutHTML += `<td><ul>${reps}</ul></td>`;
+            workoutHTML += `<td><ul>${sets}</ul></td>`;
+            workoutHTML += `<td><ul>${workouts}</ul></td>`;
 
-                        // Cooldown
-                        const cooldownExercises = workoutPlan[week][day].Cooldown.map(ex => {
-                            return `<li>${ex}</li>`;
-                        }).join('');
-                        workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
-                    }
-                    workoutHTML += `</tr>`;
+            // HIIT with work/rest intervals
+            const hiitExercises = workoutPlan[week][day].HIIT.map(ex => {
+                const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
+                if (match) {
+                    const exerciseName = match[4];
+                    const sets = match[1];
+                    // Format: "30s Exercise, 15s Rest, repeat 3x"
+                    return `<li>${sets}x (30s ${exerciseName}, 15s Rest)</li>`;
                 }
-                workoutHTML += `</table>`;
-            }
+                return `<li>${ex}</li>`;
+            }).join('');
+            workoutHTML += `<td><ul>${hiitExercises}</ul></td>`;
+
+            // Cooldown
+            const cooldownExercises = workoutPlan[week][day].Cooldown.map(ex => {
+                return `<li>${ex}</li>`;
+            }).join('');
+            workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
+        }
+        workoutHTML += `</tr>`;
+    }
+    workoutHTML += `</table>`;
+}
             document.getElementById('workout-content').innerHTML = workoutHTML;
 
             // Show user details and workout plan
@@ -573,10 +584,8 @@ function generateDietPlan() {
     const experienceLevel = document.getElementById('experience_level').value;
     const fitnessGoal = document.getElementById('fitness_goal').value;
     const activityLevel = document.getElementById('activity_level').value;
-    const sleep = document.getElementById('sleep').value;
-    const water = document.getElementById('water').value;
-
-    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel || !sleep || !water) {
+    
+    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel) {
         alert('Please fill all fields.');
         return;
     }
@@ -600,8 +609,7 @@ function generateDietPlan() {
             experience_level: experienceLevel,
             fitness_goal: fitnessGoal,
             activity_level: activityLevel,
-            sleep: sleep,
-            water: water
+          
         }),
     })
     .then(response => response.json())
@@ -616,8 +624,7 @@ function generateDietPlan() {
                 <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
                 <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
                 <p><strong>Activity Level:</strong> ${activityLevel}</p>
-                <p><strong>Hours of Sleep:</strong> ${sleep}</p>
-                <p><strong>Water Intake:</strong> ${water} liters</p>
+                
             `;
             document.getElementById('user-details-content').innerHTML = userDetails;
 
