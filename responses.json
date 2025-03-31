@@ -1,34 +1,32 @@
 [
     {
         "user_details": {
-            "age": 34,
-            "height": 176,
-            "weight": 76,
-            "experience_level": 1,
+            "age": 27,
+            "height": 178,
+            "weight": 78,
+            "experience_level": 0,
             "fitness_goal": 0,
             "activity_level": "sedentary",
-            "bmi": 24.54,
+            "bmi": 24.62,
             "bmi_category": "Ideal"
         },
         "workout_plan": {
             "Week 1": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Standard Push-ups",
-                        "2x10r Diamond Push-ups"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Diamond Push-ups",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Wide Push-ups"
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)",
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)",
-                        "3x (15.0s Skater Hops, 30s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -37,20 +35,18 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Pistol Squats (Assisted by Chair)",
-                        "2x10r Bear Crawls"
+                        "2x10r Wall Push-ups",
+                        "2x10r Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Diamond Push-ups"
+                        "3x10r Wall Push-ups",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -59,89 +55,41 @@
                 },
                 "Wed": {
                     "Warmup": [
-                        "2x10r Standard Push-ups",
-                        "2x10r Jump Squats (Onto Pillow)"
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Diamond Push-ups"
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)",
-                        "3x (15.0s Mountain Climbers, 30s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": {
-                    "Warmup": [
-                        "2x10r Side Plank (From Knees)",
-                        "2x10r Jump Squats (Onto Pillow)"
-                    ],
-                    "Main": [
-                        "3x10r Diamond Push-ups",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)"
-                    ],
-                    "HIIT": [
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)",
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
-                "Fri": {
-                    "Warmup": [
-                        "2x10r Side Plank (From Knees)",
-                        "2x10r Single-leg Glute Bridges"
-                    ],
-                    "Main": [
-                        "3x10r Diamond Push-ups",
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Wide Push-ups"
-                    ],
-                    "HIIT": [
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)",
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
+                "Thu": "Rest Day",
+                "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Wide Push-ups",
-                        "2x10r Standard Push-ups"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Squats (Holding Chair for Balance)"
                     ],
                     "Main": [
-                        "3x10r Standard Push-ups",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Wide Push-ups"
+                        "3x10r Deadbugs",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)",
-                        "3x (15.0s Full Burpees, 30s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -150,21 +98,18 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Diamond Push-ups",
-                        "2x10r Standard Push-ups"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Wide Push-ups",
-                        "3x10r Standard Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Jump Squats (Onto Pillow)"
+                        "3x10r Wall Push-ups",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (15.0s Mountain Climbers, 30s Rest)",
-                        "3x (15.0s Skater Hops, 30s Rest)",
-                        "3x (15.0s Jump Squats, 30s Rest)",
-                        "3x (15.0s Full Burpees, 30s Rest)",
-                        "3x (15.0s Plank Jacks, 30s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -175,21 +120,18 @@
             "Week 2": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Pistol Squats (Assisted by Chair)",
-                        "2x10r Bulgarian Split Squats (Back Foot on Chair)"
+                        "2x10r Squats (Holding Chair for Balance)",
+                        "2x10r Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Bear Crawls",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Table Rows (Under Sturdy Table)"
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Jump Squats, 29s Rest)",
-                        "3x (17.0s Full Burpees, 29s Rest)",
-                        "3x (17.0s Skater Hops, 29s Rest)",
-                        "3x (17.0s Mountain Climbers, 29s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -198,20 +140,19 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Side Plank (From Knees)",
-                        "2x10r Diamond Push-ups"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Bear Crawls",
-                        "3x10r Jump Squats (Onto Pillow)",
-                        "3x10r Diamond Push-ups",
-                        "3x10r Single-leg Glute Bridges"
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Deadbugs",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (17.0s Skater Hops, 29s Rest)",
-                        "3x (17.0s Jump Squats, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Full Burpees, 29s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -220,88 +161,41 @@
                 },
                 "Wed": {
                     "Warmup": [
-                        "2x10r Diamond Push-ups",
-                        "2x10r Table Rows (Under Sturdy Table)"
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Standard Push-ups",
-                        "3x10r Jump Squats (Onto Pillow)"
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Glute Bridges (Pillow Between Knees)"
                     ],
                     "HIIT": [
-                        "3x (17.0s Mountain Climbers, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Full Burpees, 29s Rest)",
-                        "3x (17.0s Jump Squats, 29s Rest)",
-                        "3x (17.0s Skater Hops, 29s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": {
-                    "Warmup": [
-                        "2x10r Jump Squats (Onto Pillow)",
-                        "2x10r Single-leg Glute Bridges"
-                    ],
-                    "Main": [
-                        "3x10r Standard Push-ups",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Wide Push-ups"
-                    ],
-                    "HIIT": [
-                        "3x (17.0s Full Burpees, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Skater Hops, 29s Rest)",
-                        "3x (17.0s Jump Squats, 29s Rest)",
-                        "3x (17.0s Mountain Climbers, 29s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
-                "Fri": {
-                    "Warmup": [
-                        "2x10r Standard Push-ups",
-                        "2x10r Bear Crawls"
-                    ],
-                    "Main": [
-                        "3x10r Jump Squats (Onto Pillow)",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Wide Push-ups",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)"
-                    ],
-                    "HIIT": [
-                        "3x (17.0s Jump Squats, 29s Rest)",
-                        "3x (17.0s Mountain Climbers, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Skater Hops, 29s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
+                "Thu": "Rest Day",
+                "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Bear Crawls",
-                        "2x10r Table Rows (Under Sturdy Table)"
+                        "2x10r Squats (Holding Chair for Balance)",
+                        "2x10r Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Jump Squats (Onto Pillow)",
-                        "3x10r Standard Push-ups"
+                        "3x10r Wall Push-ups",
+                        "3x10r Deadbugs",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Glute Bridges (Pillow Between Knees)"
                     ],
                     "HIIT": [
-                        "3x (17.0s Mountain Climbers, 29s Rest)",
-                        "3x (17.0s Skater Hops, 29s Rest)",
-                        "3x (17.0s Full Burpees, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -310,21 +204,18 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Bear Crawls",
-                        "2x10r Jump Squats (Onto Pillow)"
+                        "2x10r Squats (Holding Chair for Balance)",
+                        "2x10r Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Jump Squats (Onto Pillow)",
-                        "3x10r Side Plank (From Knees)"
+                        "3x10r Deadbugs",
+                        "3x10r Wall Push-ups",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (17.0s Skater Hops, 29s Rest)",
-                        "3x (17.0s Plank Jacks, 29s Rest)",
-                        "3x (17.0s Full Burpees, 29s Rest)",
-                        "3x (17.0s Mountain Climbers, 29s Rest)",
-                        "3x (17.0s Jump Squats, 29s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -335,20 +226,19 @@
             "Week 3": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Wide Push-ups",
-                        "2x10r Jump Squats (Onto Pillow)"
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Wide Push-ups",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Standard Push-ups"
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Deadbugs",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Wall Push-ups"
                     ],
                     "HIIT": [
-                        "3x (19.0s Mountain Climbers, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)",
-                        "3x (19.0s Skater Hops, 28s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -357,21 +247,19 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Bear Crawls",
-                        "2x10r Pistol Squats (Assisted by Chair)"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Squats (Holding Chair for Balance)"
                     ],
                     "Main": [
-                        "3x10r Bear Crawls",
-                        "3x10r Diamond Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)"
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (19.0s Skater Hops, 28s Rest)",
-                        "3x (19.0s Mountain Climbers, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -380,90 +268,41 @@
                 },
                 "Wed": {
                     "Warmup": [
-                        "2x10r Table Rows (Under Sturdy Table)",
-                        "2x10r Standard Push-ups"
+                        "2x10r Wall Push-ups",
+                        "2x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Wide Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Diamond Push-ups"
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Mountain Climbers, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)",
-                        "3x (19.0s Skater Hops, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": {
-                    "Warmup": [
-                        "2x10r Single-leg Glute Bridges",
-                        "2x10r Side Plank (From Knees)"
-                    ],
-                    "Main": [
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Wide Push-ups",
-                        "3x10r Standard Push-ups"
-                    ],
-                    "HIIT": [
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Skater Hops, 28s Rest)",
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)",
-                        "3x (19.0s Mountain Climbers, 28s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
-                "Fri": {
-                    "Warmup": [
-                        "2x10r Pistol Squats (Assisted by Chair)",
-                        "2x10r Jump Squats (Onto Pillow)"
-                    ],
-                    "Main": [
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Diamond Push-ups",
-                        "3x10r Wide Push-ups",
-                        "3x10r Side Plank (From Knees)"
-                    ],
-                    "HIIT": [
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Mountain Climbers, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)",
-                        "3x (19.0s Skater Hops, 28s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
+                "Thu": "Rest Day",
+                "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Diamond Push-ups",
-                        "2x10r Pistol Squats (Assisted by Chair)"
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Squats (Holding Chair for Balance)"
                     ],
                     "Main": [
-                        "3x10r Standard Push-ups",
-                        "3x10r Diamond Push-ups",
-                        "3x10r Jump Squats (Onto Pillow)",
-                        "3x10r Single-leg Glute Bridges"
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (19.0s Skater Hops, 28s Rest)",
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)",
-                        "3x (19.0s Mountain Climbers, 28s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -472,20 +311,19 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Side Plank (From Knees)",
-                        "2x10r Bulgarian Split Squats (Back Foot on Chair)"
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Standard Push-ups",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Bear Crawls",
-                        "3x10r Pistol Squats (Assisted by Chair)"
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (19.0s Skater Hops, 28s Rest)",
-                        "3x (19.0s Full Burpees, 28s Rest)",
-                        "3x (19.0s Jump Squats, 28s Rest)",
-                        "3x (19.0s Plank Jacks, 28s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -496,21 +334,18 @@
             "Week 4": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Single-leg Glute Bridges",
-                        "2x10r Table Rows (Under Sturdy Table)"
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Bear Crawls",
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Standard Push-ups"
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Deadbugs",
+                        "3x10r Assisted Lunges (Wall Support)"
                     ],
                     "HIIT": [
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Plank Jacks, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)",
-                        "3x (21.0s Jump Squats, 27s Rest)",
-                        "3x (21.0s Mountain Climbers, 27s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -519,20 +354,18 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Diamond Push-ups",
-                        "2x10r Bulgarian Split Squats (Back Foot on Chair)"
+                        "2x10r Squats (Holding Chair for Balance)",
+                        "2x10r Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Side Plank (From Knees)",
-                        "3x10r Diamond Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)",
-                        "3x10r Single-leg Glute Bridges"
+                        "3x10r Deadbugs",
+                        "3x10r Wall Push-ups",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (21.0s Mountain Climbers, 27s Rest)",
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)",
-                        "3x (21.0s Plank Jacks, 27s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -541,88 +374,41 @@
                 },
                 "Wed": {
                     "Warmup": [
-                        "2x10r Standard Push-ups",
-                        "2x10r Table Rows (Under Sturdy Table)"
+                        "2x10r Deadbugs",
+                        "2x10r Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Wide Push-ups",
-                        "3x10r Bear Crawls",
-                        "3x10r Pistol Squats (Assisted by Chair)"
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Mountain Climbers, 27s Rest)",
-                        "3x (21.0s Plank Jacks, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)",
-                        "3x (21.0s Jump Squats, 27s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": {
-                    "Warmup": [
-                        "2x10r Wide Push-ups",
-                        "2x10r Bulgarian Split Squats (Back Foot on Chair)"
-                    ],
-                    "Main": [
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Wide Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)"
-                    ],
-                    "HIIT": [
-                        "3x (21.0s Plank Jacks, 27s Rest)",
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Mountain Climbers, 27s Rest)",
-                        "3x (21.0s Jump Squats, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
-                "Fri": {
-                    "Warmup": [
-                        "2x10r Pistol Squats (Assisted by Chair)",
-                        "2x10r Wide Push-ups"
-                    ],
-                    "Main": [
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)",
-                        "3x10r Wide Push-ups",
-                        "3x10r Pistol Squats (Assisted by Chair)"
-                    ],
-                    "HIIT": [
-                        "3x (21.0s Jump Squats, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)",
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Plank Jacks, 27s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
+                "Thu": "Rest Day",
+                "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Bear Crawls",
-                        "2x10r Pistol Squats (Assisted by Chair)"
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Bear Crawls",
-                        "3x10r Wide Push-ups",
-                        "3x10r Bulgarian Split Squats (Back Foot on Chair)"
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (21.0s Mountain Climbers, 27s Rest)",
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Jump Squats, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -631,21 +417,19 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Jump Squats (Onto Pillow)",
-                        "2x10r Side Plank (From Knees)"
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Wide Push-ups",
-                        "3x10r Single-leg Glute Bridges",
-                        "3x10r Table Rows (Under Sturdy Table)",
-                        "3x10r Jump Squats (Onto Pillow)"
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Deadbugs",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (21.0s Mountain Climbers, 27s Rest)",
-                        "3x (21.0s Skater Hops, 27s Rest)",
-                        "3x (21.0s Jump Squats, 27s Rest)",
-                        "3x (21.0s Full Burpees, 27s Rest)",
-                        "3x (21.0s Plank Jacks, 27s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -654,6 +438,444 @@
                 }
             }
         },
-        "timestamp": "2025-03-30T22:24:18.764296"
+        "timestamp": "2025-03-31T11:06:17.620815"
+    },
+    {
+        "user_details": {
+            "age": 27,
+            "height": 178,
+            "weight": 78,
+            "experience_level": 0,
+            "fitness_goal": 0,
+            "activity_level": "sedentary",
+            "bmi": 24.62,
+            "bmi_category": "Ideal"
+        },
+        "workout_plan": {
+            "Week 1": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Wall Push-ups",
+                        "2x10r Knee Push-ups (Hands on Bed)"
+                    ],
+                    "Main": [
+                        "3x10r Wall Push-ups",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Assisted Lunges (Wall Support)"
+                    ],
+                    "Main": [
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Deadbugs",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Wall Push-ups"
+                    ],
+                    "Main": [
+                        "3x10r Deadbugs",
+                        "3x10r Wall Push-ups",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": "Rest Day",
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Deadbugs"
+                    ],
+                    "Main": [
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": "Rest Day",
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Towel Rows (Door Anchor)"
+                    ],
+                    "Main": [
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Deadbugs"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 2": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Wall Push-ups",
+                        "2x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "Main": [
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Towel Rows (Door Anchor)"
+                    ],
+                    "Main": [
+                        "3x10r Deadbugs",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Squats (Holding Chair for Balance)",
+                        "2x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "Main": [
+                        "3x10r Deadbugs",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Assisted Lunges (Wall Support)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": "Rest Day",
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "Main": [
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": "Rest Day",
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Wall Push-ups"
+                    ],
+                    "Main": [
+                        "3x10r Wall Push-ups",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 3": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Towel Rows (Door Anchor)"
+                    ],
+                    "Main": [
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Assisted Lunges (Wall Support)",
+                        "2x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "Main": [
+                        "3x10r Wall Push-ups",
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Assisted Lunges (Wall Support)",
+                        "2x10r Knee Push-ups (Hands on Bed)"
+                    ],
+                    "Main": [
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Deadbugs",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": "Rest Day",
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "Main": [
+                        "3x10r Wall Push-ups",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Towel Rows (Door Anchor)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": "Rest Day",
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Assisted Lunges (Wall Support)",
+                        "2x10r Squats (Holding Chair for Balance)"
+                    ],
+                    "Main": [
+                        "3x10r Squats (Holding Chair for Balance)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Deadbugs",
+                        "3x10r Assisted Lunges (Wall Support)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            },
+            "Week 4": {
+                "Mon": {
+                    "Warmup": [
+                        "2x10r Towel Rows (Door Anchor)",
+                        "2x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "Main": [
+                        "3x10r Deadbugs",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Tue": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Assisted Lunges (Wall Support)"
+                    ],
+                    "Main": [
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Glute Bridges (Pillow Between Knees)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": {
+                    "Warmup": [
+                        "2x10r Knee Push-ups (Hands on Bed)",
+                        "2x10r Deadbugs"
+                    ],
+                    "Main": [
+                        "3x10r Deadbugs",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Knee Push-ups (Hands on Bed)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Thu": "Rest Day",
+                "Fri": {
+                    "Warmup": [
+                        "2x10r Assisted Lunges (Wall Support)",
+                        "2x10r Towel Rows (Door Anchor)"
+                    ],
+                    "Main": [
+                        "3x10r Knee Push-ups (Hands on Bed)",
+                        "3x10r Wall Push-ups",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Deadbugs"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Sat": "Rest Day",
+                "Sun": {
+                    "Warmup": [
+                        "2x10r Glute Bridges (Pillow Between Knees)",
+                        "2x10r Assisted Lunges (Wall Support)"
+                    ],
+                    "Main": [
+                        "3x10r Towel Rows (Door Anchor)",
+                        "3x10r Assisted Lunges (Wall Support)",
+                        "3x10r Glute Bridges (Pillow Between Knees)",
+                        "3x10r Wall Push-ups"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                }
+            }
+        },
+        "timestamp": "2025-03-31T11:06:46.368356"
     }
 ]
