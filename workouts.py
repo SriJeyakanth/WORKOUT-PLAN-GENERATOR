@@ -1383,7 +1383,7 @@ def generate_workout(age, exp, activity, goal, week=None):
 
     return warmup, main, hiit_ex  # Return HIIT exercises directly # Return HIIT exercises directly
 
-def generate_month_plan(age, exp, activity, goal):
+def generate_month_plan(age, exp, activity, goal, rest_days):
     day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     plan = {}
 
@@ -1391,19 +1391,22 @@ def generate_month_plan(age, exp, activity, goal):
         week_plan = {}
         for day_index in range(7):
             day_name = day_names[day_index]
-            warmup, main, hiit = generate_workout(age, exp, activity, goal, week)
+            if day_name in rest_days:
+                week_plan[day_name] = "Rest Day"
+            else:
+                warmup, main, hiit = generate_workout(age, exp, activity, goal)
 
-            # Format HIIT workouts with work/rest intervals
-            formatted_hiit = []
-            for exercise in hiit:
-                formatted_hiit.append(f"{exercise['sets']}x ({exercise['work_sec']}s {exercise['exercise']}, {exercise['rest_sec']}s Rest)")
+                # Format HIIT workouts with work/rest intervals
+                formatted_hiit = []
+                for exercise in hiit:
+                    formatted_hiit.append(f"{exercise['sets']}x ({exercise['work_sec']}s {exercise['exercise']}, {exercise['rest_sec']}s Rest)")
 
-            week_plan[day_name] = {
-                "Warmup": [f"2x{val}r {ex}" for ex, _, val in warmup],
-                "Main": [f"{sets}x{val}r {ex}" for ex, sets, val in main],
-                "HIIT": formatted_hiit,
-                "Cooldown": ["30s Hamstring Stretch", "30s Quad Stretch"]
-            }
+                week_plan[day_name] = {
+                    "Warmup": [f"2x{val}r {ex}" for ex, _, val in warmup],
+                    "Main": [f"{sets}x{val}r {ex}" for ex, sets, val in main],
+                    "HIIT": formatted_hiit,
+                    "Cooldown": ["30s Hamstring Stretch", "30s Quad Stretch"]
+                }
         plan[f"Week {week}"] = week_plan
 
     return plan
@@ -1457,13 +1460,22 @@ def generate_workout_route():
         exp = int(data['experience_level'])
         goal = int(data['fitness_goal'])
         activity = data['activity_level']
+        rest_days = data['rest_days']  # Get the rest days from the request
+
+           # Backend validation for exactly 2 rest days
+        if len(rest_days) != 2:
+            return jsonify({"error": "Exactly 2 rest days must be selected"}), 400
+
+        # Rest of your existing validation and logic...
+        if not all([age, height, weight, exp is not None, goal is not None, activity]):
+            return jsonify({"error": "All fields are required"}), 400
 
         # Calculate BMI
         bmi = calculate_bmi(weight, height)
         bmi_category = get_bmi_category(bmi)
 
         # Generate workout plan
-        workout_plan = generate_month_plan(age, exp, activity, goal)
+        workout_plan = generate_month_plan(age, exp, activity, goal, rest_days)  # Pass rest_days to the function
 
         # Prepare response data
         response_data = {
