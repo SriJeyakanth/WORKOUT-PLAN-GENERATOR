@@ -76,7 +76,7 @@
     }
 
     .container {
-        max-width: 800px;
+        max-width: 1080px;
         margin: 50px auto;
         padding: 20px;
         background-color: #f9f9f9;
@@ -351,6 +351,46 @@ body.dark-mode .sub-title {
     color: #ffffff; /* Change color to white for dark mode */
 }
 
+/* Add to your stylesheet */
+.rest-day-cell {
+  background-color: #f8f9fa;
+  text-align: center !important;
+  padding: 15px !important;
+}
+
+.rest-day-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rest-icon {
+  font-size: 1.5em;
+  opacity: 0.7;
+}
+
+.rest-subtext {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin: 3px 0;
+}
+
+.rest-tip {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #495057;
+  margin: 5px 0 0;
+}
+
+body.dark-mode .rest-day-cell {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .rest-subtext,
+body.dark-mode .rest-tip {
+  color: #adb5bd;
+}
 
 </style>
   
@@ -395,6 +435,16 @@ body.dark-mode .sub-title {
                         <option value="highly_active">Highly Active</option>
                     </select>
                 </label>
+                <label>Rest Days (Select exactly 2):</label>
+                <div style="margin-top: 10px;">
+                    <label>Monday <input type="checkbox" class="rest-day" value="Mon"></label>
+                    <label>Tuesday <input type="checkbox" class="rest-day" value="Tue"></label>
+                    <label>Wednesday <input type="checkbox" class="rest-day" value="Wed"></label>
+                    <label>Thursday <input type="checkbox" class="rest-day" value="Thu"></label>
+                    <label>Friday <input type="checkbox" class="rest-day" value="Fri"></label>
+                    <label>Saturday <input type="checkbox" class="rest-day" value="Sat"></label>
+                    <label>Sunday <input type="checkbox" class="rest-day" value="Sun"></label>
+                </div>
                 
                 
                 <div class="button-container">
@@ -428,8 +478,22 @@ body.dark-mode .sub-title {
             const workoutGenerator = document.getElementById('workout-generator');
             workoutGenerator.classList.toggle('active');
         }
-
-        // Generate Workout Plan
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const restDayCheckboxes = document.querySelectorAll('.rest-day');
+    
+            restDayCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkedBoxes = document.querySelectorAll('.rest-day:checked');
+    
+                    // If more than 2 are checked, uncheck the current one
+                    if (checkedBoxes.length > 2) {
+                        this.checked = false;
+                    }
+                });
+            });
+        });
+    
         // Generate Workout Plan
         function generateWorkout() {
     const age = document.getElementById('age').value;
@@ -438,13 +502,22 @@ body.dark-mode .sub-title {
     const experienceLevel = document.getElementById('experience_level').value;
     const fitnessGoal = document.getElementById('fitness_goal').value;
     const activityLevel = document.getElementById('activity_level').value;
-    
 
+    // Get selected rest days
+    const restDays = Array.from(document.querySelectorAll('.rest-day:checked')).map(cb => cb.value);
+
+    // Check if exactly two rest days are selected
+    if (restDays.length !== 2) {
+        alert('Please select exactly 2 rest days.');
+        return;
+    }
+
+    // Validate other input fields
     if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel) {
         alert('Please fill all fields.');
         return;
     }
-
+    
     // Show loading indicator
     document.getElementById('loading-indicator').style.display = 'block';
     document.getElementById('user-details').style.display = 'none';
@@ -463,12 +536,11 @@ body.dark-mode .sub-title {
             experience_level: experienceLevel,
             fitness_goal: fitnessGoal,
             activity_level: activityLevel,
-            
+            rest_days: restDays
         }),
     })
     .then(response => response.json())
     .then(data => {
-        // Delay for 3 seconds before displaying the results
         setTimeout(() => {
             // Display user details
             const userDetails = `
@@ -478,7 +550,7 @@ body.dark-mode .sub-title {
                 <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
                 <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
                 <p><strong>Activity Level:</strong> ${activityLevel}</p>
-               
+                <p><strong>Rest Days:</strong> ${restDays.join(', ')}</p>
             `;
             document.getElementById('user-details-content').innerHTML = userDetails;
 
@@ -487,69 +559,147 @@ body.dark-mode .sub-title {
             document.getElementById('bmi-category').innerHTML = `According to FitnTech, your BMI is <strong>${data.user_details.bmi_category}</strong>`;
 
             // Display workout plan in a table
-            // Display workout plan in a table
-// Modify the workout plan generation to format HIIT with work/rest intervals
-const workoutPlan = data.workout_plan;
-let workoutHTML = '';
-for (const week in workoutPlan) {
-    workoutHTML += `<h4>${week}</h4>`;
-    workoutHTML += `<table>`;
-    workoutHTML += `<tr><th>Day</th><th>Warmup</th><th>Main (Reps)</th><th>Main (Sets)</th><th>Main (Workouts)</th><th>HIIT (Work/Rest)</th><th>Cooldown</th></tr>`;
-    const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    for (const day of orderedDays) {
-        workoutHTML += `<tr>`;
-        workoutHTML += `<td><strong>${day}</strong></td>`;
-        if (workoutPlan[week][day] === "Rest Day") {
-            workoutHTML += `<td colspan="6">Rest Day</td>`;
-        } else {
-            // Warmup
-            const warmupExercises = workoutPlan[week][day].Warmup.map(ex => {
-                return `<li>${ex}</li>`;
-            }).join('');
-            workoutHTML += `<td><ul>${warmupExercises}</ul></td>`;
+            const workoutPlan = data.workout_plan;
+            let workoutHTML = '';
+            for (const week in workoutPlan) {
+                workoutHTML += `<h4>${week}</h4>`;
+                workoutHTML += `<table>`;
+                workoutHTML += `<tr><th>Day</th><th>Warmup</th><th>Main (Reps)</th><th>Main (Sets)</th><th>Main (Workouts)</th><th>HIIT (Work/Rest)</th><th>Cooldown</th><th>Total Workout Time</th></tr>`;
+                const orderedDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                for (const day of orderedDays) {
+                    workoutHTML += `<tr>`;
+                    workoutHTML += `<td><strong>${day}</strong></td>`;
+                    if (workoutPlan[week][day] === "Rest Day") {
+                        workoutHTML += `
+                        <td colspan="7" class="rest-day-cell">
+                          <div class="rest-day-message">
+                            <span class="rest-icon">🌿</span>
+                            <div>
+                              <strong>💖 Self-Care Day! 🌟</strong>
+                              <p class="rest-subtext">Your health and recovery are very important to us! 🌈</p>
+                              <p class="rest-tip">"Taking time to rest is essential for your growth and strength." 💪</p>
+                              <p class="rest-tip">Please take this opportunity to relax and recharge; you truly deserve it! 😊</p>
+                              <p class="rest-tip">At FitnGro, we care deeply about your journey to fitness and well-being. 💚</p>
+                              <p class="rest-tip">Remember, every moment of rest brings you closer to your goals! 🌟</p>
+                            </div>
+                            <span class="rest-icon">🌿</span>
+                          </div>
+                        </td>`;
+                    } else {
+                        // Warmup
+                        const warmupExercises = workoutPlan[week][day].Warmup.map(ex => {
+                            return `<li>${ex}</li>`;
+                        }).join('');
+                        workoutHTML += `<td><ul>${warmupExercises}</ul></td>`;
 
-            // Main (Reps, Sets, Workouts)
-            const mainExercises = workoutPlan[week][day].Main;
-            const reps = mainExercises.map(ex => {
-                const match = ex.match(/(\d+)x(\d+)(r|s)/);
-                return match ? `<li>${match[2]} reps</li>` : `<li>N/A</li>`;
-            }).join('');
-            const sets = mainExercises.map(ex => {
-                const match = ex.match(/(\d+)x(\d+)(r|s)/);
-                return match ? `<li>${match[1]} sets</li>` : `<li>N/A</li>`;
-            }).join('');
-            const workouts = mainExercises.map(ex => {
-                const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
-                return match ? `<li>${match[4]}</li>` : `<li>N/A</li>`;
-            }).join('');
+                        // Main (Reps, Sets, Workouts)
+                        const mainExercises = workoutPlan[week][day].Main;
+                        const reps = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                            return match ? `<li>${match[2]} reps</li>` : `<li>N/A</li>`;
+                        }).join('');
+                        const sets = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                            return match ? `<li>${match[1]} sets</li>` : `<li>N/A</li>`;
+                        }).join('');
+                        const workouts = mainExercises.map(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
+                            return match ? `<li>${match[4]}</li>` : `<li>N/A</li>`;
+                        }).join('');
 
-            workoutHTML += `<td><ul>${reps}</ul></td>`;
-            workoutHTML += `<td><ul>${sets}</ul></td>`;
-            workoutHTML += `<td><ul>${workouts}</ul></td>`;
+                        workoutHTML += `<td><ul>${reps}</ul></td>`;
+                        workoutHTML += `<td><ul>${sets}</ul></td>`;
+                        workoutHTML += `<td><ul>${workouts}</ul></td>`;
 
-            // HIIT with work/rest intervals
-            const hiitExercises = workoutPlan[week][day].HIIT.map(ex => {
-                const match = ex.match(/(\d+)x(\d+)(r|s)\s(.+)/);
-                if (match) {
-                    const exerciseName = match[4];
-                    const sets = match[1];
-                    // Format: "30s Exercise, 15s Rest, repeat 3x"
-                    return `<li>${sets}x (30s ${exerciseName}, 15s Rest)</li>`;
+                        // HIIT with work/rest intervals
+                        const hiitExercises = workoutPlan[week][day].HIIT.map(ex => {
+                            const match = ex.match(/(\d+)x\s\((\d+)s\s(.+),\s(\d+)s\sRest\)/);
+                            if (match) {
+                                const exerciseName = match[3];
+                                const sets = match[1];
+                                const workTime = parseInt(match[2]);
+                                const restTime = parseInt(match[4]);
+                                return `<li>${sets}x (${workTime}s ${exerciseName}, ${restTime}s Rest)</li>`;
+                            }
+                            return `<li>${ex}</li>`;
+                        }).join('');
+                        workoutHTML += `<td><ul>${hiitExercises}</ul></td>`;
+
+                        // Cooldown
+                        const cooldownExercises = workoutPlan[week][day].Cooldown.map(ex => {
+                            return `<li>${ex}</li>`;
+                        }).join('');
+                        workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
+
+                        // Calculate total workout time based on experience level
+                        let targetDuration;
+                        switch(experienceLevel) {
+                            case "0": // Beginner
+                                targetDuration = 30; // 30 minutes
+                                break;
+                            case "1": // Intermediate
+                                targetDuration = 45; // 45 minutes
+                                break;
+                            case "2": // Advanced
+                                targetDuration = 60 + Math.floor(Math.random() * 31); // 60-90 minutes
+                                break;
+                            default:
+                                targetDuration = 45;
+                        }
+
+                        // Calculate actual exercise time components
+                        let warmupTime = warmupExercises.length * 0.5; // 30 seconds per warmup exercise
+                        let mainTime = 0;
+                        let hiitTime = 0;
+                        let cooldownTime = cooldownExercises.length * 1; // 1 minute per cooldown exercise
+
+                        // Calculate main workout time
+                        mainExercises.forEach(ex => {
+                            const match = ex.match(/(\d+)x(\d+)(r|s)/);
+                            if (match) {
+                                const sets = parseInt(match[1]);
+                                const reps = parseInt(match[2]);
+                                // 3 seconds per rep + 30 seconds rest between sets
+                                mainTime += sets * (reps * 0.05 + 0.5);
+                            }
+                        });
+
+                        // Calculate HIIT time
+                        hiitExercises.split('<li>').forEach(ex => {
+                            const match = ex.match(/(\d+)x\s\((\d+)s\s(.+),\s(\d+)s\sRest\)/);
+                            if (match) {
+                                const sets = parseInt(match[1]);
+                                const workTime = parseInt(match[2]);
+                                const restTime = parseInt(match[4]);
+                                hiitTime += sets * (workTime + restTime) / 60;
+                            }
+                        });
+
+                        // Calculate scaling factor to reach target duration
+                        const currentTotal = warmupTime + mainTime + hiitTime + cooldownTime;
+                        const scaleFactor = currentTotal > 0 ? targetDuration / currentTotal : 1;
+
+                        // Apply scaling to each component
+                        warmupTime = Math.round(warmupTime * scaleFactor);
+                        mainTime = Math.round(mainTime * scaleFactor);
+                        hiitTime = Math.round(hiitTime * scaleFactor);
+                        cooldownTime = Math.round(cooldownTime * scaleFactor);
+
+                        // Ensure minimum times for each component
+                        warmupTime = Math.max(warmupTime, 5); // At least 5 min warmup
+                        cooldownTime = Math.max(cooldownTime, 5); // At least 5 min cooldown
+
+                        // Calculate final total time
+                        const totalMinutes = warmupTime + mainTime + hiitTime + cooldownTime;
+                        const formattedTime = `${totalMinutes} min`;
+
+                        // Add total workout time to the row
+                        workoutHTML += `<td>${formattedTime}</td>`;
+                    }
+                    workoutHTML += `</tr>`;
                 }
-                return `<li>${ex}</li>`;
-            }).join('');
-            workoutHTML += `<td><ul>${hiitExercises}</ul></td>`;
-
-            // Cooldown
-            const cooldownExercises = workoutPlan[week][day].Cooldown.map(ex => {
-                return `<li>${ex}</li>`;
-            }).join('');
-            workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
-        }
-        workoutHTML += `</tr>`;
-    }
-    workoutHTML += `</table>`;
-}
+                workoutHTML += `</table>`;
+            }
             document.getElementById('workout-content').innerHTML = workoutHTML;
 
             // Show user details and workout plan
@@ -558,10 +708,15 @@ for (const week in workoutPlan) {
 
             // Hide loading indicator
             document.getElementById('loading-indicator').style.display = 'none';
-        }, 3000); // 3 seconds delay
+        }, 3000);
+    })
+    .catch(error => {
+        console.error('Error fetching workout plan:', error);
+        document.getElementById('loading-indicator').style.display = 'none';
+        alert('An error occurred while generating the workout plan. Please try again.');
     });
 }
-
+    
         // Dark/Light Mode Toggle
         const modeToggle = document.createElement('button');
         modeToggle.className = 'mode-toggle';
@@ -571,93 +726,84 @@ for (const week in workoutPlan) {
             modeToggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
         };
         document.body.appendChild(modeToggle);
-
     
-
-workoutHTML += `<tr><th>Day</th><th>Warmup</th><th class="wide-column">Main (Reps)</th><th class="wide-column">Main (Sets)</th><th class="wide-column">Main (Workouts)</th><th class="wide-column">Cooldown</th></tr>`;
-
-
-function generateDietPlan() {
-    const age = document.getElementById('age').value;
-    const height = document.getElementById('height').value;
-    const weight = document.getElementById('weight').value;
-    const experienceLevel = document.getElementById('experience_level').value;
-    const fitnessGoal = document.getElementById('fitness_goal').value;
-    const activityLevel = document.getElementById('activity_level').value;
+        function generateDietPlan() {
+            const age = document.getElementById('age').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const experienceLevel = document.getElementById('experience_level').value;
+            const fitnessGoal = document.getElementById('fitness_goal').value;
+            const activityLevel = document.getElementById('activity_level').value;
     
-    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel) {
-        alert('Please fill all fields.');
-        return;
-    }
-
-    // Show loading indicator
-    document.getElementById('loading-indicator').style.display = 'block';
-    document.getElementById('user-details').style.display = 'none';
-    document.getElementById('workout-plan').style.display = 'none';
-
-    document.getElementById('workout-plan-title').innerHTML = 'Your 4-Week Diet Plan';
-    // Fetch diet plan from backend
-    fetch('/generate-diet-plan', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            age: age,
-            height: height,
-            weight: weight,
-            experience_level: experienceLevel,
-            fitness_goal: fitnessGoal,
-            activity_level: activityLevel,
-          
-        }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Delay for 3 seconds before displaying the results
-        setTimeout(() => {
-            // Display user details
-            const userDetails = `
-                <p><strong>Age:</strong> ${age}</p>
-                <p><strong>Height:</strong> ${height} cm</p>
-                <p><strong>Weight:</strong> ${weight} kg</p>
-                <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
-                <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
-                <p><strong>Activity Level:</strong> ${activityLevel}</p>
-                
-            `;
-            document.getElementById('user-details-content').innerHTML = userDetails;
-
-            // Display diet plan in a table
-            // Display diet plan in a table
-const dietPlan = data.diet_plan;
-let dietHTML = '<h4>Your Diet Plan</h4><table>';
-dietHTML += `<tr><th>Week</th><th>Meal</th><th>Food Items</th></tr>`;
-
-for (const week in dietPlan) {
-    for (const meal in dietPlan[week]) {
-        dietHTML += `<tr><td><strong>${week}</strong></td><td><strong>${meal}</strong></td><td><ul>`;
-        dietPlan[week][meal].forEach(item => {
-            dietHTML += `<li>${item}</li>`;
-        });
-        dietHTML += `</ul></td></tr>`;
-    }
-}
-dietHTML += `</table>`;
-        
-            document.getElementById('workout-content').innerHTML = dietHTML;
-
-            // Show user details and diet plan
-            document.getElementById('user-details').style.display = 'block';
-            document.getElementById('workout-plan').style.display = 'block';
-
-            // Hide loading indicator
-            document.getElementById('loading-indicator').style.display = 'none';
-        }, 3000); // 3 seconds delay
-    });
-}
-
-
+                    if (!age || !height || !weight || !experienceLevel || !fitnessGoal || !activityLevel) {
+                alert('Please fill all fields.');
+                return;
+            }
+    
+            // Show loading indicator
+            document.getElementById('loading-indicator').style.display = 'block';
+            document.getElementById('user-details').style.display = 'none';
+            document.getElementById('workout-plan').style.display = 'none';
+    
+            document.getElementById('workout-plan-title').innerHTML = 'Your 4-Week Diet Plan';
+            
+            // Fetch diet plan from backend
+            fetch('/generate-diet-plan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    age: age,
+                    height: height,
+                    weight: weight,
+                    experience_level: experienceLevel,
+                    fitness_goal: fitnessGoal,
+                    activity_level: activityLevel,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Delay for 3 seconds before displaying the results
+                setTimeout(() => {
+                    // Display user details
+                    const userDetails = `
+                        <p><strong>Age:</strong> ${age}</p>
+                        <p><strong>Height:</strong> ${height} cm</p>
+                        <p><strong>Weight:</strong> ${weight} kg</p>
+                        <p><strong>Experience Level:</strong> ${document.getElementById('experience_level').options[experienceLevel].text}</p>
+                        <p><strong>Fitness Goal:</strong> ${document.getElementById('fitness_goal').options[fitnessGoal].text}</p>
+                        <p><strong>Activity Level:</strong> ${activityLevel}</p>
+                    `;
+                    document.getElementById('user-details-content').innerHTML = userDetails;
+    
+                    // Display diet plan in a table
+                    const dietPlan = data.diet_plan;
+                    let dietHTML = '<h4>Your Diet Plan</h4><table>';
+                    dietHTML += `<tr><th>Week</th><th>Meal</th><th>Food Items</th></tr>`;
+    
+                    for (const week in dietPlan) {
+                        for (const meal in dietPlan[week]) {
+                            dietHTML += `<tr><td><strong>${week}</strong></td><td><strong>${meal}</strong></td><td><ul>`;
+                            dietPlan[week][meal].forEach(item => {
+                                dietHTML += `<li>${item}</li>`;
+                            });
+                            dietHTML += `</ul></td></tr>`;
+                        }
+                    }
+                    dietHTML += `</table>`;
+    
+                    document.getElementById('workout-content').innerHTML = dietHTML;
+    
+                    // Show user details and diet plan
+                    document.getElementById('user-details').style.display = 'block';
+                    document.getElementById('workout-plan').style.display = 'block';
+    
+                    // Hide loading indicator
+                    document.getElementById('loading-indicator').style.display = 'none';
+                }, 3000); // 3 seconds delay
+            });
+        }
     </script>
 </body>
 </html>
