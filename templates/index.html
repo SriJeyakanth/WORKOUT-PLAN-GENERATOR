@@ -735,69 +735,43 @@ for (const week in workoutPlan) {
             workoutHTML += `<td><ul>${cooldownExercises}</ul></td>`;
 
             // Calculate total workout time based on experience level
-            let targetDuration;
-            switch(experienceLevel) {
-                case "0": // Beginner
-                    targetDuration = 30; // 30 minutes
-                    break;
-                case "1": // Intermediate
-                    targetDuration = 45; // 45 minutes
-                    break;
-                case "2": // Advanced
-                    targetDuration = 60 + Math.floor(Math.random() * 31); // 60-90 minutes
-                    break;
-                default:
-                    targetDuration = 45;
-            }
+ // Calculate total workout time based on experience level
+let targetDuration;
+const expLevel = parseInt(experienceLevel); // Make sure experienceLevel is a number
 
-            // Calculate actual exercise time components
-            let warmupTime = warmupExercises.length * 0.5; // 30 seconds per warmup exercise
-            let mainTime = 0;
-            let hiitTime = 0;
-            let cooldownTime = cooldownExercises.length * 1; // 1 minute per cooldown exercise
+if (expLevel === 0) { // Beginner
+    targetDuration = 30 + Math.floor(Math.random() * 11); // 30-40 minutes (30 + 0-10)
+} else if (expLevel === 1) { // Intermediate
+    targetDuration = 45 + Math.floor(Math.random() * 11); // 45-55 minutes (45 + 0-10)
+} else if (expLevel === 2) { // Advanced
+    targetDuration = 60 + Math.floor(Math.random() * 11); // 60-70 minutes (60 + 0-10)
+} else {
+    targetDuration = 45; // Default fallback
+}
 
-            // Calculate main workout time
-            mainExercises.forEach(ex => {
-                const match = ex.match(/(\d+)x(\d+)(r|s)/);
-                if (match) {
-                    const sets = parseInt(match[1]);
-                    const reps = parseInt(match[2]);
-                    // 3 seconds per rep + 30 seconds rest between sets
-                    mainTime += sets * (reps * 0.05 + 0.5);
-                }
-            });
+// Time allocation percentages
+const TIME_ALLOCATION = {
+    warmup: 0.15,  // 15% of total time
+    main: 0.60,    // 60% of total time
+    hiit: 0.15,    // 15% of total time
+    cooldown: 0.10 // 10% of total time
+};
 
-            // Calculate HIIT time
-            hiitExercises.split('<li>').forEach(ex => {
-                const match = ex.match(/(\d+)x\s\((\d+)s\s(.+),\s(\d+)s\sRest\)/);
-                if (match) {
-                    const sets = parseInt(match[1]);
-                    const workTime = parseInt(match[2]);
-                    const restTime = parseInt(match[4]);
-                    hiitTime += sets * (workTime + restTime) / 60;
-                }
-            });
+// Calculate component times
+let warmupTime = Math.round(targetDuration * TIME_ALLOCATION.warmup);
+let mainTime = Math.round(targetDuration * TIME_ALLOCATION.main);
+let hiitTime = Math.round(targetDuration * TIME_ALLOCATION.hiit);
+let cooldownTime = Math.round(targetDuration * TIME_ALLOCATION.cooldown);
 
-            // Calculate scaling factor to reach target duration
-            const currentTotal = warmupTime + mainTime + hiitTime + cooldownTime;
-            const scaleFactor = currentTotal > 0 ? targetDuration / currentTotal : 1;
+// Adjust reps/sets based on allocated time (if needed)
+const avgSetTime = 1.5; // 1.5 minutes per set (including rest)
+const targetSets = Math.floor(mainTime / (mainExercises.length * avgSetTime));
 
-            // Apply scaling to each component
-            warmupTime = Math.round(warmupTime * scaleFactor);
-            mainTime = Math.round(mainTime * scaleFactor);
-            hiitTime = Math.round(hiitTime * scaleFactor);
-            cooldownTime = Math.round(cooldownTime * scaleFactor);
+// Format final time display
+const formattedTime = `${targetDuration} min`;
 
-            // Ensure minimum times for each component
-            warmupTime = Math.max(warmupTime, 5); // At least 5 min warmup
-            cooldownTime = Math.max(cooldownTime, 5); // At least 5 min cooldown
-
-            // Calculate final total time
-            const totalMinutes = warmupTime + mainTime + hiitTime + cooldownTime;
-            const formattedTime = `${totalMinutes} min`;
-
-            // Add total workout time to the row
-            workoutHTML += `<td>${formattedTime}</td>`;
+// Add total workout time to the row
+workoutHTML += `<td>${formattedTime}</td>`;
         }
         workoutHTML += `</tr>`;
     }
@@ -909,4 +883,4 @@ document.getElementById('loading-indicator').style.display = 'none';
         }
     </script>
 </body>
-</html>  
+</html>
