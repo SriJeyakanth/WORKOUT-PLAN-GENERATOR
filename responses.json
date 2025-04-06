@@ -1,30 +1,30 @@
 [
     {
         "user_details": {
-            "age": 27,
-            "height": 178,
-            "weight": 78,
+            "age": 26,
+            "height": 189,
+            "weight": 89,
             "experience_level": 0,
             "fitness_goal": 0,
             "activity_level": "sedentary",
-            "bmi": 24.62,
+            "bmi": 24.92,
             "bmi_category": "Ideal"
         },
         "workout_plan": {
             "Week 1": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \u23f0 Deadbugs",
+                        "2x10r \ud83d\udcaa Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Deadbugs"
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
                         "3x (10.0s Step-Back Lunges, 40s Rest)",
                         "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
@@ -35,37 +35,38 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Wall Push-ups",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "2x10r \u23f0 Deadbugs"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Deadbugs"
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)"
                     ],
                     "HIIT": [
                         "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "2x10r \u23f0 Deadbugs"
                     ],
                     "Main": [
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Deadbugs"
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \u23f0 Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
                         "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
@@ -73,23 +74,21 @@
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
                 "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)"
                     ],
                     "HIIT": [
                         "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -98,17 +97,17 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Wall Push-ups"
+                        "2x10r \u23f0 Deadbugs",
+                        "2x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
                         "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
@@ -120,18 +119,18 @@
             "Week 2": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Squats (Holding Chair for Balance)",
-                        "2x10r Wall Push-ups"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Deadbugs"
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -140,62 +139,62 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Glute Bridges (Pillow Between Knees)"
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "2x10r \ud83d\udcaa Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Deadbugs",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
                         "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Knee Push-ups (Hands on Bed)"
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Glute Bridges (Pillow Between Knees)"
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
                 "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Squats (Holding Chair for Balance)",
-                        "2x10r Wall Push-ups"
+                        "2x10r \ud83d\udcaa Wall Push-ups",
+                        "2x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Deadbugs",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Glute Bridges (Pillow Between Knees)"
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \u23f0 Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -204,17 +203,17 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Squats (Holding Chair for Balance)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "2x10r \u23f0 Deadbugs"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Wall Push-ups",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
                         "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
@@ -226,19 +225,18 @@
             "Week 3": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Deadbugs",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -247,62 +245,62 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \ud83d\udcaa Wall Push-ups"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
+                    ],
+                    "HIIT": [
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                    ],
+                    "Cooldown": [
+                        "30s Hamstring Stretch",
+                        "30s Quad Stretch"
+                    ]
+                },
+                "Wed": "Rest Day",
+                "Thu": {
+                    "Warmup": [
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \u23f0 Deadbugs"
+                    ],
+                    "Main": [
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "HIIT": [
                         "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
-                    "Warmup": [
-                        "2x10r Wall Push-ups",
-                        "2x10r Knee Push-ups (Hands on Bed)"
-                    ],
-                    "Main": [
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Towel Rows (Door Anchor)"
-                    ],
-                    "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
-                    ],
-                    "Cooldown": [
-                        "30s Hamstring Stretch",
-                        "30s Quad Stretch"
-                    ]
-                },
-                "Thu": "Rest Day",
                 "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83d\udcaa Wall Push-ups",
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \u23f0 Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -311,19 +309,18 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Glute Bridges (Pillow Between Knees)"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \u23f0 Deadbugs"
                     ],
                     "HIIT": [
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -334,18 +331,18 @@
             "Week 4": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Deadbugs",
-                        "3x10r Assisted Lunges (Wall Support)"
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -354,61 +351,62 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Squats (Holding Chair for Balance)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Wall Push-ups",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "3x10r \ud83d\udcaa Wall Push-ups",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)"
                     ],
                     "HIIT": [
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
                         "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Deadbugs",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)",
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)",
+                        "3x10r \u23f0 Deadbugs",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83c\udfcb\ufe0f Squats (Holding Chair for Balance)"
                     ],
                     "HIIT": [
                         "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "3x (10.0s Modified Jump Squats, 40s Rest)",
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
                 "Fri": "Rest Day",
                 "Sat": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "2x10r \ud83c\udfcb\ufe0f Knee Push-ups (Hands on Bed)"
                     ],
                     "Main": [
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "3x10r \u23f0 Deadbugs"
                     ],
                     "HIIT": [
                         "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                        "3x (10.0s Step-Back Lunges, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -417,19 +415,18 @@
                 },
                 "Sun": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "2x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)"
                     ],
                     "Main": [
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Deadbugs",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Assisted Lunges (Wall Support)",
+                        "3x10r \ud83c\udfaf Towel Rows (Door Anchor)",
+                        "3x10r \ud83d\udcaa Glute Bridges (Pillow Between Knees)",
+                        "3x10r \ud83d\udcaa Wall Push-ups"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
                         "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -438,35 +435,38 @@
                 }
             }
         },
-        "timestamp": "2025-03-31T11:06:17.620815"
+        "timestamp": "2025-04-06T10:46:46.998400"
     },
     {
         "user_details": {
-            "age": 27,
-            "height": 178,
-            "weight": 78,
-            "experience_level": 0,
+            "age": 26,
+            "height": 189,
+            "weight": 89,
+            "experience_level": 2,
             "fitness_goal": 0,
             "activity_level": "sedentary",
-            "bmi": 24.62,
+            "bmi": 24.92,
             "bmi_category": "Ideal"
         },
         "workout_plan": {
             "Week 1": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Wall Push-ups",
-                        "2x10r Knee Push-ups (Hands on Bed)"
+                        "2x10r \u23f0 Planche Lean (Towel Slides)",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Glute Bridges (Pillow Between Knees)"
+                        "3x10r \ud83c\udfaf One-arm Towel Rows",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -475,82 +475,92 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "2x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Deadbugs",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Wall Push-ups"
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "2x10r \ud83c\udfaf One-arm Towel Rows"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Wall Push-ups",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Squats (Holding Chair for Balance)"
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
-                "Fri": {
+                "Fri": "Rest Day",
+                "Sat": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Deadbugs"
+                        "2x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "2x10r \ud83d\udcaa Dragon Flag Progressions"
                     ],
                     "Main": [
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Sat": "Rest Day",
                 "Sun": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "Main": [
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Deadbugs"
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -561,18 +571,20 @@
             "Week 2": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Wall Push-ups",
-                        "2x10r Glute Bridges (Pillow Between Knees)"
+                        "2x10r \ud83c\udfaf One-arm Towel Rows",
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -581,82 +593,91 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "2x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Glute Bridges (Pillow Between Knees)"
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83c\udfaf One-arm Towel Rows",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Squats (Holding Chair for Balance)",
-                        "2x10r Glute Bridges (Pillow Between Knees)"
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows",
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Assisted Lunges (Wall Support)"
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
-                "Fri": {
+                "Fri": "Rest Day",
+                "Sat": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \u23f0 Planche Lean (Towel Slides)",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "3x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Sat": "Rest Day",
                 "Sun": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Wall Push-ups"
+                        "2x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -667,18 +688,21 @@
             "Week 3": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "2x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows",
+                        "3x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -687,81 +711,90 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Assisted Lunges (Wall Support)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "2x10r \ud83c\udfaf One-arm Towel Rows"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Squats (Holding Chair for Balance)"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfaf One-arm Towel Rows"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Assisted Lunges (Wall Support)",
-                        "2x10r Knee Push-ups (Hands on Bed)"
+                        "2x10r \ud83d\udcaa Dragon Flag Progressions",
+                        "2x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Deadbugs",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
-                "Fri": {
+                "Fri": "Rest Day",
+                "Sat": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Wall Push-ups",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Towel Rows (Door Anchor)"
+                        "3x10r \ud83c\udfaf One-arm Towel Rows",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Sat": "Rest Day",
                 "Sun": {
                     "Warmup": [
-                        "2x10r Assisted Lunges (Wall Support)",
-                        "2x10r Squats (Holding Chair for Balance)"
+                        "2x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "2x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "Main": [
-                        "3x10r Squats (Holding Chair for Balance)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Deadbugs",
-                        "3x10r Assisted Lunges (Wall Support)"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Nordic Curls (Towel Under Knees)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -772,18 +805,21 @@
             "Week 4": {
                 "Mon": {
                     "Warmup": [
-                        "2x10r Towel Rows (Door Anchor)",
-                        "2x10r Glute Bridges (Pillow Between Knees)"
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows",
+                        "2x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows",
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)"
                     ],
                     "HIIT": [
-                        "3x (10.0s Modified Jump Squats, 40s Rest)",
-                        "3x (10.0s Step-Back Lunges, 40s Rest)"
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -792,82 +828,91 @@
                 },
                 "Tue": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "2x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions"
                     ],
                     "Main": [
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Glute Bridges (Pillow Between Knees)"
+                        "3x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Burpees (No Push-up), 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Wed": {
+                "Wed": "Rest Day",
+                "Thu": {
                     "Warmup": [
-                        "2x10r Knee Push-ups (Hands on Bed)",
-                        "2x10r Deadbugs"
+                        "2x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Deadbugs",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Knee Push-ups (Hands on Bed)"
+                        "3x10r \ud83c\udfaf One-arm Towel Rows",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)"
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Thu": "Rest Day",
-                "Fri": {
+                "Fri": "Rest Day",
+                "Sat": {
                     "Warmup": [
-                        "2x10r Assisted Lunges (Wall Support)",
-                        "2x10r Towel Rows (Door Anchor)"
+                        "2x10r \ud83d\udcaa Archer Push-ups (Sliding Towels)",
+                        "2x10r \ud83c\udfaf One-arm Towel Rows"
                     ],
                     "Main": [
-                        "3x10r Knee Push-ups (Hands on Bed)",
-                        "3x10r Wall Push-ups",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Deadbugs"
+                        "3x10r \ud83d\udcaa\ud83c\udffc Towel Muscle-up Progressions",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "HIIT": [
-                        "3x (10.0s Slow Mountain Climbers, 40s Rest)",
-                        "3x (10.0s Standing Alternating Toe Touches, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
                         "30s Quad Stretch"
                     ]
                 },
-                "Sat": "Rest Day",
                 "Sun": {
                     "Warmup": [
-                        "2x10r Glute Bridges (Pillow Between Knees)",
-                        "2x10r Assisted Lunges (Wall Support)"
+                        "2x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions",
+                        "2x10r \ud83c\udfcb\ufe0f Towel Front Lever Rows"
                     ],
                     "Main": [
-                        "3x10r Towel Rows (Door Anchor)",
-                        "3x10r Assisted Lunges (Wall Support)",
-                        "3x10r Glute Bridges (Pillow Between Knees)",
-                        "3x10r Wall Push-ups"
+                        "3x10r \ud83d\udd70\ufe0f Human Flag Progressions (Tree Branch)",
+                        "3x10r \ud83c\udfc6 Handstand Push-ups (Wall-assisted)",
+                        "3x10r \u23f0 Planche Lean (Towel Slides)",
+                        "3x10r \ud83c\udfcb\ufe0f One-arm Push-up Progressions"
                     ],
                     "HIIT": [
-                        "3x (10.0s Step-Back Lunges, 40s Rest)",
-                        "3x (10.0s Modified Jump Squats, 40s Rest)"
+                        "4x (20.0s Spiderman Push-up Climbers, 20s Rest)",
+                        "4x (20.0s 180\u00b0 Jump Squats, 20s Rest)",
+                        "4x (20.0s Plyo Push-ups, 20s Rest)",
+                        "4x (20.0s Dive Bomber Push-ups, 20s Rest)",
+                        "4x (20.0s Tuck Jumps, 20s Rest)"
                     ],
                     "Cooldown": [
                         "30s Hamstring Stretch",
@@ -876,6 +921,6 @@
                 }
             }
         },
-        "timestamp": "2025-03-31T11:06:46.368356"
+        "timestamp": "2025-04-06T10:47:53.912873"
     }
 ]
