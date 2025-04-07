@@ -8,7 +8,6 @@ import datetime
 
 app = Flask(__name__)
 
-# Minimal EXERCISES dictionary
 EXERCISES = {
     # ===== Gain Muscle (0-29) =====
     # Beginner (0-9)
@@ -60,6 +59,30 @@ EXERCISES = {
     38: ("🏋️ Seated Russian Twists (Hold Shoes)", "reps"),
     39: ("🏃 Slow Mountain Climbers", "reps"),
 
+    # Intermediate (40-49)
+    40: ("⏰ Jumping Jacks", "timing"),
+    41: ("🏃 Standing Knee-to-Elbow", "reps"),
+    42: ("💪 Standing Bicycle Crunches", "reps"),
+    43: ("⏳ Squat Hold", "timing"),
+    44: ("🕰️ Butt Kicks", "timing"),
+    45: ("⏰ High Knees", "timing"),
+    46: ("🏃 Step-back Lunges", "reps"),
+    47: ("💪🏼 Standing Side Leg Raises", "reps"),
+    48: ("🏋️ Standing Russian Twists", "reps"),
+    49: ("🏃 Mountain Climbers", "reps"),
+
+    # Advanced (50-59)
+    50: ("⏰ Burpees (No Push-up)", "timing"),
+    51: ("🏃 Jump Lunges", "reps"),
+    52: ("💪 Standing Bicycle Crunches with Twist", "reps"),
+    53: ("⏳ Single-leg Wall Sit", "timing"),
+    54: ("🕰️ Fast High Knees", "timing"),
+    55: ("⏰ Plank Jacks", "timing"),
+    56: ("🏃 Box Jumps (Onto Step)", "reps"),
+    57: ("💪🏼 Hanging Leg Raises (Door Frame)", "reps"),
+    58: ("🏋️ Standing Weighted Twists", "reps"),
+    59: ("🏃 Fast Mountain Climbers", "reps"),
+
     # ===== Improve Strength (60-89) =====
     # Beginner (60-69)
     60: ("💪 Towel-Resisted Push-ups", "reps"),
@@ -72,6 +95,30 @@ EXERCISES = {
     67: ("💪 Box Squats (To Chair)", "reps"),
     68: ("🏋️‍♂️ Bird Dogs", "reps"),
     69: ("💪🏼 Clamshells (Towel Under Knee)", "reps"),
+
+    # Intermediate (70-79)
+    70: ("💪 Resistance Band Push-ups", "reps"),
+    71: ("🏋️ Single-leg Squats", "reps"),
+    72: ("⏰ Farmer's Walk (Heavy Objects)", "timing"),
+    73: ("💪🏼 Single-leg Deadlifts", "reps"),
+    74: ("🎯 Inverted Rows (Under Table)", "reps"),
+    75: ("⏳ Wall Handstand Push-ups", "timing"),
+    76: ("🏋️ Resistance Band Pallof Press", "reps"),
+    77: ("💪 Bulgarian Split Squats", "reps"),
+    78: ("🏋️‍♂️ Supermans", "reps"),
+    79: ("💪🏼 Side-lying Leg Raises", "reps"),
+
+    # Advanced (80-89)
+    80: ("💪 Weighted Push-ups (Backpack)", "reps"),
+    81: ("🏋️ Pistol Squats", "reps"),
+    82: ("⏰ Single-arm Farmer's Walk", "timing"),
+    83: ("💪🏼 Single-leg Romanian Deadlifts", "reps"),
+    84: ("🎯 One-arm Inverted Rows", "reps"),
+    85: ("⏳ Freestanding Handstand Hold", "timing"),
+    86: ("🏋️ Weighted Pallof Press", "reps"),
+    87: ("💪 Shrimp Squats", "reps"),
+    88: ("🏋️‍♂️ Hanging Leg Raises", "reps"),
+    89: ("💪🏼 Weighted Side Plank", "timing"),
 
     # ===== Improve Stamina (90-119) =====
     # Beginner (90-99)
@@ -86,6 +133,30 @@ EXERCISES = {
     98: ("🕰️ Seated Marches", "timing"),
     99: ("⏰ Breathing Exercises", "timing"),
 
+    # Intermediate (100-109)
+    100: ("⏰ Power Walking", "timing"),
+    101: ("⏳ Shadow Boxing (Moderate Pace)", "timing"),
+    102: ("🕰️ Step Touch (Moderate Intensity)", "timing"),
+    103: ("🏃 Standing Knee Lifts (Fast)", "reps"),
+    104: ("⏰ Push-up to Plank Holds", "timing"),
+    105: ("💪 Standing Side Bends (Fast)", "reps"),
+    106: ("🏃 Alternating Step-ups", "reps"),
+    107: ("⏳ Arm Circles (With Weight)", "timing"),
+    108: ("🕰️ Standing Marches", "timing"),
+    109: ("⏰ Box Breathing Exercises", "timing"),
+
+    # Advanced (110-119)
+    110: ("⏰ Stair Climbing", "timing"),
+    111: ("⏳ Shadow Boxing (High Intensity)", "timing"),
+    112: ("🕰️ High Knee Step Touch", "timing"),
+    113: ("🏃 Jumping Knee Lifts", "reps"),
+    114: ("⏰ Plank to Push-up Holds", "timing"),
+    115: ("💪 Weighted Side Bends", "reps"),
+    116: ("🏃 Plyometric Step-ups", "reps"),
+    117: ("⏳ Weighted Arm Circles", "timing"),
+    118: ("🕰️ High Knee Marches", "timing"),
+    119: ("⏰ Wim Hof Breathing", "timing"),
+
     # ===== Cardio (120-149) =====
     # Beginner (120-129)
     120: ("⏰ Marching in Place", "timing"),
@@ -98,6 +169,30 @@ EXERCISES = {
     127: ("💪 Standing Knee Hugs", "reps"),
     128: ("🏋️ Heel Touches", "reps"),
     129: ("⏰ Breath Focus Walks", "timing"),
+
+    # Intermediate (130-139)
+    130: ("⏰ Jogging in Place", "timing"),
+    131: ("⏳ Standing Dancing", "timing"),
+    132: ("🕰️ Arm Circles", "timing"),
+    133: ("⏰ Leg Raises", "timing"),
+    134: ("⏳ Shoulder Rolls", "timing"),
+    135: ("🕰️ Hip Circles", "timing"),
+    136: ("🏃 Standing Jumping Jacks", "reps"),
+    137: ("💪 Standing Quad Stretches", "reps"),
+    138: ("🏋️ Toe Touches", "reps"),
+    139: ("⏰ Power Walking", "timing"),
+
+    # Advanced (140-149)
+    140: ("⏰ High Knee Running in Place", "timing"),
+    141: ("⏳ Dance Cardio", "timing"),
+    142: ("🕰️ Arm Punches", "timing"),
+    143: ("⏰ Dynamic Leg Swings", "timing"),
+    144: ("⏳ Dynamic Neck Stretches", "timing"),
+    145: ("🕰️ Dynamic Hip Openers", "timing"),
+    146: ("🏃 Plyometric Jumping Jacks", "reps"),
+    147: ("💪 Dynamic Stretching Routine", "reps"),
+    148: ("🏋️ Jump Rope (Imaginary)", "timing"),
+    149: ("⏰ Interval Running", "timing"),
 
     # ===== General Fitness (150-179) =====
     # Beginner (150-159)
@@ -112,6 +207,18 @@ EXERCISES = {
     158: ("🕰️ Wrist Stretches", "timing"),
     159: ("⏰ Deep Breathing Exercises", "timing"),
 
+    # Intermediate (160-169)
+    160: ("⏰ Downward Dog Stretch", "timing"),
+    161: ("⏳ Neck Resistance Stretches", "timing"),
+    162: ("🕰️ Standing Forward Bend", "timing"),
+    163: ("🧘🏻‍♀️ Thread the Needle", "reps"),
+    164: ("⏰ Lunge with Twist", "timing"),
+    165: ("⏳ Standing Spinal Twist", "timing"),
+    166: ("💪 Arm Cross Stretch", "reps"),
+    167: ("🏋️ Dynamic Ankle Mobility", "reps"),
+    168: ("🕰️ Finger Stretches", "timing"),
+    169: ("⏰ Box Breathing", "timing"),
+
     # Advanced (170-179)
     170: ("⏰ Handstand Hold (Wall)", "timing"),
     171: ("⏳ L-Sit Progressions", "timing"),
@@ -124,6 +231,7 @@ EXERCISES = {
     178: ("⏰ Capoeira Movements", "timing"),
     179: ("🕰️ Advanced Yoga Flow", "timing")
 }
+
 HIIT_EXERCISES = {
     180: ("Burpees (No Push-up)", "timing"),  # Beginner
     181: ("Modified Jump Squats", "timing"),
@@ -167,924 +275,636 @@ DIET_PLANS = {
     0: {  # Gain Muscle (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Moong dal chilla with mint chutney",
-                "Idli with sambar and coconut chutney",
-                "Ragi porridge with banana and almonds",
-                "Poha with peanuts and vegetables",
-                "Besan cheela with pudina chutney",
-                "Dosa with sambar and tomato chutney",
-                "Oats upma with vegetables"
+                "2 Masala Dosa with Coconut Chutney (Protein: 12g, Carbs: 60g, Fats: 15g, Energy: 380kcal)",
+                "3 Idlis with Sambar (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "Pongal with Ghee + 2 Egg Whites (Protein: 20g, Carbs: 45g, Fats: 10g, Energy: 350kcal)",
+                "Ragi Dosa with Peanut Chutney (Protein: 18g, Carbs: 55g, Fats: 12g, Energy: 400kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry and mixed vegetables",
-                "Roti with dal and bhindi sabzi",
-                "Quinoa khichdi with fish curry",
-                "Soya chunks curry with jeera rice",
-                "Jeera rice with rajma",
-                "Missi roti with kadhi",
-                "Vegetable pulao with raita"
+                "2 Chapati + Chicken Curry (150g) + Curd (Protein: 40g, Carbs: 60g, Fats: 20g, Energy: 550kcal)",
+                "Brown Rice + Fish Curry (200g) + Rasam (Protein: 45g, Carbs: 70g, Fats: 15g, Energy: 600kcal)",
+                "Quinoa Khichdi with Soya Chunks (Protein: 35g, Carbs: 65g, Fats: 12g, Energy: 500kcal)",
+                "Millet Rice + Egg Curry (3 eggs) + Vegetable Salad (Protein: 38g, Carbs: 55g, Fats: 25g, Energy: 580kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with bajra roti and palak",
-                "Fish curry with red rice",
-                "Dal tadka with jowar roti",
-                "Paneer bhurji with multigrain roti",
-                "Soya keema with roti",
-                "Dal makhani with jeera rice",
-                "Vegetable stew with appam"
+                "2 Roti + Paneer Bhurji (100g) + Dal (Protein: 35g, Carbs: 50g, Fats: 18g, Energy: 500kcal)",
+                "Dosa with Chicken Keema (100g) (Protein: 40g, Carbs: 45g, Fats: 15g, Energy: 480kcal)",
+                "Jeera Rice + Prawns Curry (150g) + Curd (Protein: 42g, Carbs: 60g, Fats: 12g, Energy: 520kcal)",
+                "Ragi Mudde + Chicken Stew (Protein: 38g, Carbs: 55g, Fats: 20g, Energy: 550kcal)"
             ],
             "Snacks": [
-                "Sprouts chaat",
-                "Roasted chana with coconut",
-                "Curd with flaxseeds and jaggery",
-                "Makhana (fox nuts) with ghee",
-                "Fruit with peanut butter",
-                "Roasted makhana",
-                "Paneer tikka"
+                "Sprouts Chaat (100g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Peanut Sundal (50g) (Protein: 12g, Carbs: 15g, Fats: 10g, Energy: 200kcal)",
+                "Boiled Egg (2) + Banana (Protein: 12g, Carbs: 25g, Fats: 10g, Energy: 250kcal)",
+                "Curd with Flaxseeds (200g) (Protein: 10g, Carbs: 15g, Fats: 8g, Energy: 180kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Stuffed paratha with curd",
-                "Egg omelette with multigrain toast",
-                "Banana peanut butter smoothie",
-                "Chana dal chilla",
-                "Vegetable vermicelli upma",
-                "Pongal with sambar",
-                "Methi thepla with curd"
+                "Egg Dosa (3 eggs) with Chutney (Protein: 25g, Carbs: 40g, Fats: 18g, Energy: 420kcal)",
+                "Rava Upma with Vegetables + 2 Egg Whites (Protein: 20g, Carbs: 50g, Fats: 12g, Energy: 380kcal)",
+                "Pesarattu (Green Gram Dosa) with Ginger Chutney (Protein: 22g, Carbs: 55g, Fats: 10g, Energy: 400kcal)",
+                "Oats Idli with Sambar (Protein: 18g, Carbs: 60g, Fats: 8g, Energy: 350kcal)"
             ],
             "Lunch": [
-                "Egg curry with millet roti",
-                "Chicken sukka with jowar roti",
-                "Palak paneer with bajra roti",
-                "Soya biryani with raita",
-                "Fish fry with quinoa",
-                "Dal khichdi with ghee",
-                "Keema paratha with curd"
+                "2 Chapati + Mutton Curry (100g) + Curd (Protein: 42g, Carbs: 60g, Fats: 25g, Energy: 600kcal)",
+                "Brown Rice + Chicken Chettinad (150g) + Vegetable Salad (Protein: 45g, Carbs: 65g, Fats: 18g, Energy: 580kcal)",
+                "Quinoa Pulao with Fish Fry (Protein: 40g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Millet Roti + Egg Bhurji (3 eggs) + Dal (Protein: 38g, Carbs: 50g, Fats: 22g, Energy: 550kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Egg curry with rice",
-                "Dal khichdi with ghee",
-                "Soya chunks biryani",
-                "Paneer tikka with roti",
-                "Mushroom curry with rice"
+                "2 Roti + Chicken Keema (100g) + Vegetable Salad (Protein: 40g, Carbs: 45g, Fats: 20g, Energy: 500kcal)",
+                "Dosa with Egg Curry (3 eggs) (Protein: 38g, Carbs: 40g, Fats: 18g, Energy: 480kcal)",
+                "Jeera Rice + Prawns Masala (150g) + Curd (Protein: 45g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Ragi Mudde + Mutton Curry (Protein: 42g, Carbs: 50g, Fats: 25g, Energy: 600kcal)"
             ],
             "Snacks": [
-                "Dry fruit milkshake",
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Paneer Tikka (100g) (Protein: 20g, Carbs: 10g, Fats: 15g, Energy: 250kcal)",
+                "Roasted Chana (50g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Banana Milkshake with Peanut Butter (Protein: 15g, Carbs: 40g, Fats: 12g, Energy: 320kcal)",
+                "Curd with Chia Seeds (200g) (Protein: 12g, Carbs: 15g, Fats: 10g, Energy: 200kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Paneer paratha with curd",
-                "Egg bhurji with multigrain toast",
-                "Banana almond smoothie",
-                "Vegetable oats upma",
-                "Rava idli with sambar",
-                "Stuffed besan chilla",
-                "Poha with sprouts"
+                "Paneer Uttapam (2) with Coconut Chutney (Protein: 28g, Carbs: 55g, Fats: 18g, Energy: 480kcal)",
+                "4 Egg Whites + 1 Whole Egg Bhurji with Multigrain Toast (Protein: 32g, Carbs: 35g, Fats: 22g, Energy: 450kcal)",
+                "Moong Dal Cheela with Mint Chutney (Protein: 25g, Carbs: 40g, Fats: 12g, Energy: 380kcal)",
+                "Ragi Idli with Chicken Keema (100g) (Protein: 35g, Carbs: 50g, Fats: 15g, Energy: 500kcal)"
             ],
             "Lunch": [
-                "Chicken curry with brown rice",
-                "Dal tadka with bajra roti",
-                "Soya biryani with raita",
-                "Fish curry with quinoa",
-                "Egg fried rice",
-                "Paneer butter masala with roti",
-                "Keema with jeera rice"
+                "3 Roti + Beef Curry (150g) + Vegetable Salad (Protein: 50g, Carbs: 65g, Fats: 28g, Energy: 700kcal)",
+                "Red Rice + Crab Curry (200g) + Rasam (Protein: 48g, Carbs: 60g, Fats: 18g, Energy: 620kcal)",
+                "Bajra Khichdi with Soya Chunks (Protein: 38g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Quinoa Rice + Egg Masala (4 eggs) + Avocado Salad (Protein: 42g, Carbs: 50g, Fats: 30g, Energy: 650kcal)"
             ],
             "Dinner": [
-                "Grilled fish with vegetables",
-                "Dal makhani with roti",
-                "Chicken stew with appam",
-                "Vegetable khichdi with curd",
-                "Egg bhurji with roti",
-                "Soya chunks curry with rice",
-                "Palak chicken with roti"
+                "2 Roti + Chicken Liver Fry (150g) + Dal (Protein: 45g, Carbs: 45g, Fats: 25g, Energy: 580kcal)",
+                "Adai with Jaggery and Butter (Protein: 30g, Carbs: 70g, Fats: 20g, Energy: 600kcal)",
+                "Jeera Rice + Fish Molee (200g) + Curd (Protein: 48g, Carbs: 55g, Fats: 18g, Energy: 580kcal)",
+                "Ragi Roti + Mutton Sukka (Protein: 45g, Carbs: 50g, Fats: 28g, Energy: 650kcal)"
             ],
             "Snacks": [
-                "Protein shake with dates",
-                "Roasted chana with coconut",
-                "Paneer cubes with mint chutney",
-                "Fruit and nut yogurt",
-                "Makhana chaat",
-                "Sprouts salad",
-                "Peanut butter with banana"
+                "Soya Chunk Chaat (150g) (Protein: 25g, Carbs: 20g, Fats: 8g, Energy: 280kcal)",
+                "Dates + Almonds (5 each) (Protein: 10g, Carbs: 50g, Fats: 15g, Energy: 350kcal)",
+                "Boiled Sweet Potato + Peanut Butter (Protein: 8g, Carbs: 45g, Fats: 12g, Energy: 320kcal)",
+                "Greek Yogurt with Walnuts (200g) (Protein: 20g, Carbs: 15g, Fats: 18g, Energy: 300kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Vegetable stuffed paratha with curd",
-                "Egg white omelette with toast",
-                "Ragi malt with nuts",
-                "Moong dal dosa with chutney",
-                "Besan chilla with mint chutney",
-                "Vegetable upma with peanuts",
-                "Poha with sprouts and nuts"
+                "Methi Paratha (3) with Curd + 2 Egg Whites (Protein: 35g, Carbs: 75g, Fats: 20g, Energy: 600kcal)",
+                "Chicken Keema Dosa (Protein: 40g, Carbs: 50g, Fats: 25g, Energy: 580kcal)",
+                "Besan Chilla with Paneer Stuffing (Protein: 30g, Carbs: 35g, Fats: 22g, Energy: 450kcal)",
+                "Oats Pongal with Ghee + 3 Egg Whites (Protein: 32g, Carbs: 60g, Fats: 18g, Energy: 520kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry",
-                "Dal tadka with jowar roti",
-                "Soya chunks biryani",
-                "Fish curry with quinoa",
-                "Paneer butter masala with roti",
-                "Egg curry with rice",
-                "Keema with jeera rice"
+                "3 Roti + Duck Curry (150g) + Vegetable Salad (Protein: 55g, Carbs: 70g, Fats: 30g, Energy: 750kcal)",
+                "Black Rice + Prawn Biryani (Protein: 50g, Carbs: 65g, Fats: 25g, Energy: 680kcal)",
+                "Millet Khichdi with Chicken Pieces (Protein: 45g, Carbs: 60g, Fats: 20g, Energy: 600kcal)",
+                "Quinoa Dosa with Mutton Keema (Protein: 48g, Carbs: 55g, Fats: 28g, Energy: 650kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Dal khichdi with ghee",
-                "Soya chunks curry with rice",
-                "Fish fry with quinoa",
-                "Vegetable pulao with raita",
-                "Egg bhurji with roti"
+                "2 Roti + Egg Curry (4 eggs) + Palak (Protein: 42g, Carbs: 40g, Fats: 30g, Energy: 600kcal)",
+                "Neer Dosa with Chicken Ghee Roast (Protein: 45g, Carbs: 50g, Fats: 35g, Energy: 680kcal)",
+                "Jeera Rice + Fish Curry (250g) + Avocado (Protein: 55g, Carbs: 60g, Fats: 25g, Energy: 700kcal)",
+                "Ragi Roti + Mutton Liver Masala (Protein: 50g, Carbs: 45g, Fats: 30g, Energy: 650kcal)"
             ],
             "Snacks": [
-                "Dry fruit milkshake",
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Peanut Chikki (50g) + Milk (Protein: 18g, Carbs: 40g, Fats: 20g, Energy: 400kcal)",
+                "Roasted Grams + Jaggery (Protein: 15g, Carbs: 50g, Fats: 10g, Energy: 350kcal)",
+                "Banana + Almond Butter Smoothie (Protein: 12g, Carbs: 60g, Fats: 18g, Energy: 450kcal)",
+                "Paneer Wrap with Multigrain Roti (Protein: 25g, Carbs: 40g, Fats: 22g, Energy: 480kcal)"
             ]
         }
     },
     1: {  # Lose Fat (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Vegetable dalia",
-                "Moong dal chilla",
-                "Fruit smoothie with flaxseeds",
-                "Vegetable upma",
-                "Besan cheela",
-                "Dosa with coconut chutney",
-                "Poha with vegetables"
+                "Moong Dal Chilla (2) with Mint Chutney (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Vegetable Oats Upma (Protein: 12g, Carbs: 40g, Fats: 5g, Energy: 250kcal)",
+                "Ragi Porridge with Almonds (Protein: 10g, Carbs: 35g, Fats: 8g, Energy: 240kcal)",
+                "Poha with Vegetables (Protein: 8g, Carbs: 45g, Fats: 5g, Energy: 250kcal)"
             ],
             "Lunch": [
-                "Brown rice with dal and lauki sabzi",
-                "Jowar roti with palak dal",
-                "Vegetable sambar with rice",
-                "Grilled fish with salad",
-                "Missi roti with kadhi",
-                "Vegetable khichdi",
-                "Dal with barley roti"
+                "Brown Rice + Sambar (1 cup) + Vegetable Salad (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "2 Roti + Dal + Lauki Sabzi (Protein: 18g, Carbs: 40g, Fats: 5g, Energy: 280kcal)",
+                "Quinoa Khichdi with Vegetables (Protein: 20g, Carbs: 45g, Fats: 8g, Energy: 320kcal)",
+                "Millet Rice + Fish Curry (100g) + Rasam (Protein: 25g, Carbs: 40g, Fats: 10g, Energy: 350kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with multigrain roti",
-                "Stir-fried vegetables with paneer",
-                "Dal with barley roti",
-                "Chicken clear soup with vegetables",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Moong dal chilla with chutney"
+                "Vegetable Soup + 1 Roti (Protein: 10g, Carbs: 25g, Fats: 3g, Energy: 180kcal)",
+                "Dosa with Tomato Chutney (Protein: 12g, Carbs: 35g, Fats: 5g, Energy: 220kcal)",
+                "Vegetable Khichdi with Curd (Protein: 15g, Carbs: 40g, Fats: 5g, Energy: 280kcal)",
+                "Grilled Chicken (100g) with Salad (Protein: 30g, Carbs: 10g, Fats: 8g, Energy: 250kcal)"
             ],
             "Snacks": [
-                "Cucumber slices with hummus",
-                "Roasted chana",
-                "Buttermilk with jeera",
-                "Fruit chaat",
-                "Sprouts salad",
-                "Green tea with nuts",
-                "Vegetable soup"
+                "Cucumber Slices with Hummus (Protein: 5g, Carbs: 15g, Fats: 5g, Energy: 120kcal)",
+                "Roasted Makhana (30g) (Protein: 5g, Carbs: 20g, Fats: 2g, Energy: 120kcal)",
+                "Buttermilk with Jeera (Protein: 3g, Carbs: 10g, Fats: 2g, Energy: 80kcal)",
+                "Fruit Chaat (100g) (Protein: 2g, Carbs: 25g, Fats: 0g, Energy: 120kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Ragi porridge with fruits",
-                "Vegetable oats upma",
-                "Moong dal chilla",
-                "Fruit salad with flaxseeds",
-                "Besan cheela with mint chutney",
-                "Dosa with sambar",
-                "Poha with vegetables"
+                "Ragi Idli (3) with Tomato Chutney (Protein: 12g, Carbs: 45g, Fats: 3g, Energy: 250kcal)",
+                "Vegetable Daliya (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "Oats Porridge with Flaxseeds (Protein: 10g, Carbs: 40g, Fats: 8g, Energy: 280kcal)",
+                "Besan Chilla with Mint Chutney (Protein: 18g, Carbs: 30g, Fats: 5g, Energy: 250kcal)"
             ],
             "Lunch": [
-                "Quinoa khichdi with vegetables",
-                "Jowar roti with lauki sabzi",
-                "Vegetable sambar with brown rice",
-                "Grilled chicken with salad",
-                "Missi roti with kadhi",
-                "Dal with bajra roti",
-                "Vegetable pulao with raita"
+                "Quinoa Rice + Dal + Cucumber Salad (Protein: 20g, Carbs: 55g, Fats: 8g, Energy: 350kcal)",
+                "2 Roti + Lauki Chana Dal + Curd (Protein: 22g, Carbs: 45g, Fats: 8g, Energy: 320kcal)",
+                "Millet Khichdi with Vegetables (Protein: 18g, Carbs: 50g, Fats: 8g, Energy: 350kcal)",
+                "Brown Rice + Fish Curry (150g) + Beetroot Salad (Protein: 30g, Carbs: 45g, Fats: 12g, Energy: 400kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with multigrain roti",
-                "Stir-fried paneer with vegetables",
-                "Dal with jowar roti",
-                "Chicken clear soup with vegetables",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Moong dal chilla with chutney"
+                "Vegetable Clear Soup + 1 Roti (Protein: 12g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Adai (2) with Coconut Chutney (Protein: 15g, Carbs: 40g, Fats: 8g, Energy: 300kcal)",
+                "Moong Dal Khichdi with Curd (Protein: 20g, Carbs: 45g, Fats: 5g, Energy: 320kcal)",
+                "Grilled Fish (150g) with Stir-fried Vegetables (Protein: 35g, Carbs: 15g, Fats: 10g, Energy: 300kcal)"
             ],
             "Snacks": [
-                "Cucumber carrot sticks",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Fruit salad",
-                "Sprouts chaat",
-                "Green tea with nuts",
-                "Vegetable soup"
+                "Carrot Sticks with Hummus (Protein: 6g, Carbs: 20g, Fats: 5g, Energy: 150kcal)",
+                "Roasted Chana (40g) (Protein: 12g, Carbs: 25g, Fats: 4g, Energy: 200kcal)",
+                "Green Tea + 5 Almonds (Protein: 5g, Carbs: 5g, Fats: 8g, Energy: 120kcal)",
+                "Watermelon (200g) (Protein: 2g, Carbs: 30g, Fats: 0g, Energy: 130kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Vegetable dalia",
-                "Moong dal chilla",
-                "Fruit smoothie with flaxseeds",
-                "Vegetable upma",
-                "Besan cheela",
-                "Dosa with coconut chutney",
-                "Poha with vegetables"
+                "Oats Idli (4) with Sambar (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "Vegetable Rava Upma with Flaxseeds (Protein: 12g, Carbs: 45g, Fats: 8g, Energy: 300kcal)",
+                "Pesarattu (2) with Ginger Chutney (Protein: 18g, Carbs: 40g, Fats: 8g, Energy: 320kcal)",
+                "Ragi Porridge with Walnuts (Protein: 12g, Carbs: 35g, Fats: 10g, Energy: 280kcal)"
             ],
             "Lunch": [
-                "Brown rice with dal and lauki sabzi",
-                "Jowar roti with palak dal",
-                "Vegetable sambar with rice",
-                "Grilled fish with salad",
-                "Missi roti with kadhi",
-                "Vegetable khichdi",
-                "Dal with barley roti"
+                "Brown Rice + Dal + Cabbage Sabzi (Protein: 18g, Carbs: 55g, Fats: 8g, Energy: 350kcal)",
+                "2 Jowar Roti + Bottle Gourd Dal + Curd (Protein: 20g, Carbs: 40g, Fats: 8g, Energy: 320kcal)",
+                "Quinoa Pulao with Vegetables (Protein: 15g, Carbs: 50g, Fats: 8g, Energy: 350kcal)",
+                "Millet Rice + Chicken Clear Soup (Protein: 25g, Carbs: 40g, Fats: 10g, Energy: 380kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with multigrain roti",
-                "Stir-fried vegetables with paneer",
-                "Dal with barley roti",
-                "Chicken clear soup with vegetables",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Moong dal chilla with chutney"
+                "Vegetable Soup + 1 Multigrain Roti (Protein: 12g, Carbs: 35g, Fats: 5g, Energy: 230kcal)",
+                "Dosa with Mint Chutney (Protein: 10g, Carbs: 40g, Fats: 5g, Energy: 250kcal)",
+                "Vegetable Khichdi with Curd (Protein: 18g, Carbs: 45g, Fats: 5g, Energy: 300kcal)",
+                "Grilled Chicken (120g) with Stir-fried Vegetables (Protein: 30g, Carbs: 20g, Fats: 8g, Energy: 280kcal)"
             ],
             "Snacks": [
-                "Cucumber slices with hummus",
-                "Roasted chana",
-                "Buttermilk with jeera",
-                "Fruit chaat",
-                "Sprouts salad",
-                "Green tea with nuts",
-                "Vegetable soup"
+                "Cucumber + Tomato Salad (Protein: 3g, Carbs: 15g, Fats: 2g, Energy: 90kcal)",
+                "Roasted Makhana (40g) (Protein: 6g, Carbs: 25g, Fats: 3g, Energy: 160kcal)",
+                "Buttermilk with Cumin (Protein: 4g, Carbs: 12g, Fats: 3g, Energy: 90kcal)",
+                "Papaya (200g) (Protein: 2g, Carbs: 35g, Fats: 0g, Energy: 150kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Ragi porridge with fruits",
-                "Vegetable oats upma",
-                "Moong dal chilla",
-                "Fruit salad with flaxseeds",
-                "Besan cheela with mint chutney",
-                "Dosa with sambar",
-                "Poha with vegetables"
+                "Moong Dal Chilla (2) with Coriander Chutney (Protein: 18g, Carbs: 30g, Fats: 5g, Energy: 250kcal)",
+                "Vegetable Oats Upma with Flaxseeds (Protein: 15g, Carbs: 45g, Fats: 8g, Energy: 320kcal)",
+                "Ragi Dosa with Tomato Chutney (Protein: 12g, Carbs: 40g, Fats: 5g, Energy: 250kcal)",
+                "Poha with Sprouts (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)"
             ],
             "Lunch": [
-                "Quinoa khichdi with vegetables",
-                "Jowar roti with lauki sabzi",
-                "Vegetable sambar with brown rice",
-                "Grilled chicken with salad",
-                "Missi roti with kadhi",
-                "Dal with bajra roti",
-                "Vegetable pulao with raita"
+                "Quinoa Rice + Dal + Cucumber Raita (Protein: 22g, Carbs: 50g, Fats: 8g, Energy: 350kcal)",
+                "2 Bajra Roti + Lauki Dal + Salad (Protein: 20g, Carbs: 40g, Fats: 8g, Energy: 320kcal)",
+                "Millet Khichdi with Vegetables (Protein: 18g, Carbs: 45g, Fats: 8g, Energy: 350kcal)",
+                "Brown Rice + Fish Curry (150g) + Beetroot Salad (Protein: 30g, Carbs: 40g, Fats: 12g, Energy: 400kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with multigrain roti",
-                "Stir-fried paneer with vegetables",
-                "Dal with jowar roti",
-                "Chicken clear soup with vegetables",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Moong dal chilla with chutney"
+                "Vegetable Clear Soup + 1 Roti (Protein: 12g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Adai (2) with Coconut Chutney (Protein: 15g, Carbs: 40g, Fats: 8g, Energy: 300kcal)",
+                "Moong Dal Khichdi with Curd (Protein: 20g, Carbs: 45g, Fats: 5g, Energy: 320kcal)",
+                "Grilled Fish (150g) with Stir-fried Vegetables (Protein: 35g, Carbs: 15g, Fats: 10g, Energy: 300kcal)"
             ],
             "Snacks": [
-                "Cucumber carrot sticks",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Fruit salad",
-                "Sprouts chaat",
-                "Green tea with nuts",
-                "Vegetable soup"
+                "Carrot Sticks with Hummus (Protein: 6g, Carbs: 20g, Fats: 5g, Energy: 150kcal)",
+                "Roasted Chana (40g) (Protein: 12g, Carbs: 25g, Fats: 4g, Energy: 200kcal)",
+                "Green Tea + 5 Almonds (Protein: 5g, Carbs: 5g, Fats: 8g, Energy: 120kcal)",
+                "Watermelon (200g) (Protein: 2g, Carbs: 30g, Fats: 0g, Energy: 130kcal)"
             ]
         }
     },
     2: {  # Improve Strength (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Paneer paratha with curd",
-                "Egg bhurji with multigrain toast",
-                "Banana smoothie with almond butter",
-                "Chana dal chilla",
-                "Vegetable stuffed paratha",
-                "Egg omelette with toast",
-                "Poha with peanuts and vegetables"
+                "Paneer Paratha (2) with Curd (Protein: 25g, Carbs: 60g, Fats: 15g, Energy: 450kcal)",
+                "Egg Bhurji (3 eggs) with Multigrain Toast (Protein: 30g, Carbs: 40g, Fats: 20g, Energy: 480kcal)",
+                "Banana Almond Smoothie with Chia Seeds (Protein: 20g, Carbs: 50g, Fats: 15g, Energy: 400kcal)",
+                "Chana Dal Chilla with Mint Chutney (Protein: 22g, Carbs: 45g, Fats: 10g, Energy: 350kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry",
-                "Dal tadka with bajra roti",
-                "Soya biryani with raita",
-                "Fish curry with quinoa",
-                "Egg fried rice",
-                "Paneer butter masala with roti",
-                "Keema with jeera rice"
+                "Brown Rice + Chicken Curry (150g) + Vegetable Salad (Protein: 45g, Carbs: 60g, Fats: 20g, Energy: 600kcal)",
+                "2 Roti + Dal Tadka + Palak Sabzi (Protein: 30g, Carbs: 50g, Fats: 15g, Energy: 450kcal)",
+                "Soya Biryani with Raita (Protein: 35g, Carbs: 55g, Fats: 12g, Energy: 500kcal)",
+                "Fish Curry (200g) with Quinoa (Protein: 50g, Carbs: 45g, Fats: 15g, Energy: 550kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Egg curry with rice",
-                "Dal khichdi with ghee",
-                "Soya chunks biryani",
-                "Paneer tikka with roti",
-                "Mushroom curry with rice"
+                "Grilled Chicken (150g) with Vegetables (Protein: 45g, Carbs: 20g, Fats: 15g, Energy: 400kcal)",
+                "Palak Paneer (100g) with 2 Roti (Protein: 30g, Carbs: 40g, Fats: 20g, Energy: 450kcal)",
+                "Egg Curry (3 eggs) with Rice (Protein: 35g, Carbs: 50g, Fats: 18g, Energy: 500kcal)",
+                "Dal Khichdi with Ghee (Protein: 25g, Carbs: 60g, Fats: 15g, Energy: 480kcal)"
             ],
             "Snacks": [
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Protein shake",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Sprouted Moong Salad (100g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Peanut Ladoo (2 small) (Protein: 12g, Carbs: 20g, Fats: 15g, Energy: 250kcal)",
+                "Curd with Chia Seeds (200g) (Protein: 12g, Carbs: 15g, Fats: 10g, Energy: 200kcal)",
+                "Roasted Makhana (50g) (Protein: 8g, Carbs: 35g, Fats: 5g, Energy: 220kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Vegetable stuffed paratha with curd",
-                "Egg white omelette with toast",
-                "Ragi malt with nuts",
-                "Moong dal dosa with chutney",
-                "Besan chilla with mint chutney",
-                "Vegetable upma with peanuts",
-                "Poha with sprouts and nuts"
+                "Egg Dosa (3 eggs) with Chutney (Protein: 25g, Carbs: 40g, Fats: 18g, Energy: 420kcal)",
+                "Rava Upma with Vegetables + 2 Egg Whites (Protein: 20g, Carbs: 50g, Fats: 12g, Energy: 380kcal)",
+                "Pesarattu (Green Gram Dosa) with Ginger Chutney (Protein: 22g, Carbs: 55g, Fats: 10g, Energy: 400kcal)",
+                "Oats Idli with Sambar (Protein: 18g, Carbs: 60g, Fats: 8g, Energy: 350kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry",
-                "Dal tadka with jowar roti",
-                "Soya chunks biryani",
-                "Fish curry with quinoa",
-                "Paneer butter masala with roti",
-                "Egg curry with rice",
-                "Keema with jeera rice"
+                "2 Chapati + Mutton Curry (100g) + Curd (Protein: 42g, Carbs: 60g, Fats: 25g, Energy: 600kcal)",
+                "Brown Rice + Chicken Chettinad (150g) + Vegetable Salad (Protein: 45g, Carbs: 65g, Fats: 18g, Energy: 580kcal)",
+                "Quinoa Pulao with Fish Fry (Protein: 40g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Millet Roti + Egg Bhurji (3 eggs) + Dal (Protein: 38g, Carbs: 50g, Fats: 22g, Energy: 550kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Dal khichdi with ghee",
-                "Soya chunks curry with rice",
-                "Fish fry with quinoa",
-                "Vegetable pulao with raita",
-                "Egg bhurji with roti"
+                "2 Roti + Chicken Keema (100g) + Vegetable Salad (Protein: 40g, Carbs: 45g, Fats: 20g, Energy: 500kcal)",
+                "Dosa with Egg Curry (3 eggs) (Protein: 38g, Carbs: 40g, Fats: 18g, Energy: 480kcal)",
+                "Jeera Rice + Prawns Masala (150g) + Curd (Protein: 45g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Ragi Mudde + Mutton Curry (Protein: 42g, Carbs: 50g, Fats: 25g, Energy: 600kcal)"
             ],
             "Snacks": [
-                "Dry fruit milkshake",
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Paneer Tikka (100g) (Protein: 20g, Carbs: 10g, Fats: 15g, Energy: 250kcal)",
+                "Roasted Chana (50g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Banana Milkshake with Peanut Butter (Protein: 15g, Carbs: 40g, Fats: 12g, Energy: 320kcal)",
+                "Curd with Chia Seeds (200g) (Protein: 12g, Carbs: 15g, Fats: 10g, Energy: 200kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Paneer paratha with curd",
-                "Egg bhurji with multigrain toast",
-                "Banana smoothie with almond butter",
-                "Chana dal chilla",
-                "Vegetable stuffed paratha",
-                "Egg omelette with toast",
-                "Poha with peanuts and vegetables"
+                "Paneer Uttapam (2) with Coconut Chutney (Protein: 28g, Carbs: 55g, Fats: 18g, Energy: 480kcal)",
+                "4 Egg Whites + 1 Whole Egg Bhurji with Multigrain Toast (Protein: 32g, Carbs: 35g, Fats: 22g, Energy: 450kcal)",
+                "Moong Dal Cheela with Mint Chutney (Protein: 25g, Carbs: 40g, Fats: 12g, Energy: 380kcal)",
+                "Ragi Idli with Chicken Keema (100g) (Protein: 35g, Carbs: 50g, Fats: 15g, Energy: 500kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry",
-                "Dal tadka with bajra roti",
-                "Soya biryani with raita",
-                "Fish curry with quinoa",
-                "Egg fried rice",
-                "Paneer butter masala with roti",
-                "Keema with jeera rice"
+                "3 Roti + Beef Curry (150g) + Vegetable Salad (Protein: 50g, Carbs: 65g, Fats: 28g, Energy: 700kcal)",
+                "Red Rice + Crab Curry (200g) + Rasam (Protein: 48g, Carbs: 60g, Fats: 18g, Energy: 620kcal)",
+                "Bajra Khichdi with Soya Chunks (Protein: 38g, Carbs: 55g, Fats: 15g, Energy: 520kcal)",
+                "Quinoa Rice + Egg Masala (4 eggs) + Avocado Salad (Protein: 42g, Carbs: 50g, Fats: 30g, Energy: 650kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Egg curry with rice",
-                "Dal khichdi with ghee",
-                "Soya chunks biryani",
-                "Paneer tikka with roti",
-                "Mushroom curry with rice"
+                "2 Roti + Chicken Liver Fry (150g) + Dal (Protein: 45g, Carbs: 45g, Fats: 25g, Energy: 580kcal)",
+                "Adai with Jaggery and Butter (Protein: 30g, Carbs: 70g, Fats: 20g, Energy: 600kcal)",
+                "Jeera Rice + Fish Molee (200g) + Curd (Protein: 48g, Carbs: 55g, Fats: 18g, Energy: 580kcal)",
+                "Ragi Roti + Mutton Sukka (Protein: 45g, Carbs: 50g, Fats: 28g, Energy: 650kcal)"
             ],
             "Snacks": [
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Protein shake",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Soya Chunk Chaat (150g) (Protein: 25g, Carbs: 20g, Fats: 8g, Energy: 280kcal)",
+                "Dates + Almonds (5 each) (Protein: 10g, Carbs: 50g, Fats: 15g, Energy: 350kcal)",
+                "Boiled Sweet Potato + Peanut Butter (Protein: 8g, Carbs: 45g, Fats: 12g, Energy: 320kcal)",
+                "Greek Yogurt with Walnuts (200g) (Protein: 20g, Carbs: 15g, Fats: 18g, Energy: 300kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Vegetable stuffed paratha with curd",
-                "Egg white omelette with toast",
-                "Ragi malt with nuts",
-                "Moong dal dosa with chutney",
-                "Besan chilla with mint chutney",
-                "Vegetable upma with peanuts",
-                "Poha with sprouts and nuts"
+                "Methi Paratha (3) with Curd + 2 Egg Whites (Protein: 35g, Carbs: 75g, Fats: 20g, Energy: 600kcal)",
+                "Chicken Keema Dosa (Protein: 40g, Carbs: 50g, Fats: 25g, Energy: 580kcal)",
+                "Besan Chilla with Paneer Stuffing (Protein: 30g, Carbs: 35g, Fats: 22g, Energy: 450kcal)",
+                "Oats Pongal with Ghee + 3 Egg Whites (Protein: 32g, Carbs: 60g, Fats: 18g, Energy: 520kcal)"
             ],
             "Lunch": [
-                "Brown rice with chicken curry",
-                "Dal tadka with jowar roti",
-                "Soya chunks biryani",
-                "Fish curry with quinoa",
-                "Paneer butter masala with roti",
-                "Egg curry with rice",
-                "Keema with jeera rice"
+                "3 Roti + Duck Curry (150g) + Vegetable Salad (Protein: 55g, Carbs: 70g, Fats: 30g, Energy: 750kcal)",
+                "Black Rice + Prawn Biryani (Protein: 50g, Carbs: 65g, Fats: 25g, Energy: 680kcal)",
+                "Millet Khichdi with Chicken Pieces (Protein: 45g, Carbs: 60g, Fats: 20g, Energy: 600kcal)",
+                "Quinoa Dosa with Mutton Keema (Protein: 48g, Carbs: 55g, Fats: 28g, Energy: 650kcal)"
             ],
             "Dinner": [
-                "Grilled chicken with vegetables",
-                "Palak paneer with roti",
-                "Dal khichdi with ghee",
-                "Soya chunks curry with rice",
-                "Fish fry with quinoa",
-                "Vegetable pulao with raita",
-                "Egg bhurji with roti"
+                "2 Roti + Egg Curry (4 eggs) + Palak (Protein: 42g, Carbs: 40g, Fats: 30g, Energy: 600kcal)",
+                "Neer Dosa with Chicken Ghee Roast (Protein: 45g, Carbs: 50g, Fats: 35g, Energy: 680kcal)",
+                "Jeera Rice + Fish Curry (250g) + Avocado (Protein: 55g, Carbs: 60g, Fats: 25g, Energy: 700kcal)",
+                "Ragi Roti + Mutton Liver Masala (Protein: 50g, Carbs: 45g, Fats: 30g, Energy: 650kcal)"
             ],
             "Snacks": [
-                "Dry fruit milkshake",
-                "Sprouted moong salad",
-                "Peanut ladoo",
-                "Curd with chia seeds",
-                "Roasted makhana",
-                "Boiled egg whites",
-                "Nuts and seeds mix"
+                "Peanut Chikki (50g) + Milk (Protein: 18g, Carbs: 40g, Fats: 20g, Energy: 400kcal)",
+                "Roasted Grams + Jaggery (Protein: 15g, Carbs: 50g, Fats: 10g, Energy: 350kcal)",
+                "Banana + Almond Butter Smoothie (Protein: 12g, Carbs: 60g, Fats: 18g, Energy: 450kcal)",
+                "Paneer Wrap with Multigrain Roti (Protein: 25g, Carbs: 40g, Fats: 22g, Energy: 480kcal)"
             ]
         }
     },
     3: {  # Improve Stamina (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Dalia with vegetables",
-                "Pongal with coconut chutney",
-                "Banana oats smoothie",
-                "Vegetable uttapam",
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dosa with chutney"
+                "Dalia with Vegetables (Protein: 15g, Carbs: 60g, Fats: 5g, Energy: 350kcal)",
+                "Pongal with Coconut Chutney (Protein: 12g, Carbs: 65g, Fats: 10g, Energy: 380kcal)",
+                "Banana Oats Smoothie (Protein: 10g, Carbs: 70g, Fats: 5g, Energy: 350kcal)",
+                "Vegetable Uttapam with Sambar (Protein: 15g, Carbs: 55g, Fats: 8g, Energy: 320kcal)"
             ],
             "Lunch": [
-                "Lemon rice with peanuts",
-                "Vegetable khichdi",
-                "Curd rice with pickle",
-                "Sambar rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Khichdi"
+                "Lemon Rice with Peanuts (Protein: 15g, Carbs: 80g, Fats: 10g, Energy: 450kcal)",
+                "Vegetable Khichdi with Curd (Protein: 18g, Carbs: 70g, Fats: 8g, Energy: 420kcal)",
+                "Curd Rice with Pickle (Protein: 12g, Carbs: 75g, Fats: 10g, Energy: 400kcal)",
+                "Sambar Rice with Papad (Protein: 15g, Carbs: 65g, Fats: 8g, Energy: 380kcal)"
             ],
             "Dinner": [
-                "Vegetable pulao with raita",
-                "Dal with roti",
-                "Vegetable soup with bread",
-                "Poha with vegetables",
-                "Vegetable soup with toast",
-                "Dal with roti",
-                "Vegetable stew"
+                "Vegetable Pulao with Raita (Protein: 15g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Dal with 2 Roti (Protein: 20g, Carbs: 50g, Fats: 5g, Energy: 320kcal)",
+                "Vegetable Soup with Bread (Protein: 12g, Carbs: 45g, Fats: 5g, Energy: 280kcal)",
+                "Poha with Vegetables (Protein: 10g, Carbs: 55g, Fats: 5g, Energy: 300kcal)"
             ],
             "Snacks": [
-                "Fruit salad",
-                "Roasted chana",
-                "Buttermilk",
-                "Dry fruits",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruit Salad (200g) (Protein: 2g, Carbs: 40g, Fats: 1g, Energy: 180kcal)",
+                "Roasted Chana (50g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Buttermilk (300ml) (Protein: 5g, Carbs: 10g, Fats: 2g, Energy: 80kcal)",
+                "Dry Fruits (30g) (Protein: 5g, Carbs: 20g, Fats: 12g, Energy: 200kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Vegetable upma",
-                "Pongal with sambar",
-                "Banana smoothie with flaxseeds",
-                "Rava idli with chutney",
-                "Dalia with milk",
-                "Poha with peanuts",
-                "Dosa with sambar"
+                "Vegetable Upma with Peanuts (Protein: 15g, Carbs: 65g, Fats: 10g, Energy: 400kcal)",
+                "Pongal with Sambar (Protein: 18g, Carbs: 70g, Fats: 12g, Energy: 450kcal)",
+                "Banana Smoothie with Flaxseeds (Protein: 12g, Carbs: 75g, Fats: 8g, Energy: 420kcal)",
+                "Rava Idli with Chutney (Protein: 15g, Carbs: 60g, Fats: 8g, Energy: 380kcal)"
             ],
             "Lunch": [
-                "Vegetable biryani with raita",
-                "Dal khichdi",
-                "Curd rice with vegetables",
-                "Sambar rice with papad",
-                "Jeera rice with vegetables",
-                "Vegetable pulao with raita",
-                "Khichdi with curd"
+                "Tomato Rice with Curd (Protein: 15g, Carbs: 85g, Fats: 10g, Energy: 480kcal)",
+                "Vegetable Biryani with Raita (Protein: 18g, Carbs: 75g, Fats: 12g, Energy: 450kcal)",
+                "Curd Rice with Vegetables (Protein: 15g, Carbs: 80g, Fats: 10g, Energy: 450kcal)",
+                "Sambar Rice with Ghee (Protein: 18g, Carbs: 70g, Fats: 15g, Energy: 480kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable stew with appam",
-                "Poha with vegetables",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable pulao"
+                "Vegetable Khichdi with Papad (Protein: 18g, Carbs: 65g, Fats: 8g, Energy: 400kcal)",
+                "Dal with 2 Roti (Protein: 22g, Carbs: 55g, Fats: 8g, Energy: 380kcal)",
+                "Vegetable Stew with Appam (Protein: 15g, Carbs: 70g, Fats: 10g, Energy: 420kcal)",
+                "Poha with Peanuts (Protein: 12g, Carbs: 60g, Fats: 10g, Energy: 380kcal)"
             ],
             "Snacks": [
-                "Fruit yogurt",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Dry fruits and nuts",
-                "Coconut water",
-                "Fruit salad",
-                "Roasted chana"
+                "Fruit Yogurt (200g) (Protein: 8g, Carbs: 45g, Fats: 5g, Energy: 250kcal)",
+                "Roasted Makhana (40g) (Protein: 8g, Carbs: 35g, Fats: 5g, Energy: 220kcal)",
+                "Buttermilk with Jeera (Protein: 5g, Carbs: 15g, Fats: 3g, Energy: 100kcal)",
+                "Dry Fruits and Nuts (40g) (Protein: 8g, Carbs: 25g, Fats: 15g, Energy: 250kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Dalia with vegetables",
-                "Pongal with coconut chutney",
-                "Banana oats smoothie",
-                "Vegetable uttapam",
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dosa with chutney"
+                "Dalia with Milk and Nuts (Protein: 18g, Carbs: 70g, Fats: 12g, Energy: 450kcal)",
+                "Pongal with Ghee and Cashews (Protein: 15g, Carbs: 75g, Fats: 15g, Energy: 480kcal)",
+                "Banana Date Smoothie (Protein: 10g, Carbs: 80g, Fats: 8g, Energy: 420kcal)",
+                "Vegetable Dosa with Chutney (Protein: 15g, Carbs: 65g, Fats: 10g, Energy: 400kcal)"
             ],
             "Lunch": [
-                "Lemon rice with peanuts",
-                "Vegetable khichdi",
-                "Curd rice with pickle",
-                "Sambar rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Khichdi"
+                "Lemon Rice with Peanuts and Cashews (Protein: 18g, Carbs: 85g, Fats: 15g, Energy: 520kcal)",
+                "Vegetable Pulao with Raita (Protein: 18g, Carbs: 80g, Fats: 12g, Energy: 480kcal)",
+                "Curd Rice with Fried Gram (Protein: 18g, Carbs: 85g, Fats: 12g, Energy: 480kcal)",
+                "Sambar Rice with Ghee and Papad (Protein: 20g, Carbs: 75g, Fats: 18g, Energy: 520kcal)"
             ],
             "Dinner": [
-                "Vegetable pulao with raita",
-                "Dal with roti",
-                "Vegetable soup with bread",
-                "Poha with vegetables",
-                "Vegetable soup with toast",
-                "Dal with roti",
-                "Vegetable stew"
+                "Vegetable Khichdi with Curd (Protein: 20g, Carbs: 70g, Fats: 10g, Energy: 450kcal)",
+                "Dal with 2 Roti (Protein: 25g, Carbs: 60g, Fats: 10g, Energy: 420kcal)",
+                "Vegetable Stew with Idiyappam (Protein: 15g, Carbs: 75g, Fats: 12g, Energy: 450kcal)",
+                "Poha with Vegetables and Nuts (Protein: 15g, Carbs: 65g, Fats: 12g, Energy: 420kcal)"
             ],
             "Snacks": [
-                "Fruit salad",
-                "Roasted chana",
-                "Buttermilk",
-                "Dry fruits",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruit Salad with Honey (200g) (Protein: 3g, Carbs: 50g, Fats: 2g, Energy: 230kcal)",
+                "Roasted Chana with Coconut (50g) (Protein: 15g, Carbs: 35g, Fats: 8g, Energy: 280kcal)",
+                "Buttermilk with Mint (Protein: 6g, Carbs: 20g, Fats: 5g, Energy: 150kcal)",
+                "Dry Fruits and Seeds (50g) (Protein: 10g, Carbs: 30g, Fats: 20g, Energy: 320kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Vegetable upma",
-                "Pongal with sambar",
-                "Banana smoothie with flaxseeds",
-                "Rava idli with chutney",
-                "Dalia with milk",
-                "Poha with peanuts",
-                "Dosa with sambar"
+                "Dalia with Vegetables and Ghee (Protein: 20g, Carbs: 75g, Fats: 15g, Energy: 500kcal)",
+                "Pongal with Cashews and Raisins (Protein: 18g, Carbs: 80g, Fats: 18g, Energy: 520kcal)",
+                "Banana Nut Smoothie with Honey (Protein: 12g, Carbs: 85g, Fats: 12g, Energy: 480kcal)",
+                "Rava Dosa with Chutney and Sambar (Protein: 18g, Carbs: 70g, Fats: 15g, Energy: 480kcal)"
             ],
             "Lunch": [
-                "Vegetable biryani with raita",
-                "Dal khichdi",
-                "Curd rice with vegetables",
-                "Sambar rice with papad",
-                "Jeera rice with vegetables",
-                "Vegetable pulao with raita",
-                "Khichdi with curd"
+                "Lemon Rice with Fried Gram (Protein: 20g, Carbs: 90g, Fats: 18g, Energy: 580kcal)",
+                "Vegetable Biryani with Raita (Protein: 20g, Carbs: 85g, Fats: 15g, Energy: 550kcal)",
+                "Curd Rice with Pickle and Papad (Protein: 18g, Carbs: 90g, Fats: 15g, Energy: 550kcal)",
+                "Sambar Rice with Ghee and Vegetables (Protein: 22g, Carbs: 80g, Fats: 20g, Energy: 580kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable stew with appam",
-                "Poha with vegetables",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable pulao"
+                "Vegetable Khichdi with Curd and Papad (Protein: 22g, Carbs: 75g, Fats: 15g, Energy: 520kcal)",
+                "Dal with 2 Roti and Ghee (Protein: 25g, Carbs: 65g, Fats: 15g, Energy: 480kcal)",
+                "Vegetable Stew with Appam and Coconut Milk (Protein: 18g, Carbs: 80g, Fats: 18g, Energy: 520kcal)",
+                "Poha with Nuts and Seeds (Protein: 18g, Carbs: 70g, Fats: 15g, Energy: 480kcal)"
             ],
             "Snacks": [
-                "Fruit yogurt",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Dry fruits and nuts",
-                "Coconut water",
-                "Fruit salad",
-                "Roasted chana"
+                "Fruit Yogurt with Honey (200g) (Protein: 10g, Carbs: 55g, Fats: 8g, Energy: 320kcal)",
+                "Roasted Makhana with Ghee (50g) (Protein: 10g, Carbs: 40g, Fats: 10g, Energy: 300kcal)",
+                "Buttermilk with Jeera and Mint (Protein: 8g, Carbs: 25g, Fats: 8g, Energy: 200kcal)",
+                "Dry Fruits and Nuts Mix (60g) (Protein: 12g, Carbs: 35g, Fats: 25g, Energy: 380kcal)"
             ]
         }
     },
     4: {  # Cardio (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Fruit smoothie with seeds",
-                "Vegetable upma",
-                "Poha with peanuts",
-                "Dosa with chutney",
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk"
+                "Fruit Smoothie with Seeds (Protein: 10g, Carbs: 50g, Fats: 8g, Energy: 300kcal)",
+                "Vegetable Upma (Protein: 12g, Carbs: 55g, Fats: 5g, Energy: 320kcal)",
+                "Poha with Peanuts (Protein: 10g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Dosa with Chutney (Protein: 12g, Carbs: 45g, Fats: 10g, Energy: 320kcal)"
             ],
             "Lunch": [
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Curd rice",
-                "Khichdi",
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi with vegetables"
+                "Jeera Rice with Dal (Protein: 15g, Carbs: 70g, Fats: 8g, Energy: 400kcal)",
+                "Vegetable Pulao (Protein: 12g, Carbs: 65g, Fats: 5g, Energy: 350kcal)",
+                "Curd Rice (Protein: 10g, Carbs: 75g, Fats: 10g, Energy: 400kcal)",
+                "Khichdi with Vegetables (Protein: 15g, Carbs: 60g, Fats: 8g, Energy: 380kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with toast",
-                "Dal with roti",
-                "Vegetable stew",
-                "Grilled chicken with salad",
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao"
+                "Vegetable Soup with Toast (Protein: 10g, Carbs: 40g, Fats: 5g, Energy: 250kcal)",
+                "Dal with 1 Roti (Protein: 15g, Carbs: 35g, Fats: 5g, Energy: 250kcal)",
+                "Vegetable Stew (Protein: 8g, Carbs: 45g, Fats: 5g, Energy: 250kcal)",
+                "Grilled Chicken (100g) with Salad (Protein: 30g, Carbs: 10g, Fats: 8g, Energy: 250kcal)"
             ],
             "Snacks": [
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana",
-                "Buttermilk",
-                "Fruits",
-                "Nuts",
-                "Roasted chana"
+                "Coconut Water (300ml) (Protein: 2g, Carbs: 15g, Fats: 0g, Energy: 70kcal)",
+                "Fruit Chaat (150g) (Protein: 2g, Carbs: 35g, Fats: 1g, Energy: 160kcal)",
+                "Roasted Makhana (30g) (Protein: 5g, Carbs: 20g, Fats: 2g, Energy: 120kcal)",
+                "Buttermilk (300ml) (Protein: 5g, Carbs: 10g, Fats: 2g, Energy: 80kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Banana smoothie with seeds",
-                "Vegetable vermicelli upma",
-                "Poha with sprouts",
-                "Dosa with sambar",
-                "Idli with chutney",
-                "Poha with vegetables",
-                "Dalia with fruits"
+                "Banana Smoothie with Seeds (Protein: 12g, Carbs: 55g, Fats: 8g, Energy: 320kcal)",
+                "Vegetable Vermicelli Upma (Protein: 15g, Carbs: 60g, Fats: 5g, Energy: 350kcal)",
+                "Poha with Sprouts (Protein: 15g, Carbs: 55g, Fats: 5g, Energy: 320kcal)",
+                "Dosa with Sambar (Protein: 15g, Carbs: 50g, Fats: 8g, Energy: 320kcal)"
             ],
             "Lunch": [
-                "Lemon rice with peanuts",
-                "Vegetable khichdi",
-                "Curd rice with vegetables",
-                "Sambar rice",
-                "Jeera rice with vegetables",
-                "Vegetable pulao with raita",
-                "Khichdi with curd"
+                "Lemon Rice with Peanuts (Protein: 15g, Carbs: 75g, Fats: 10g, Energy: 450kcal)",
+                "Vegetable Khichdi (Protein: 18g, Carbs: 65g, Fats: 8g, Energy: 400kcal)",
+                "Curd Rice with Vegetables (Protein: 12g, Carbs: 70g, Fats: 10g, Energy: 400kcal)",
+                "Sambar Rice (Protein: 15g, Carbs: 65g, Fats: 8g, Energy: 380kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable pulao"
+                "Vegetable Soup with Bread (Protein: 12g, Carbs: 45g, Fats: 5g, Energy: 280kcal)",
+                "Dal with Roti (Protein: 18g, Carbs: 40g, Fats: 5g, Energy: 280kcal)",
+                "Vegetable Stew with Appam (Protein: 12g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Poha with Vegetables (Protein: 12g, Carbs: 50g, Fats: 5g, Energy: 300kcal)"
             ],
             "Snacks": [
-                "Coconut water with pulp",
-                "Fruit yogurt",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Fruit salad",
-                "Nuts and seeds",
-                "Roasted chana"
+                "Coconut Water with Pulp (300ml) (Protein: 3g, Carbs: 20g, Fats: 2g, Energy: 100kcal)",
+                "Fruit Yogurt (200g) (Protein: 8g, Carbs: 40g, Fats: 5g, Energy: 230kcal)",
+                "Roasted Makhana (40g) (Protein: 8g, Carbs: 30g, Fats: 5g, Energy: 200kcal)",
+                "Buttermilk with Jeera (Protein: 5g, Carbs: 15g, Fats: 3g, Energy: 100kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Fruit smoothie with seeds",
-                "Vegetable upma",
-                "Poha with peanuts",
-                "Dosa with chutney",
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk"
+                "Fruit Smoothie with Chia Seeds (Protein: 12g, Carbs: 60g, Fats: 10g, Energy: 380kcal)",
+                "Vegetable Oats Upma (Protein: 15g, Carbs: 65g, Fats: 5g, Energy: 350kcal)",
+                "Poha with Peanuts and Coconut (Protein: 12g, Carbs: 60g, Fats: 10g, Energy: 380kcal)",
+                "Dosa with Tomato Chutney (Protein: 12g, Carbs: 50g, Fats: 8g, Energy: 320kcal)"
             ],
             "Lunch": [
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Curd rice",
-                "Khichdi",
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi with vegetables"
+                "Jeera Rice with Dal and Salad (Protein: 18g, Carbs: 70g, Fats: 8g, Energy: 420kcal)",
+                "Vegetable Pulao with Raita (Protein: 15g, Carbs: 65g, Fats: 8g, Energy: 380kcal)",
+                "Curd Rice with Fried Gram (Protein: 15g, Carbs: 75g, Fats: 10g, Energy: 420kcal)",
+                "Khichdi with Vegetables and Curd (Protein: 18g, Carbs: 65g, Fats: 8g, Energy: 400kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with toast",
-                "Dal with roti",
-                "Vegetable stew",
-                "Grilled chicken with salad",
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao"
+                "Vegetable Soup with Multigrain Toast (Protein: 12g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "Dal with 1 Roti (Protein: 15g, Carbs: 40g, Fats: 5g, Energy: 280kcal)",
+                "Vegetable Stew with Rice (Protein: 12g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Grilled Fish (100g) with Salad (Protein: 25g, Carbs: 15g, Fats: 8g, Energy: 250kcal)"
             ],
             "Snacks": [
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana",
-                "Buttermilk",
-                "Fruits",
-                "Nuts",
-                "Roasted chana"
+                "Coconut Water with Banana (Protein: 3g, Carbs: 40g, Fats: 2g, Energy: 180kcal)",
+                "Fruit Chaat with Chia Seeds (150g) (Protein: 5g, Carbs: 45g, Fats: 5g, Energy: 230kcal)",
+                "Roasted Makhana with Ghee (40g) (Protein: 8g, Carbs: 35g, Fats: 8g, Energy: 250kcal)",
+                "Buttermilk with Mint (Protein: 5g, Carbs: 20g, Fats: 5g, Energy: 150kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Banana smoothie with seeds",
-                "Vegetable vermicelli upma",
-                "Poha with sprouts",
-                "Dosa with sambar",
-                "Idli with chutney",
-                "Poha with vegetables",
-                "Dalia with fruits"
+                "Banana Date Smoothie with Almonds (Protein: 15g, Carbs: 70g, Fats: 12g, Energy: 450kcal)",
+                "Vegetable Rava Upma with Peanuts (Protein: 18g, Carbs: 70g, Fats: 10g, Energy: 450kcal)",
+                "Poha with Sprouts and Coconut (Protein: 18g, Carbs: 65g, Fats: 10g, Energy: 420kcal)",
+                "Dosa with Sambar and Chutney (Protein: 18g, Carbs: 60g, Fats: 10g, Energy: 400kcal)"
             ],
             "Lunch": [
-                "Lemon rice with peanuts",
-                "Vegetable khichdi",
-                "Curd rice with vegetables",
-                "Sambar rice",
-                "Jeera rice with vegetables",
-                "Vegetable pulao with raita",
-                "Khichdi with curd"
+                "Lemon Rice with Cashews (Protein: 18g, Carbs: 80g, Fats: 15g, Energy: 520kcal)",
+                "Vegetable Biryani with Raita (Protein: 18g, Carbs: 75g, Fats: 12g, Energy: 480kcal)",
+                "Curd Rice with Vegetables and Fried Gram (Protein: 18g, Carbs: 80g, Fats: 12g, Energy: 480kcal)",
+                "Sambar Rice with Ghee and Papad (Protein: 20g, Carbs: 75g, Fats: 15g, Energy: 500kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable stew with appam",
-                "Grilled fish with salad",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable pulao"
+                "Vegetable Soup with Multigrain Bread (Protein: 15g, Carbs: 55g, Fats: 8g, Energy: 350kcal)",
+                "Dal with 1 Roti (Protein: 18g, Carbs: 45g, Fats: 8g, Energy: 320kcal)",
+                "Vegetable Stew with Appam (Protein: 15g, Carbs: 70g, Fats: 10g, Energy: 420kcal)",
+                "Grilled Chicken (120g) with Stir-fried Vegetables (Protein: 30g, Carbs: 20g, Fats: 8g, Energy: 280kcal)"
             ],
             "Snacks": [
-                "Coconut water with pulp",
-                "Fruit yogurt",
-                "Roasted makhana",
-                "Buttermilk with jeera",
-                "Fruit salad",
-                "Nuts and seeds",
-                "Roasted chana"
+                "Coconut Water with Pulp and Chia (300ml) (Protein: 5g, Carbs: 30g, Fats: 5g, Energy: 180kcal)",
+                "Fruit Yogurt with Flaxseeds (200g) (Protein: 10g, Carbs: 50g, Fats: 8g, Energy: 300kcal)",
+                "Roasted Makhana with Ghee and Pepper (50g) (Protein: 10g, Carbs: 40g, Fats: 10g, Energy: 300kcal)",
+                "Buttermilk with Jeera and Mint (Protein: 6g, Carbs: 25g, Fats: 5g, Energy: 160kcal)"
             ]
         }
     },
     5: {  # General Fitness (Complete 4 weeks)
         "Week 1": {
             "Breakfast": [
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk",
-                "Paratha with curd",
-                "Dosa with chutney",
-                "Upma with vegetables",
-                "Besan chilla"
+                "Idli (3) with Sambar (Protein: 15g, Carbs: 50g, Fats: 5g, Energy: 300kcal)",
+                "Poha with Vegetables (Protein: 8g, Carbs: 55g, Fats: 5g, Energy: 300kcal)",
+                "Dalia with Milk (Protein: 12g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Paratha (2) with Curd (Protein: 15g, Carbs: 65g, Fats: 10g, Energy: 400kcal)"
             ],
             "Lunch": [
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi",
-                "Curd rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Sambar rice"
+                "Rice with Dal and Sabzi (Protein: 18g, Carbs: 70g, Fats: 8g, Energy: 420kcal)",
+                "Roti (2) with Vegetable Curry (Protein: 15g, Carbs: 50g, Fats: 10g, Energy: 350kcal)",
+                "Khichdi with Curd (Protein: 20g, Carbs: 60g, Fats: 8g, Energy: 400kcal)",
+                "Curd Rice with Pickle (Protein: 12g, Carbs: 75g, Fats: 10g, Energy: 400kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao",
-                "Grilled fish with rice",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable stew"
+                "Vegetable Soup with Bread (Protein: 10g, Carbs: 40g, Fats: 5g, Energy: 250kcal)",
+                "Dal with 2 Roti (Protein: 20g, Carbs: 50g, Fats: 5g, Energy: 320kcal)",
+                "Vegetable Pulao with Raita (Protein: 15g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Grilled Fish (100g) with Rice (Protein: 30g, Carbs: 50g, Fats: 10g, Energy: 400kcal)"
             ],
             "Snacks": [
-                "Fruits",
-                "Nuts",
-                "Roasted chana",
-                "Buttermilk",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruits (200g) (Protein: 2g, Carbs: 40g, Fats: 1g, Energy: 180kcal)",
+                "Nuts (30g) (Protein: 8g, Carbs: 10g, Fats: 15g, Energy: 200kcal)",
+                "Roasted Chana (50g) (Protein: 15g, Carbs: 30g, Fats: 5g, Energy: 220kcal)",
+                "Buttermilk (300ml) (Protein: 5g, Carbs: 10g, Fats: 2g, Energy: 80kcal)"
             ]
         },
         "Week 2": {
             "Breakfast": [
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk",
-                "Paratha with curd",
-                "Dosa with chutney",
-                "Upma with vegetables",
-                "Besan chilla"
+                "Idli (3) with Chutney (Protein: 12g, Carbs: 55g, Fats: 5g, Energy: 300kcal)",
+                "Dosa with Sambar (Protein: 15g, Carbs: 50g, Fats: 8g, Energy: 320kcal)",
+                "Upma with Vegetables (Protein: 12g, Carbs: 60g, Fats: 8g, Energy: 350kcal)",
+                "Pongal with Ghee (Protein: 15g, Carbs: 65g, Fats: 10g, Energy: 400kcal)"
             ],
             "Lunch": [
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi",
-                "Curd rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Sambar rice"
+                "Rice with Sambar and Vegetables (Protein: 18g, Carbs: 75g, Fats: 8g, Energy: 450kcal)",
+                "Roti (2) with Dal and Sabzi (Protein: 20g, Carbs: 55g, Fats: 10g, Energy: 380kcal)",
+                "Khichdi with Papad (Protein: 18g, Carbs: 65g, Fats: 10g, Energy: 420kcal)",
+                "Curd Rice with Pickle and Fried Gram (Protein: 18g, Carbs: 80g, Fats: 12g, Energy: 450kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao",
-                "Grilled fish with rice",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable stew"
+                "Vegetable Soup with Toast (Protein: 12g, Carbs: 45g, Fats: 5g, Energy: 280kcal)",
+                "Dal with 2 Roti (Protein: 22g, Carbs: 55g, Fats: 8g, Energy: 380kcal)",
+                "Vegetable Pulao with Raita (Protein: 18g, Carbs: 65g, Fats: 10g, Energy: 420kcal)",
+                "Grilled Chicken (120g) with Rice (Protein: 35g, Carbs: 55g, Fats: 12g, Energy: 450kcal)"
             ],
             "Snacks": [
-                "Fruits",
-                "Nuts",
-                "Roasted chana",
-                "Buttermilk",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruit Salad (200g) (Protein: 3g, Carbs: 45g, Fats: 2g, Energy: 200kcal)",
+                "Nuts and Seeds (40g) (Protein: 10g, Carbs: 15g, Fats: 20g, Energy: 280kcal)",
+                "Roasted Makhana (50g) (Protein: 10g, Carbs: 35g, Fats: 5g, Energy: 230kcal)",
+                "Buttermilk with Jeera (Protein: 6g, Carbs: 15g, Fats: 5g, Energy: 130kcal)"
             ]
         },
         "Week 3": {
             "Breakfast": [
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk",
-                "Paratha with curd",
-                "Dosa with chutney",
-                "Upma with vegetables",
-                "Besan chilla"
+                "Idli (4) with Sambar (Protein: 18g, Carbs: 60g, Fats: 5g, Energy: 350kcal)",
+                "Dosa with Chutney and Sambar (Protein: 18g, Carbs: 55g, Fats: 10g, Energy: 380kcal)",
+                "Upma with Peanuts and Vegetables (Protein: 15g, Carbs: 65g, Fats: 10g, Energy: 400kcal)",
+                "Pongal with Cashews and Ghee (Protein: 18g, Carbs: 70g, Fats: 15g, Energy: 480kcal)"
             ],
             "Lunch": [
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi",
-                "Curd rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Sambar rice"
+                "Rice with Rasam and Vegetables (Protein: 18g, Carbs: 80g, Fats: 8g, Energy: 450kcal)",
+                "Roti (2) with Paneer Sabzi (Protein: 25g, Carbs: 50g, Fats: 15g, Energy: 420kcal)",
+                "Khichdi with Curd and Papad (Protein: 22g, Carbs: 70g, Fats: 12g, Energy: 480kcal)",
+                "Curd Rice with Fried Gram and Pickle (Protein: 22g, Carbs: 85g, Fats: 15g, Energy: 520kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao",
-                "Grilled fish with rice",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable stew"
+                "Vegetable Soup with Multigrain Bread (Protein: 15g, Carbs: 50g, Fats: 8g, Energy: 320kcal)",
+                "Dal with 2 Roti (Protein: 25g, Carbs: 60g, Fats: 10g, Energy: 420kcal)",
+                "Vegetable Pulao with Raita (Protein: 20g, Carbs: 70g, Fats: 12g, Energy: 480kcal)",
+                "Grilled Fish (150g) with Rice and Salad (Protein: 40g, Carbs: 60g, Fats: 15g, Energy: 520kcal)"
             ],
             "Snacks": [
-                "Fruits",
-                "Nuts",
-                "Roasted chana",
-                "Buttermilk",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruit Salad with Honey (200g) (Protein: 3g, Carbs: 50g, Fats: 2g, Energy: 230kcal)",
+                "Nuts and Dry Fruits (50g) (Protein: 12g, Carbs: 25g, Fats: 25g, Energy: 350kcal)",
+                "Roasted Chana with Coconut (60g) (Protein: 18g, Carbs: 40g, Fats: 10g, Energy: 320kcal)",
+                "Buttermilk with Mint and Jeera (Protein: 8g, Carbs: 20g, Fats: 8g, Energy: 180kcal)"
             ]
         },
         "Week 4": {
             "Breakfast": [
-                "Idli with sambar",
-                "Poha with vegetables",
-                "Dalia with milk",
-                "Paratha with curd",
-                "Dosa with chutney",
-                "Upma with vegetables",
-                "Besan chilla"
+                "Idli (4) with Sambar and Chutney (Protein: 20g, Carbs: 65g, Fats: 8g, Energy: 400kcal)",
+                "Dosa with Potato Masala (Protein: 18g, Carbs: 60g, Fats: 12g, Energy: 420kcal)",
+                "Upma with Vegetables and Nuts (Protein: 18g, Carbs: 70g, Fats: 15g, Energy: 480kcal)",
+                "Pongal with Ghee, Cashews and Raisins (Protein: 20g, Carbs: 75g, Fats: 18g, Energy: 520kcal)"
             ],
             "Lunch": [
-                "Rice with dal and sabzi",
-                "Roti with vegetable curry",
-                "Khichdi",
-                "Curd rice",
-                "Jeera rice with dal",
-                "Vegetable pulao",
-                "Sambar rice"
+                "Rice with Sambar, Rasam and Vegetables (Protein: 22g, Carbs: 85g, Fats: 10g, Energy: 520kcal)",
+                "Roti (2) with Dal Makhani and Salad (Protein: 28g, Carbs: 60g, Fats: 18g, Energy: 480kcal)",
+                "Khichdi with Curd, Papad and Pickle (Protein: 25g, Carbs: 75g, Fats: 15g, Energy: 520kcal)",
+                "Curd Rice with Fried Gram, Pickle and Papad (Protein: 25g, Carbs: 90g, Fats: 18g, Energy: 580kcal)"
             ],
             "Dinner": [
-                "Vegetable soup with bread",
-                "Dal with roti",
-                "Vegetable pulao",
-                "Grilled fish with rice",
-                "Vegetable khichdi",
-                "Dal with rice",
-                "Vegetable stew"
+                "Vegetable Soup with Garlic Bread (Protein: 18g, Carbs: 60g, Fats: 12g, Energy: 420kcal)",
+                "Dal with 2 Roti and Ghee (Protein: 28g, Carbs: 65g, Fats: 15g, Energy: 480kcal)",
+                "Vegetable Pulao with Raita and Papad (Protein: 22g, Carbs: 75g, Fats: 15g, Energy: 520kcal)",
+                "Grilled Chicken (150g) with Rice and Stir-fried Vegetables (Protein: 45g, Carbs: 65g, Fats: 18g, Energy: 580kcal)"
             ],
             "Snacks": [
-                "Fruits",
-                "Nuts",
-                "Roasted chana",
-                "Buttermilk",
-                "Coconut water",
-                "Fruit chaat",
-                "Roasted makhana"
+                "Fruit Salad with Yogurt and Honey (200g) (Protein: 8g, Carbs: 60g, Fats: 5g, Energy: 320kcal)",
+                "Nuts, Seeds and Dry Fruits (60g) (Protein: 15g, Carbs: 35g, Fats: 30g, Energy: 420kcal)",
+                "Roasted Chana with Coconut and Spices (70g) (Protein: 20g, Carbs: 45g, Fats: 12g, Energy: 380kcal)",
+                "Buttermilk with Jeera, Mint and Ginger (Protein: 10g, Carbs: 25g, Fats: 10g, Energy: 220kcal)"
             ]
         }
     }
