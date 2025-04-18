@@ -194,43 +194,52 @@ EXERCISES = {
     148: ("🏋️ Jump Rope (Imaginary)", "timing"),
     149: ("⏰ Interval Running", "timing"),
 
-    # ===== General Fitness (150-179) =====
-    # Beginner (150-159)
-    150: ("⏰ Standing Side Stretch", "timing"),
-    151: ("⏳ Neck Stretches", "timing"),
-    152: ("🕰️ Seated Forward Fold", "timing"),
-    153: ("🧘🏻‍♀️ Cat-Cow Stretch", "reps"),
-    154: ("⏰ Standing Quad Stretch", "timing"),
-    155: ("⏳ Seated Spinal Twist", "timing"),
-    156: ("💪 Shoulder Rolls", "reps"),
-    157: ("🏋️ Ankle Rolls", "reps"),
-    158: ("🕰️ Wrist Stretches", "timing"),
-    159: ("⏰ Deep Breathing Exercises", "timing"),
+    ===== General Fitness (150-179) =====
 
-    # Intermediate (160-169)
-    160: ("⏰ Downward Dog Stretch", "timing"),
-    161: ("⏳ Neck Resistance Stretches", "timing"),
-    162: ("🕰️ Standing Forward Bend", "timing"),
-    163: ("🧘🏻‍♀️ Thread the Needle", "reps"),
-    164: ("⏰ Lunge with Twist", "timing"),
-    165: ("⏳ Standing Spinal Twist", "timing"),
-    166: ("💪 Arm Cross Stretch", "reps"),
-    167: ("🏋️ Dynamic Ankle Mobility", "reps"),
-    168: ("🕰️ Finger Stretches", "timing"),
-    169: ("⏰ Box Breathing", "timing"),
+# Beginner (150-159)  
+# Upper Body
+150: ("🧍 Wall Push-ups", "reps"),  
+151: ("🙌 Lateral Arm Raises", "reps"),  
+152: ("🧍 Front Arm Raises", "reps"),  
+153: ("🙋 Overhead Reaches", "reps"),
+# Core  
+154: ("🪨 Front Plank", "timing"),  
+155: ("🧍 Standing Knee Raises", "reps"),  
+# Lower Body
+156: ("🏃 Jumping Jacks", "reps"),  
+157: ("🧍 Bodyweight Squats", "reps"),  
+158: ("🧍 Standing Leg Raises", "reps"),  
+159: ("🦵 Forward Lunges", "reps"),  
 
-    # Advanced (170-179)
-    170: ("⏰ Handstand Hold (Wall)", "timing"),
-    171: ("⏳ L-Sit Progressions", "timing"),
-    172: ("🕰️ Bridge Hold", "timing"),
-    173: ("⏰ V-Sit Progressions", "timing"),
-    174: ("⏳ Towel Assisted Splits", "timing"),
-    175: ("🤸‍♂️ Backbend Walkouts", "reps"),
-    176: ("💀 Ninja Jump Rolls", "reps"),
-    177: ("🏋️‍♂️ Parkour Basics (Wall Jumps)", "reps"),
-    178: ("⏰ Capoeira Movements", "timing"),
-    179: ("🕰️ Advanced Yoga Flow", "timing")
-}
+# Intermediate (160-169)  
+# Upper Body
+160: ("💪 Chair/Couch Dips", "reps"),  
+161: ("💪 Wide-Grip Push-ups", "reps"),  
+162: ("🧍 Wall Mountain Climbers", "reps"),  
+163: ("🧍 Standing Reverse Fly", "reps"),
+# Core  
+164: ("🧎 Shoulder Taps in Plank", "reps"),  
+165: ("🪨 Straight-Arm Side Plank", "timing"),  
+166: ("🧍 Standing Bicycle Crunch", "reps"),
+# Lower Body  
+167: ("🏃 High Knees", "reps"),  
+168: ("🧍 Lateral Lunges", "reps"),  
+169: ("🧍 Standing Glute Kickbacks", "reps"),  
+
+# Advanced (170-179)  
+# Upper Body
+170: ("💪 Pike Push-ups", "reps"),  
+171: ("💪 Decline Push-ups", "reps"),  
+172: ("🪨 Up-Down Plank", "reps"),  
+173: ("🧍 Wall Handstand Hold", "timing"),
+# Core  
+174: ("🧎 Superman Pose", "timing"),  
+175: ("🪨 Extended Arm Plank", "timing"),  
+176: ("🧍 Standing Leg Raises with Hold", "reps"),
+# Lower Body  
+177: ("🧍 Single-Leg Squats", "reps"),  
+178: ("🦵 Jump Squats", "reps"),  
+179: ("🏃 Split Jump Lunges", "reps")
 
 HIIT_EXERCISES = {
     180: ("Burpees (No Push-up)", "timing"),  # Beginner
